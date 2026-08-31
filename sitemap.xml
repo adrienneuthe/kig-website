@@ -13,6 +13,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://kronusintelligencegroup.com/insights/corporate-osint</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kronusintelligencegroup.com/insights/counterintelligence-consulting</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
