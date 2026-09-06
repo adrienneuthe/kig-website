@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Detect Disinformation Campaigns | Kronus Intelligence Group</title>
+<meta name="description" content="A practitioner's guide to detecting disinformation campaigns: signal indicators, attribution methodology, and the intelligence infrastructure required to respond effectively.">
+<link rel="canonical" href="https://kronusintelligencegroup.com/insights/how-to-detect-disinformation-campaigns">
+<meta property="og:title" content="How to Detect Disinformation Campaigns">
+<meta property="og:description" content="A practitioner's guide to detecting disinformation campaigns: signal indicators, attribution methodology, and the intelligence infrastructure required to respond effectively.">
+<meta property="og:image" content="https://kronusintelligencegroup.com/meta.png">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0KEYQ4PBX5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-0KEYQ4PBX5");</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ch:#1A1A1A;--gr:#222222;--stone:#3D3D3D;--dust:#C8D8E4;--parch:#E8F0F8;--cream:#FFFFFF;--crim:#E8112D;--border:rgba(255,255,255,0.06);--cond:"Barlow Condensed","Arial Narrow",sans-serif;--mono:"IBM Plex Mono",monospace;--sans:"IBM Plex Sans",sans-serif;}
+body{background:var(--ch);color:var(--parch);font-family:var(--sans);font-size:16px;line-height:1.75;}
+a{color:inherit;text-decoration:none;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--ch);z-index:100;}
+.nav-logo{font-family:var(--cond);font-size:15px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);}
+.nav-logo span{color:var(--crim);}
+.nav-back{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--dust);text-transform:uppercase;}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--crim);margin-bottom:14px;}
+.hero{padding:80px 48px 60px;max-width:900px;border-bottom:1px solid var(--border);}
+h1{font-family:var(--cond);font-size:clamp(32px,4vw,52px);font-weight:800;color:var(--cream);line-height:1.05;text-transform:uppercase;margin-bottom:20px;}
+.hero-meta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#555;text-transform:uppercase;margin-bottom:20px;}
+.hero-desc{font-size:17px;color:var(--dust);max-width:640px;line-height:1.75;}
+article{max-width:760px;margin:0 auto;padding:60px 48px 80px;}
+article h2{font-family:var(--cond);font-size:26px;font-weight:800;color:var(--cream);text-transform:uppercase;margin:48px 0 16px;}
+article h3{font-family:var(--cond);font-size:19px;font-weight:700;color:var(--dust);text-transform:uppercase;margin:28px 0 12px;}
+article p{margin-bottom:20px;color:var(--parch);line-height:1.8;}
+article ul,article ol{margin:0 0 20px 24px;color:var(--parch);line-height:1.8;}
+article li{margin-bottom:8px;}
+article strong{color:var(--cream);}
+.cta-block{background:var(--gr);border:1px solid rgba(232,17,45,0.25);padding:32px;margin:48px 0 0;border-left:3px solid var(--crim);}
+.cta-block p{margin:0 0 16px;color:var(--dust);}
+.cta-block a{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--crim);border:1px solid rgba(232,17,45,0.4);padding:10px 20px;}
+.cta-block a:hover{background:rgba(232,17,45,0.08);}
+.faq-block{margin-top:48px;border-top:1px solid var(--border);padding-top:40px;}
+.faq-block h2{margin-top:0;}
+.faq-item{margin-bottom:28px;}
+.faq-item h3{font-family:var(--sans);font-size:15px;font-weight:500;color:var(--cream);text-transform:none;letter-spacing:0;margin-bottom:8px;}
+.faq-item p{margin:0;font-size:15px;}
+footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.footer-logo{font-family:var(--cond);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dust);}
+.footer-copy{font-family:var(--mono);font-size:10px;color:#555;}
+@media(max-width:768px){nav,footer{padding:16px 24px;}.hero{padding:60px 24px 40px;}article{padding:40px 24px 60px;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Detect Disinformation Campaigns",
+  "description": "A practitioner's guide to detecting disinformation campaigns: signal indicators, attribution methodology, and the intelligence infrastructure required to respond effectively.",
+  "datePublished": "2026-09-06",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kronus Intelligence Group",
+    "url": "https://kronusintelligencegroup.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you detect a disinformation campaign early?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Early detection requires monitoring for coordinated inauthentic behavior: accounts posting identical or near-identical content within tight time windows, abnormal amplification velocity relative to account follower counts, and narrative clusters that emerge simultaneously across unrelated platforms. Automated crawling of surface and forum-layer social platforms, combined with human analysis, provides the earliest warning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between misinformation and disinformation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Misinformation is false or inaccurate content spread without deliberate intent to deceive. Disinformation is false content created and distributed with intentional purpose — typically to damage a reputation, shift public opinion, undermine institutional trust, or create confusion in a specific audience. The distinction matters operationally: disinformation implies an actor, an objective, and a campaign structure worth investigating."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What tools are used to detect disinformation campaigns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Detection tooling typically includes: OSINT platforms with narrative tracking and entity resolution (Maltego, Social Links, SpiderFoot), purpose-built influence operation detection tools (Graphika, Storyful, Yonder), network graph analysis software, and custom media monitoring stacks tuned to specific threat actors or information environments. No single tool is sufficient — effective detection combines automated signal collection with analyst-led pattern recognition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a private organization detect disinformation targeting them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Corporations, NGOs, law firms, and high-profile executives are frequent targets of coordinated disinformation. Private intelligence firms with narrative monitoring capabilities can establish baseline brand and executive sentiment across platforms, detect anomalous amplification patterns, identify probable origin accounts or networks, and support legal or communications response teams with documented evidence."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav><a href="/" class="nav-logo">KRONUS<span>/</span>INTELLIGENCE GROUP</a><a href="/insights/" class="nav-back">← All Insights</a></nav>
+<div class="hero">
+  <div class="eyebrow">Intelligence Insights</div>
+  <h1>How to Detect Disinformation Campaigns</h1>
+  <div class="hero-meta">September 6, 2026 &nbsp;|&nbsp; Kronus Intelligence Group</div>
+  <p class="hero-desc">A practitioner's guide to detecting disinformation campaigns: signal indicators, attribution methodology, and the intelligence infrastructure required to respond effectively.</p>
+</div>
+<article>
+
+<p>Disinformation campaigns targeting organizations, executives, and institutions are no longer rare events confined to geopolitical conflict zones. They are a routine instrument of competitive and adversarial action — deployed by hostile state actors, organized criminal networks, activist groups, and business competitors alike. What distinguishes effective detection from reactive crisis management is the ability to identify a campaign before it reaches mainstream amplification.</p>
+
+<p>Detection is not monitoring. Passive monitoring — tracking brand mentions or flagging individual negative posts — misses the structural signatures that define an organized campaign. Effective detection requires a layered intelligence posture: automated signal collection, behavioral network analysis, and human judgment applied to pattern recognition across information environments.</p>
+
+<h2>What Does a Disinformation Campaign Actually Look Like?</h2>
+
+<p>A disinformation campaign is not a single false narrative — it is a coordinated system of content creation, distribution, and amplification designed to move a target audience toward a specific belief or behavior. Understanding the architecture is the prerequisite to detecting it.</p>
+
+<p>Most organized campaigns share a recognizable structural profile:</p>
+
+<ul>
+  <li><strong>Origin layer:</strong> A small number of content-creating accounts — often inauthentic — generate the initial false or misleading narrative. These may be freshly created accounts, aged sleeper accounts purchased or cultivated for the operation, or compromised legitimate accounts.</li>
+  <li><strong>Amplification layer:</strong> Secondary accounts — frequently automated or coordinated — amplify the original content at velocity that would be impossible for organic activity to replicate. Amplification often begins within minutes of the original post.</li>
+  <li><strong>Legitimization layer:</strong> Unwitting third parties — journalists, commentators, domain-relevant communities — encounter the already-amplified content and engage with it in good faith, providing the appearance of organic traction.</li>
+  <li><strong>Persistence layer:</strong> The narrative is seeded into alternative media, forums (Reddit, 4chan, Telegram channels), and searchable platforms so that it survives platform moderation actions against the originating accounts.</li>
+</ul>
+
+<p>The window for effective early intervention is narrow — typically between the origin layer and the legitimization layer. Once credible third parties have amplified a false narrative, the remediation calculus shifts from suppression to counter-narrative and legal response.</p>
+
+<h2>What Are the Signal Indicators of a Coordinated Campaign?</h2>
+
+<p>Detection begins with identifying behavioral anomalies that deviate from organic information spread. No single indicator confirms a coordinated campaign, but the following clusters — when observed together — warrant escalated investigation:</p>
+
+<h3>Amplification Velocity Anomalies</h3>
+<p>Organic content about a non-public figure or niche organizational matter does not accumulate hundreds of shares within the first hour. Velocity spikes — particularly when the amplifying accounts have low follower counts, limited posting history, or non-native language patterns — are a primary indicator of inauthentic coordination. Monitoring tools should be calibrated to flag content about your organization that reaches abnormal amplification thresholds relative to your standard baseline.</p>
+
+<h3>Coordinated Inauthentic Behavior Patterns</h3>
+<p>Platform-level behavioral analysis — which private investigators can approximate through OSINT — looks for accounts posting identical or near-identical content within tight time windows, accounts that activate simultaneously after long dormancy, and networks where follower/following relationships form dense clusters inconsistent with organic community formation. Linguistic fingerprinting can also identify machine-translated content or repeated syntactic patterns across nominally unrelated accounts.</p>
+
+<h3>Narrative Cluster Emergence</h3>
+<p>A specific false claim appearing across multiple unrelated platforms within a short time window — Twitter/X, LinkedIn, Reddit, niche forums, and regional news aggregators simultaneously — suggests a seeding operation rather than organic spread. Tracking platform diversity and timing of identical narratives is a structural indicator that is underutilized by organizations relying solely on social listening tools.</p>
+
+<h3>Source Laundering</h3>
+<p>Sophisticated campaigns use proxy sources — low-credibility news sites, aggregator blogs, or fabricated "research" documents — to create the appearance of third-party validation before amplifying the narrative. Monitor not just social platforms but the document and link ecosystem surrounding any suspicious narrative: Where did the claim originate? What domain published it first? When was that domain registered?</p>
+
+<h2>Attribution: Who Is Running the Campaign?</h2>
+
+<p>Detection establishes that a campaign is occurring. Attribution answers who is responsible — and why. Attribution is operationally significant because the appropriate response differs substantially depending on whether the origin is a hostile state actor, a domestic competitor, an organized activist network, or an individual bad actor operating at scale with basic tooling.</p>
+
+<p>Attribution methodology draws from several analytical disciplines:</p>
+
+<ul>
+  <li><strong>Infrastructure analysis:</strong> Domain registration patterns, hosting providers, IP clustering, and SSL certificate histories can connect apparently unrelated websites and accounts to shared operational infrastructure. Infrastructure reuse is one of the most reliable attribution signals.</li>
+  <li><strong>Behavioral fingerprinting:</strong> Operational security errors — posting in native language before switching to target language, using the same profile photo across multiple inauthentic accounts, time-zone-consistent posting patterns — narrow the probable origin population.</li>
+  <li><strong>Motive and opportunity mapping:</strong> Attribution analysis must be grounded in a realistic threat actor assessment. Who benefits from this specific narrative, directed at this specific target, at this specific moment? Motive analysis eliminates hypothetical actors and focuses investigation on probable ones.</li>
+  <li><strong>Human intelligence:</strong> OSINT-derived attribution has limits. In high-stakes situations — litigation, regulatory response, executive protection scenarios — HUMINT sources within relevant communities can confirm or refute technical attribution hypotheses. <a href="/insights/humint-services">HUMINT collection capabilities</a> are a material advantage in ambiguous attribution environments.</li>
+</ul>
+
+<p>Full technical attribution to a named actor is rarely achievable in private sector investigations without law enforcement cooperation. The more operationally relevant output is a threat actor profile with sufficient confidence to support legal action, communications strategy, or defensive posture decisions.</p>
+
+<h2>Building the Detection Infrastructure</h2>
+
+<p>Detection at scale requires a monitoring architecture that is tuned to your specific threat surface — not a generic social listening dashboard. The components of an effective system include:</p>
+
+<ul>
+  <li><strong>Keyword and entity monitoring:</strong> Brand names, executive names, product names, key spokespersons, and associated terminology — monitored across surface web, social platforms, and forum environments including Telegram, Discord, and dark web forums where early seeding frequently occurs.</li>
+  <li><strong>Baseline establishment:</strong> Effective anomaly detection requires knowing what normal looks like. Organizations without a pre-crisis baseline cannot distinguish organic sentiment shifts from coordinated manipulation. Baseline monitoring should begin well before any active threat is identified.</li>
+  <li><strong>Network graph analysis:</strong> Relational mapping of who amplifies what, and how those amplifiers are connected to each other, surfaces coordination structures invisible to content-only analysis.</li>
+  <li><strong>Alert thresholds calibrated to your environment:</strong> A global financial institution has a different normal amplification baseline than a regional NGO. Detection thresholds must be calibrated to your specific information environment or alert fatigue will degrade the entire system.</li>
+  <li><strong>Analyst-in-the-loop review:</strong> Automated systems identify signals. Experienced analysts determine which signals constitute threats, which are noise, and what the appropriate escalation pathway is. There is no fully automated substitute for trained judgment in ambiguous information environments.</li>
+</ul>
+
+<p>For most organizations, building and maintaining this infrastructure in-house is neither cost-effective nor operationally realistic. The more common model — particularly for organizations facing periodic rather than continuous elevated threat — is retaining an external intelligence provider with standing <a href="/insights/narrative-threat-monitoring">narrative threat monitoring</a> capabilities that can surge when indicators emerge.</p>
+
+<p>The organizations most exposed to disinformation risk are often those that have never been targeted before. A campaign can reach mainstream amplification in under six hours. Detection infrastructure that is assembled reactively — after a campaign is already visible — provides almost no operational value. The investment in early warning capability must precede the threat.</p>
+
+<div class="faq-block">
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+  <h3>How do you detect a disinformation campaign early?</h3>
+  <p>Early detection requires monitoring for coordinated inauthentic behavior: accounts posting identical or near-identical content within tight time windows, abnormal amplification velocity relative to account follower counts, and narrative clusters that emerge simultaneously across unrelated platforms. Automated crawling of surface and forum-layer social platforms, combined with human analysis, provides the earliest warning.</p>
+</div>
+
+<div class="faq-item">
+  <h3>What is the difference between misinformation and disinformation?</h3>
+  <p>Misinformation is false or inaccurate content spread without deliberate intent to deceive. Disinformation is false content created and distributed with intentional purpose — typically to damage a reputation, shift public opinion, undermine institutional trust, or create confusion in a specific audience. The distinction matters operationally: disinformation implies an actor, an objective, and a campaign structure worth investigating.</p>
+</div>
+
+<div class="faq-item">
+  <h3>What tools are used to detect disinformation campaigns?</h3>
+  <p>Detection tooling typically includes OSINT platforms with narrative tracking and entity resolution (Maltego, Social Links, SpiderFoot), purpose-built influence operation detection tools (Graphika, Storyful, Yonder), network graph analysis software, and custom media monitoring stacks tuned to specific threat actors or information environments. No single tool is sufficient — effective detection combines automated signal collection with analyst-led pattern recognition.</p>
+</div>
+
+<div class="faq-item">
+  <h3>Can a private organization detect disinformation targeting them?</h3>
+  <p>Yes. Corporations, NGOs, law firms, and high-profile executives are frequent targets of coordinated disinformation. Private intelligence firms with narrative monitoring capabilities can establish baseline brand and executive sentiment across platforms, detect anomalous amplification patterns, identify probable origin accounts or networks, and support legal or communications response teams with documented evidence.</p>
+</div>
+</div>
+
+<div class="cta-block"><p>Kronus Intelligence Group builds and operates custom intelligence infrastructure for organizations that cannot afford to be wrong. If your environment requires it, we want to hear from you.</p><a href="https://kronusintelligencegroup.com/#contact">Start a Confidential Conversation →</a></div>
+</article>
+<footer><div class="footer-logo">Kronus Intelligence Group</div><div class="footer-copy">&copy; 2026 Kronus Intelligence Group.</div></footer>
+</body>
+</html>
