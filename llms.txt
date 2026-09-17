@@ -1,0 +1,31 @@
+# Kronus Intelligence Group
+
+> Custom intelligence infrastructure for organizations that can't afford to be wrong — HUMINT networks, narrative threat detection, electoral integrity, executive security, and counterparty vetting.
+
+Kronus Intelligence Group (KIG) is a protective-intelligence firm led by Adrienne Uthe. KIG scopes, builds, and operates intelligence infrastructure inside a client's own environment rather than selling an off-the-shelf platform, fusing 30+ years of embedded field intelligence with modern AI-driven analysis.
+
+## What We Do
+
+- Custom Intelligence Systems: Intelligence infrastructure — data pipelines, reasoning engines, monitoring — built into a client's existing environment, including integration with platforms like Splunk, Palantir, and Salesforce, plus ongoing managed operation.
+- Narrative & Digital Threat Detection: Real-time monitoring of social, dark web, and news sources for coordinated disinformation, actor attribution, crisis response, deepfake and AI-content detection, and narrative due diligence for M&A and partnerships.
+- Intelligence & Risk Assessment: HUMINT/OSINT collection from embedded field networks, counterparty vetting and financial-integrity investigations, and geopolitical risk assessment built on in-region relationships rather than public reporting alone.
+- Executive Security: Threat assessment and profiling, digital footprint reduction, travel security and route intelligence, and residential/family security architecture for high-value individuals.
+- Electoral Integrity: Electoral observer support, pre-election threat assessment and disinformation monitoring, and intelligence support for civic institutions — nearly 30 years operating in contested electoral environments.
+
+## Who We Work With
+
+- Private companies and enterprises
+- NGOs and international organizations
+- Contractors and government-adjacent firms
+- High-net-worth individuals, executives, and family offices
+
+## Track Record
+
+- 30+ years of continuous field intelligence and electoral monitoring across the Western Hemisphere and beyond
+- Analysts embedded across the United States, Haiti and the Caribbean, Colombia and Latin America, Sudan and East Africa, the Middle East and MENA, Europe and the Balkans, and Asia
+- 7 languages spoken natively by embedded analysts, including Haitian Creole, Spanish, French, Arabic, and Serbian
+- Discretion-first model: client relationships are not published
+
+## Key People
+
+- Adrienne Uthe — Managing Principal
