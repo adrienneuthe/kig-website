@@ -898,51 +898,99 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 
 
 <!-- KIG GLOBAL MONITOR SECTION -->
-<section id="monitor" style="background:#111;padding:80px 48px;border-bottom:1px solid rgba(255,255,255,0.06);position:relative;"><div style="position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center/cover no-repeat;opacity:0.05;pointer-events:none;z-index:0;"></div>
+<section id="monitor" style="background:#0D0D0D;padding:80px 48px;border-bottom:1px solid rgba(255,255,255,0.06);position:relative;"><div style="position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center/cover no-repeat;opacity:0.03;pointer-events:none;z-index:0;"></div>
 <div style="max-width:1160px;margin:0 auto;position:relative;z-index:1;">
 
-  <!-- Header -->
-  <div class="reveal mon-hdr-grid" style="display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;margin-bottom:36px;">
-    <div>
-      <div class="eyebrow" style="font-weight:700;">Narrative Threat Monitoring - Real-Time Global Intelligence</div>
-      <h2 class="headline" style="margin-bottom:10px;">THIS IS WHAT<br><em>WE WATCH.</em></h2>
-      <p style="font-size:14px;color:#C0D0DC;max-width:520px;line-height:1.7;">Real-time signal aggregation across 25+ global sources. Country instability scoring. Active threat theaters.</p>
-      <div style="font-size:12px;color:#9AABB8;max-width:520px;line-height:1.65;margin-top:10px;padding:10px 14px;border-left:2px solid rgba(232,17,45,0.45);background:rgba(232,17,45,0.06);">The data below is <strong style="color:#E8112D;">representative sample output</strong> - an illustration of what a KIG-built system surfaces. Your system is scoped and operated for your specific environment and threat reality.</div>
+  <!-- Section Header -->
+  <div class="reveal" style="margin-bottom:24px;">
+    <div class="eyebrow" style="font-weight:700;">Narrative Threat Monitoring — Real-Time Global Intelligence</div>
+    <h2 class="headline" style="margin-bottom:10px;">THIS IS WHAT<br><em>WE WATCH.</em></h2>
+    <p style="font-size:14px;color:#C0D0DC;max-width:560px;line-height:1.7;margin-bottom:12px;">Real-time signal aggregation across 25+ global sources. Country instability scoring. Active threat theaters.</p>
+    <div style="font-size:11px;color:#9AABB8;max-width:560px;line-height:1.65;padding:9px 14px;border-left:2px solid rgba(232,17,45,0.45);background:rgba(232,17,45,0.05);">The data below is <strong style="color:#E8112D;">representative sample output</strong> — an illustration of what a KIG-built system surfaces. Your system is scoped and operated for your specific environment and threat reality.</div>
+  </div>
+
+  <!-- Terminal Header Bar -->
+  <div style="background:#111;border:1px solid rgba(255,255,255,0.08);border-bottom:none;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:16px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;color:#E8112D;">KIG // GLOBAL INTELLIGENCE TERMINAL</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#3D3D3D;">|</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.1em;color:#505050;">ZEUS SYSTEM ACTIVE</span>
     </div>
-    <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#1A5C35;flex-shrink:0;">
-      <div class="pulse"></div>LIVE MONITORING ACTIVE
+    <div style="display:flex;align-items:center;gap:16px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#505050;" id="kig-terminal-ts"></span>
+      <div style="display:flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.12em;color:#1A5C35;"><div class="pulse"></div>LIVE</div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    function updateTs(){
+      var el = document.getElementById('kig-terminal-ts');
+      if(!el) return;
+      var now = new Date();
+      var d = now.toUTCString().replace(' GMT','').toUpperCase();
+      el.textContent = d + ' UTC';
+    }
+    updateTs();
+    setInterval(updateTs, 1000);
+  })();
+  </script>
+
+  <!-- Data Ticker Strip -->
+  <div style="background:#111;border:1px solid rgba(255,255,255,0.08);border-top:1px solid rgba(255,255,255,0.04);border-bottom:none;padding:6px 16px;display:flex;gap:0;overflow:hidden;">
+    <div style="display:flex;align-items:center;gap:24px;font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.1em;white-space:nowrap;flex-wrap:nowrap;">
+      <span style="color:#E8112D;margin-right:8px;">&#9632; SIGNALS</span>
+      <span style="color:#C8D4DE;">CONFLICT <span style="color:#E8112D;">HIGH ▲</span></span>
+      <span style="color:#3D3D3D;">|</span>
+      <span style="color:#C8D4DE;">NARRATIVE <span style="color:#E8112D;">ELEVATED</span></span>
+      <span style="color:#3D3D3D;">|</span>
+      <span style="color:#C8D4DE;">ELECTORAL <span style="color:#8B6914;">ACTIVE</span></span>
+      <span style="color:#3D3D3D;">|</span>
+      <span style="color:#C8D4DE;">CYBER <span style="color:#8B6914;">MONITOR</span></span>
+      <span style="color:#3D3D3D;">|</span>
+      <span style="color:#C8D4DE;">THEATERS <span style="color:#E8112D;">5 ACTIVE</span></span>
+      <span style="color:#3D3D3D;">|</span>
+      <span style="color:#C8D4DE;">SOURCES <span style="color:#1A5C35;">14 CONNECTED</span></span>
+      <span style="color:#3D3D3D;">|</span>
+      <span style="color:#C8D4DE;">LANGUAGES <span style="color:#C8D4DE;">25+</span></span>
+      <span style="color:#3D3D3D;">|</span>
+      <span style="color:#C8D4DE;">RISK INDEX <span style="color:#E8112D;">58 ELEVATED</span></span>
     </div>
   </div>
 
   <!-- Main Dashboard Grid -->
-  <div style="display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:1px;background:rgba(255,255,255,0.06);margin-bottom:1px;" class="reveal mon-main-grid">
+  <div style="display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:1px;background:rgba(255,255,255,0.07);margin-bottom:1px;border:1px solid rgba(255,255,255,0.08);" class="reveal mon-main-grid">
 
     <!-- PANEL 1: Country Instability -->
-    <div style="background:#161616;padding:24px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#909090;margin-bottom:16px;display:flex;justify-content:space-between;">
-        <span>COUNTRY INSTABILITY</span><span style="color:#E8112D;" id="kig-defcon">DEFCON <span id="kig-defcon-num">4</span></span>
+    <div style="background:#111;">
+      <div style="border-top:2px solid #E8112D;padding:10px 16px;background:#141414;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D4DE;">COUNTRY INSTABILITY</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#E8112D;letter-spacing:.1em;" id="kig-defcon">DEFCON <span id="kig-defcon-num">4</span></span>
       </div>
-      <div style="display:flex;flex-direction:column;gap:10px;" id="kig-instability">
+      <div style="padding:16px;display:flex;flex-direction:column;gap:8px;" id="kig-instability">
         <!-- populated by JS -->
       </div>
     </div>
 
     <!-- PANEL 2: Live Intel Feed -->
-    <div style="background:#161616;padding:24px;display:flex;flex-direction:column;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#909090;margin-bottom:16px;display:flex;justify-content:space-between;">
-        <span>LIVE INTEL FEED</span>
-        <span style="color:#1A5C35;display:flex;align-items:center;gap:5px;"><div class="pulse"></div><span id="kig-feed-count">0</span> signals</span>
+    <div style="background:#111;display:flex;flex-direction:column;border-left:1px solid rgba(255,255,255,0.06);border-right:1px solid rgba(255,255,255,0.06);">
+      <div style="border-top:2px solid #1A5C35;padding:10px 16px;background:#141414;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D4DE;">LIVE INTEL FEED</span>
+        <span style="color:#1A5C35;display:flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:7.5px;"><div class="pulse"></div><span id="kig-feed-count">0</span> SIGNALS</span>
       </div>
-      <div style="display:flex;flex-direction:column;gap:6px;flex:1;overflow-y:auto;max-height:420px;" id="kig-feed">
+      <div style="padding:16px;display:flex;flex-direction:column;gap:5px;flex:1;overflow-y:auto;max-height:380px;" id="kig-feed">
         <!-- populated by JS -->
       </div>
     </div>
 
     <!-- PANEL 3: Strategic Risk Overview -->
-    <div style="background:#161616;padding:24px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#909090;margin-bottom:16px;">STRATEGIC RISK OVERVIEW</div>
+    <div style="background:#111;">
+      <div style="border-top:2px solid #8B6914;padding:10px 16px;background:#141414;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D4DE;">STRATEGIC RISK</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#8B6914;">OVERVIEW</span>
+      </div>
+      <div style="padding:16px;">
       <!-- Big risk dial -->
-      <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:20px;">
+      <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:16px;">
         <svg viewBox="0 0 160 100" style="width:160px;height:100px;">
           <!-- arc background -->
           <path d="M 20 80 A 60 60 0 0 1 140 80" fill="none" stroke="#2C2C2C" stroke-width="10" stroke-linecap="round"/>
@@ -964,44 +1012,53 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
         <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:#E8112D;margin-top:4px;" id="kig-risk-label">ELEVATED</div>
       </div>
       <!-- Active theaters -->
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:#909090;margin-bottom:10px;">ACTIVE THEATERS</div>
-      <div style="display:flex;flex-direction:column;gap:6px;" id="kig-theaters">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.14em;text-transform:uppercase;color:#505050;margin-bottom:8px;margin-top:4px;">ACTIVE THEATERS</div>
+      <div style="display:flex;flex-direction:column;gap:4px;" id="kig-theaters">
         <!-- populated by JS -->
       </div>
-    </div>
-  </div>
+      </div><!-- /padding wrapper -->
+    </div><!-- /panel 3 -->
+  </div><!-- /main grid -->
 
   <!-- Bottom row: Signal categories + cross-source aggregator -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.06);" class="reveal mon-bot-grid">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.08);border-top:none;" class="reveal mon-bot-grid">
 
     <!-- Signal Categories -->
-    <div style="background:#161616;padding:24px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#909090;margin-bottom:16px;">SIGNAL BREAKDOWN BY CATEGORY</div>
-      <div style="display:flex;flex-direction:column;gap:10px;" id="kig-categories">
+    <div style="background:#111;">
+      <div style="border-top:2px solid #505050;padding:10px 16px;background:#141414;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D4DE;">SIGNAL BREAKDOWN BY CATEGORY</span>
+      </div>
+      <div style="padding:16px;">
+      <div style="display:flex;flex-direction:column;gap:8px;" id="kig-categories">
         <!-- populated by JS -->
       </div>
-    </div>
+      </div><!-- /padding -->
+    </div><!-- /signal categories -->
 
     <!-- Cross-Source Aggregator -->
-    <div style="background:#161616;padding:24px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#909090;margin-bottom:16px;">CROSS-SOURCE SIGNAL AGGREGATOR</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;" id="kig-sources">
-        <!-- populated by JS -->
+    <div style="background:#111;border-left:1px solid rgba(255,255,255,0.06);">
+      <div style="border-top:2px solid #1A5C35;padding:10px 16px;background:#141414;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D4DE;">CROSS-SOURCE SIGNAL AGGREGATOR</span>
       </div>
-      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:14px;margin-top:4px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.1em;color:#909090;margin-bottom:8px;">AI STRATEGIC POSTURE</div>
-        <div style="font-size:12px;color:#C8D4DE;line-height:1.65;" id="kig-posture">Analyzing cross-theater signals...</div>
+      <div style="padding:16px;">
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;" id="kig-sources">
+          <!-- populated by JS -->
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:12px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.14em;text-transform:uppercase;color:#505050;margin-bottom:8px;">AI STRATEGIC POSTURE</div>
+          <div style="font-size:11.5px;color:#C8D4DE;line-height:1.7;font-family:'IBM Plex Sans',sans-serif;" id="kig-posture">Analyzing cross-theater signals...</div>
+        </div>
       </div>
     </div>
-  </div>
+  </div><!-- /bottom grid -->
 
   <!-- CTA -->
-  <div class="reveal" style="margin-top:32px;padding:28px 32px;background:rgba(232,17,45,0.06);border:1px solid rgba(232,17,45,0.2);display:flex;align-items:center;justify-content:space-between;gap:24px;">
+  <div class="reveal" style="margin-top:1px;padding:24px 28px;background:rgba(232,17,45,0.05);border:1px solid rgba(232,17,45,0.18);border-top:2px solid rgba(232,17,45,0.4);display:flex;align-items:center;justify-content:space-between;gap:24px;">
     <div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#E8112D;margin-bottom:6px;">What you just saw is a sample.</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#EDF2F7;">We build this for your specific environment - your threats, your regions, your sources.</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#E8112D;margin-bottom:6px;">// REPRESENTATIVE SAMPLE ONLY</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#EDF2F7;">We build this for your environment — your threats, your regions, your sources.</div>
     </div>
-    <a href="javascript:void(0)" onclick="toggleKIGChat()" class="btn-primary" style="flex-shrink:0;">Speak With Our Team →</a>
+    <a href="#contact" class="btn-primary" style="flex-shrink:0;white-space:nowrap;">Schedule a Confidential Call →</a>
   </div>
 
 </div>
@@ -1067,15 +1124,14 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
     el.innerHTML = countries.map(function(c){
       var w = c.score + '%';
       var col = c.score>=90?'#E8112D':c.score>=70?'#8B6914':'#3D5C3A';
-      return '<div>' +
-        '<div style="display:flex;justify-content:space-between;margin-bottom:4px;">' +
-          '<span style="font-family:IBM Plex Mono,monospace;font-size:9px;color:#C8D4DE;letter-spacing:.08em;">' + c.name + '</span>' +
-          '<span style="font-family:IBM Plex Mono,monospace;font-size:9px;color:' + (statusColor[c.status]||'#9AABB8') + ';">' + c.score + ' ' + c.trend + '</span>' +
+      return '<div style="display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;">' +
+          '<span style="font-family:IBM Plex Mono,monospace;font-size:8px;color:#C8D4DE;letter-spacing:.08em;">' + c.name + '</span>' +
+          '<span style="font-family:IBM Plex Mono,monospace;font-size:9px;font-weight:600;color:' + (statusColor[c.status]||'#9AABB8') + ';min-width:28px;text-align:right;">' + c.score + '</span>' +
+          '<span style="font-family:IBM Plex Mono,monospace;font-size:7px;padding:1px 5px;border:1px solid ' + (statusColor[c.status]||'#9AABB8') + ';color:' + (statusColor[c.status]||'#9AABB8') + ';">' + c.status + '</span>' +
         '</div>' +
-        '<div style="height:3px;background:#2C2C2C;border-radius:0;">' +
-          '<div style="height:3px;background:' + col + ';width:' + w + ';transition:width 1.5s ease;" class="kig-bar" data-w="' + w + '"></div>' +
-        '</div>' +
-      '</div>';
+        '<div style="height:2px;background:#1E1E1E;margin-bottom:2px;">' +
+          '<div style="height:2px;background:' + col + ';width:0;transition:width 1.5s ease;" class="kig-bar" data-w="' + w + '"></div>' +
+        '</div>';
     }).join('');
   }
 
@@ -1432,7 +1488,7 @@ document.getElementById('kig-contact-form').addEventListener('submit', function(
   <div style="grid-column:1/-1;border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:24px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;">
     <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#909090;white-space:nowrap;">Partners</span>
     <img src="/images/csi-logo.png" alt="Cognitive Security Institute" style="height:28px;width:auto;mix-blend-mode:screen;opacity:0.5;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='0.5'">
-    <!-- ANN logo: pending URL from Adrienne -->
+    <img src="/images/ann-logo.jpg" alt="Anti-Narrative Network" style="height:28px;width:auto;mix-blend-mode:screen;opacity:0.5;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='0.5'">
   </div>
   <div class="foot-logo"><img src="/images/kig-logo.jpg" alt="Kronus Intelligence Group" style="height:110px;width:auto;mix-blend-mode:screen;opacity:0.85;filter:brightness(1.1);"></div>
   <ul class="foot-links">
