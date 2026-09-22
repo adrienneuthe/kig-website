@@ -787,8 +787,6 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
   <img src="/images/florida-dept-of-law-enforcement.png" alt="Florida Dept of Law Enforcement" style="height:36px;mix-blend-mode:screen;opacity:0.45;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'">
   <img src="/images/toyota.png" alt="Toyota" style="height:36px;mix-blend-mode:screen;opacity:0.45;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'">
   <img src="/images/us-intelligence-community.png" alt="US Intelligence Community" style="height:36px;mix-blend-mode:screen;opacity:0.45;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'">
-  <img src="/images/csi-logo.png" alt="Cognitive Security Institute" style="height:36px;mix-blend-mode:screen;opacity:0.45;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'">
-  <img src="/images/ann-logo.jpg" alt="Anti-Narrative Network" style="height:36px;mix-blend-mode:screen;opacity:0.45;filter:grayscale(1) brightness(4);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'">
 </div>
 
 <!-- SERVICES -->
@@ -806,7 +804,7 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
   <!-- PILLAR 01 -->
   <div id="pillar-01" style="border-top:1px solid var(--border);padding:60px 0;">
 
-    <div class="panel" style="display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);background:var(--gr);">
+    <div class="panel svc-panel" style="display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);background:var(--gr);">
       <div class="pl">
         <div style="font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--crim-lt);margin-bottom:12px;">01 // Protective Intelligence</div>
         <div class="pl-h">PRINCIPAL &amp;<br><em>EXECUTIVE PROTECTIVE INTELLIGENCE</em></div>
@@ -824,7 +822,7 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 
   <!-- PILLAR 02 -->
   <div id="pillar-02" style="border-top:1px solid var(--border);padding:60px 0;">
-    <div class="panel" style="display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);background:var(--gr);">
+    <div class="panel svc-panel" style="display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);background:var(--gr);">
       <div class="pl">
         <div style="font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--crim-lt);margin-bottom:12px;">02 // Threat Intelligence</div>
         <div class="pl-h">INSTITUTIONAL &amp;<br><em>INFRASTRUCTURE THREAT INTELLIGENCE</em></div>
@@ -842,7 +840,7 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 
   <!-- PILLAR 03 -->
   <div id="pillar-03" style="border-top:1px solid var(--border);padding:60px 0;">
-    <div class="panel" style="display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);background:var(--gr);">
+    <div class="panel svc-panel" style="display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);background:var(--gr);">
       <div class="pl">
         <div style="font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--crim-lt);margin-bottom:12px;">03 // Deal Intelligence</div>
         <div class="pl-h">COUNTERPARTY &amp;<br><em>DEAL-LEVEL INTELLIGENCE</em></div>
@@ -860,7 +858,7 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 
   <!-- PILLAR 04 -->
   <div id="pillar-04" style="border-top:1px solid var(--border);padding:60px 0;">
-    <div class="panel" style="display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);background:var(--gr);">
+    <div class="panel svc-panel" style="display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);background:var(--gr);">
       <div class="pl">
         <div style="font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--crim-lt);margin-bottom:12px;">04 // Narrative Intelligence</div>
         <div class="pl-h">NARRATIVE &amp;<br><em>REPUTATIONAL THREAT INTELLIGENCE</em></div>
@@ -1651,6 +1649,28 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   .inner, .svc-inner{
     max-width:100% !important;
     padding:0 !important;
+  }
+
+  /* SERVICE PILLARS: stack to single column on mobile */
+  .svc-panel{
+    grid-template-columns:1fr !important;
+  }
+  .svc-panel .pl{
+    border-right:none !important;
+    border-bottom:1px solid var(--border) !important;
+  }
+
+  /* HERO TICKER: prevent horizontal overflow */
+  .hero-ticker{
+    overflow:hidden !important;
+    max-width:100% !important;
+    white-space:nowrap !important;
+  }
+
+  /* TICKER BAR: prevent horizontal scroll */
+  .ticker{
+    overflow:hidden !important;
+    max-width:100vw !important;
   }
 
   /* MONITOR: limit panel heights on mobile */
