@@ -33,3 +33,7 @@ body{background:#1a1a1a;color:#e8f0f8;font-family:'IBM Plex Sans',sans-serif}
 
 .contact-wrap select,.contact-wrap .fi-sel{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#C8D8E4 50%),linear-gradient(135deg,#C8D8E4 50%,transparent 50%);background-position:calc(100% - 20px) calc(50% - 2px),calc(100% - 14px) calc(50% - 2px);background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:40px}
 .archive-gap{font:11px var(--mono,'IBM Plex Mono',monospace);color:#909090;padding:0 4px}
+
+.form-done{background:#222222;border:1px solid #3D3D3D;padding:32px}
+.form-done h3{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;color:#FFFFFF;margin:0 0 8px}
+.form-done p{font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.75;color:#C8D8E4;margin:0}
