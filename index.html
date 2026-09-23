@@ -777,18 +777,6 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 </div>
 
 
-<!-- LOGO BAR -->
-<div style="background:#1A1A1A;border-bottom:1px solid rgba(255,255,255,0.06);padding:20px 48px;display:flex;align-items:center;gap:36px;justify-content:center;flex-wrap:wrap;overflow:hidden;">
-  <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#909090;white-space:nowrap;flex-shrink:0;">Trusted By</span>
-  <img src="/images/national-security-agency.png" alt="National Security Agency" style="height:36px;mix-blend-mode:screen;opacity:0.45;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'">
-  <img src="/images/bp.png" alt="BP" style="height:36px;mix-blend-mode:screen;opacity:0.45;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'">
-  <img src="/images/central-security-service.png" alt="Central Security Service" style="height:36px;mix-blend-mode:screen;opacity:0.45;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'">
-  <img src="/images/progressive.png" alt="Progressive" style="height:36px;mix-blend-mode:screen;opacity:0.45;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'">
-  <img src="/images/florida-dept-of-law-enforcement.png" alt="Florida Dept of Law Enforcement" style="height:36px;mix-blend-mode:screen;opacity:0.45;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'">
-  <img src="/images/toyota.png" alt="Toyota" style="height:36px;mix-blend-mode:screen;opacity:0.45;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'">
-  <img src="/images/us-intelligence-community.png" alt="US Intelligence Community" style="height:36px;mix-blend-mode:screen;opacity:0.45;filter:grayscale(1);transition:opacity .2s;cursor:default;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='0.45'">
-</div>
-
 <!-- SERVICES -->
 <section class="services" id="services" style="background:var(--ch);padding-top:0;position:relative;">
   <div class="svc-inner" style="position:relative;z-index:50;">
@@ -1705,7 +1693,7 @@ if (mobileNavToggle && primaryNavigation) {
 /* Tight, legible mobile layout: the fixed desktop status/nav and long ticker
    previously forced the hero into a multi-thousand-pixel min-content column. */
 .mobile-nav-toggle{display:none}
-@media(max-width:680px){
+@media(max-width:900px){
   html,body{width:100%;max-width:100%;overflow-x:clip}
   nav{top:0;height:56px !important;padding:0 16px !important}
   .mobile-nav-toggle{display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;width:40px;height:40px;flex:0 0 40px;border:1px solid var(--stone);background:transparent;color:var(--dust);cursor:pointer}
