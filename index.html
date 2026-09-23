@@ -211,7 +211,7 @@
   ─ Dust:        #6B6B6B  muted text
   ─ Parchment:   #C0CAD4  body text - cool light gray
   ─ Cream:       #E8EDF2  primary text - cold white
-  ─ Signal Red:  #E8112D  single accent - vivid cold red
+  ─ Signal Red:  #B52B43  single accent - vivid cold red
   ─ Crimson-dim: rgba(155,28,28,0.12)
   ─ Amber:       #8B6914  secondary accent for geographic highlights
   ─ Green-sig:   #1A5C35  "active / confirmed" signals only
@@ -231,10 +231,10 @@
   --parch: #E8F0F8;
   --cream: #FFFFFF;
   --white: #FFFFFF;
-  --crim:  #E8112D;
-  --crim-lt:#FF1F3A;
-  --crim-d:rgba(232,17,45,0.13);
-  --crim-ln:rgba(232,17,45,0.45);
+  --crim:  #B52B43;
+  --crim-lt:#CE5368;
+  --crim-d:rgba(181,43,67,0.13);
+  --crim-ln:rgba(181,43,67,0.45);
   --amber: #8B6914;
   --amb-d: rgba(139,105,20,0.15);
   --amb-ln:rgba(139,105,20,0.4);
@@ -297,7 +297,7 @@ nav{
   pointer-events:none;
 }
 /* Single scan - slow, subtle */
-.scan{position:absolute;left:0;right:0;height:1px;z-index:4;background:linear-gradient(90deg,transparent,rgba(232,17,45,0.55) 35%,rgba(232,17,45,0.25) 65%,transparent);opacity:0;animation:scan 12s ease-in-out infinite 3s;pointer-events:none}
+.scan{position:absolute;left:0;right:0;height:1px;z-index:4;background:linear-gradient(90deg,transparent,rgba(181,43,67,0.55) 35%,rgba(181,43,67,0.25) 65%,transparent);opacity:0;animation:scan 12s ease-in-out infinite 3s;pointer-events:none}
 @keyframes scan{0%{top:82px;opacity:0}5%{opacity:1}95%{opacity:1}100%{top:100vh;opacity:0}}
 
 /* KIG watermark */
@@ -602,10 +602,10 @@ footer{background:var(--gr);border-top:1px solid var(--border);padding:32px 48px
 
 /* ── LOCATIONS ── */
 .locations{background:var(--gr);border-top:1px solid var(--border);position:relative;overflow:hidden}
-.locations::before{content:'';position:absolute;inset:0;background:rgba(232,17,45,0.02);pointer-events:none;}
+.locations::before{content:'';position:absolute;inset:0;background:rgba(181,43,67,0.02);pointer-events:none;}
 .loc-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;position:relative;z-index:1}
 .loc-visual{border:1px solid var(--border2);background:var(--st);height:280px;position:relative;overflow:hidden;display:flex;align-items:stretch}
-.loc-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,17,45,0.04) 0%,transparent 60%);pointer-events:none;}
+.loc-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(181,43,67,0.04) 0%,transparent 60%);pointer-events:none;}
 .loc-visual::after{content:'HQ: UNITED STATES';position:absolute;top:16px;left:16px;font-family:var(--mono);font-size:8px;letter-spacing:.14em;color:var(--crim)}
 .loc-visual-inner{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);padding:0}
 .lvi-eyebrow{grid-column:1/-1;padding:14px 18px;font-family:var(--mono);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--crim);border-bottom:1px solid var(--border);background:rgba(26,26,26,.85)}
@@ -904,13 +904,13 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
     <div class="eyebrow" style="font-weight:700;">Narrative Threat Monitoring — Real-Time Global Intelligence</div>
     <h2 class="headline" style="margin-bottom:10px;">THIS IS WHAT<br><em>WE WATCH.</em></h2>
     <p style="font-size:14px;color:#C0D0DC;max-width:560px;line-height:1.7;margin-bottom:12px;">Real-time signal aggregation across 25+ global sources. Country instability scoring. Active threat theaters.</p>
-    <div style="font-size:11px;color:#9AABB8;max-width:560px;line-height:1.65;padding:9px 14px;border-left:2px solid rgba(232,17,45,0.45);background:rgba(232,17,45,0.05);">The data below is <strong style="color:#E8112D;">representative sample output</strong> — an illustration of what a KIG-built system surfaces. Your system is scoped and operated for your specific environment and threat reality.</div>
+    <div style="font-size:11px;color:#9AABB8;max-width:560px;line-height:1.65;padding:9px 14px;border-left:2px solid rgba(181,43,67,0.45);background:rgba(181,43,67,0.05);">The data below is <strong style="color:#B52B43;">representative sample output</strong> — an illustration of what a KIG-built system surfaces. Your system is scoped and operated for your specific environment and threat reality.</div>
   </div>
 
   <!-- Terminal Header Bar -->
   <div style="background:#111;border:1px solid rgba(255,255,255,0.08);border-bottom:none;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;">
     <div style="display:flex;align-items:center;gap:16px;">
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;color:#E8112D;">KIG // GLOBAL INTELLIGENCE TERMINAL</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;color:#B52B43;">KIG // GLOBAL INTELLIGENCE TERMINAL</span>
       <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#3D3D3D;">|</span>
       <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.1em;color:#505050;">KIG SYSTEM ACTIVE</span>
     </div>
@@ -936,22 +936,22 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
   <!-- Data Ticker Strip -->
   <div style="background:#111;border:1px solid rgba(255,255,255,0.08);border-top:1px solid rgba(255,255,255,0.04);border-bottom:none;padding:6px 16px;display:flex;gap:0;overflow:hidden;">
     <div style="display:flex;align-items:center;gap:24px;font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.1em;white-space:nowrap;flex-wrap:nowrap;">
-      <span style="color:#E8112D;margin-right:8px;">&#9632; SIGNALS</span>
-      <span style="color:#C8D4DE;">CONFLICT <span style="color:#E8112D;">HIGH ▲</span></span>
+      <span style="color:#B52B43;margin-right:8px;">&#9632; SIGNALS</span>
+      <span style="color:#C8D4DE;">CONFLICT <span style="color:#B52B43;">HIGH ▲</span></span>
       <span style="color:#3D3D3D;">|</span>
-      <span style="color:#C8D4DE;">NARRATIVE <span style="color:#E8112D;">ELEVATED</span></span>
+      <span style="color:#C8D4DE;">NARRATIVE <span style="color:#B52B43;">ELEVATED</span></span>
       <span style="color:#3D3D3D;">|</span>
       <span style="color:#C8D4DE;">ELECTORAL <span style="color:#8B6914;">ACTIVE</span></span>
       <span style="color:#3D3D3D;">|</span>
       <span style="color:#C8D4DE;">CYBER <span style="color:#8B6914;">MONITOR</span></span>
       <span style="color:#3D3D3D;">|</span>
-      <span style="color:#C8D4DE;">THEATERS <span style="color:#E8112D;">5 ACTIVE</span></span>
+      <span style="color:#C8D4DE;">THEATERS <span style="color:#B52B43;">5 ACTIVE</span></span>
       <span style="color:#3D3D3D;">|</span>
       <span style="color:#C8D4DE;">SOURCES <span style="color:#1A5C35;">14 CONNECTED</span></span>
       <span style="color:#3D3D3D;">|</span>
       <span style="color:#C8D4DE;">LANGUAGES <span style="color:#C8D4DE;">25+</span></span>
       <span style="color:#3D3D3D;">|</span>
-      <span style="color:#C8D4DE;">RISK INDEX <span style="color:#E8112D;">58 ELEVATED</span></span>
+      <span style="color:#C8D4DE;">RISK INDEX <span style="color:#B52B43;">58 ELEVATED</span></span>
     </div>
   </div>
 
@@ -960,9 +960,9 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 
     <!-- PANEL 1: Country Instability -->
     <div style="background:#111;">
-      <div style="border-top:2px solid #E8112D;padding:10px 16px;background:#141414;display:flex;justify-content:space-between;align-items:center;">
+      <div style="border-top:2px solid #B52B43;padding:10px 16px;background:#141414;display:flex;justify-content:space-between;align-items:center;">
         <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D4DE;">COUNTRY INSTABILITY</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#E8112D;letter-spacing:.1em;" id="kig-defcon">DEFCON <span id="kig-defcon-num">4</span></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#B52B43;letter-spacing:.1em;" id="kig-defcon">DEFCON <span id="kig-defcon-num">4</span></span>
       </div>
       <div style="padding:16px;display:flex;flex-direction:column;gap:8px;" id="kig-instability">
         <!-- populated by JS -->
@@ -993,12 +993,12 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
           <!-- arc background -->
           <path d="M 20 80 A 60 60 0 0 1 140 80" fill="none" stroke="#2C2C2C" stroke-width="10" stroke-linecap="round"/>
           <!-- arc fill - animated -->
-          <path d="M 20 80 A 60 60 0 0 1 140 80" fill="none" stroke="#E8112D" stroke-width="10" stroke-linecap="round"
+          <path d="M 20 80 A 60 60 0 0 1 140 80" fill="none" stroke="#B52B43" stroke-width="10" stroke-linecap="round"
             stroke-dasharray="188" stroke-dashoffset="75" id="kig-risk-arc" style="transition:stroke-dashoffset 1.5s ease;"/>
           <!-- needle -->
-          <line x1="80" y1="80" x2="80" y2="28" stroke="#E8112D" stroke-width="2" stroke-linecap="round" id="kig-needle"
+          <line x1="80" y1="80" x2="80" y2="28" stroke="#B52B43" stroke-width="2" stroke-linecap="round" id="kig-needle"
             style="transform-origin:80px 80px;transform:rotate(28deg);transition:transform 1.5s ease;"/>
-          <circle cx="80" cy="80" r="5" fill="#E8112D"/>
+          <circle cx="80" cy="80" r="5" fill="#B52B43"/>
           <!-- labels -->
           <text x="16" y="96" font-family="IBM Plex Mono,monospace" font-size="7" fill="#9AABB8">LOW</text>
           <text x="68" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#9AABB8">MED</text>
@@ -1007,7 +1007,7 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
           <text x="80" y="68" font-family="Barlow Condensed,sans-serif" font-size="26" font-weight="800" fill="#EDF2F7" text-anchor="middle" id="kig-risk-score">58</text>
           <text x="80" y="78" font-family="IBM Plex Mono,monospace" font-size="6" fill="#9AABB8" text-anchor="middle">GLOBAL RISK INDEX</text>
         </svg>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:#E8112D;margin-top:4px;" id="kig-risk-label">ELEVATED</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:#B52B43;margin-top:4px;" id="kig-risk-label">ELEVATED</div>
       </div>
       <!-- Active theaters -->
       <div style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.14em;text-transform:uppercase;color:#505050;margin-bottom:8px;margin-top:4px;">ACTIVE THEATERS</div>
@@ -1051,9 +1051,9 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
   </div><!-- /bottom grid -->
 
   <!-- CTA -->
-  <div class="reveal" style="margin-top:1px;padding:24px 28px;background:rgba(232,17,45,0.05);border:1px solid rgba(232,17,45,0.18);border-top:2px solid rgba(232,17,45,0.4);display:flex;align-items:center;justify-content:space-between;gap:24px;">
+  <div class="reveal" style="margin-top:1px;padding:24px 28px;background:rgba(181,43,67,0.05);border:1px solid rgba(181,43,67,0.18);border-top:2px solid rgba(181,43,67,0.4);display:flex;align-items:center;justify-content:space-between;gap:24px;">
     <div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#E8112D;margin-bottom:6px;">// REPRESENTATIVE SAMPLE ONLY</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#B52B43;margin-bottom:6px;">// REPRESENTATIVE SAMPLE ONLY</div>
       <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#EDF2F7;">We build this for your environment — your threats, your regions, your sources.</div>
     </div>
     <a href="#contact" class="btn-primary" style="flex-shrink:0;white-space:nowrap;">Schedule a Confidential Call →</a>
@@ -1092,8 +1092,8 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
   ];
 
   var categories = [
-    {name:'Conflict',      count:34, pct:80, color:'#E8112D'},
-    {name:'Narrative',     count:28, pct:65, color:'#E8112D'},
+    {name:'Conflict',      count:34, pct:80, color:'#B52B43'},
+    {name:'Narrative',     count:28, pct:65, color:'#B52B43'},
     {name:'Political',     count:22, pct:52, color:'#8B6914'},
     {name:'Cyber',         count:18, pct:42, color:'#8B6914'},
     {name:'Supply Chain',  count:14, pct:33, color:'#909090'},
@@ -1112,16 +1112,16 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
   ];
 
   var sevColors = {HIGH:'#c04040', ACT:'#a07020', MON:'#9AABB8'};
-  var sevBg     = {HIGH:'rgba(232,17,45,0.1)', ACT:'rgba(139,105,20,0.1)', MON:'rgba(255,255,255,0.03)'};
-  var sevBorder = {HIGH:'rgba(232,17,45,0.3)', ACT:'rgba(139,105,20,0.3)', MON:'rgba(255,255,255,0.08)'};
-  var statusColor= {CRIT:'#E8112D', ELEV:'#8B6914', NORM:'#1A5C35'};
+  var sevBg     = {HIGH:'rgba(181,43,67,0.1)', ACT:'rgba(139,105,20,0.1)', MON:'rgba(255,255,255,0.03)'};
+  var sevBorder = {HIGH:'rgba(181,43,67,0.3)', ACT:'rgba(139,105,20,0.3)', MON:'rgba(255,255,255,0.08)'};
+  var statusColor= {CRIT:'#B52B43', ELEV:'#8B6914', NORM:'#1A5C35'};
 
   function buildInstability(){
     var el = document.getElementById('kig-instability');
     if(!el) return;
     el.innerHTML = countries.map(function(c){
       var w = c.score + '%';
-      var col = c.score>=90?'#E8112D':c.score>=70?'#8B6914':'#3D5C3A';
+      var col = c.score>=90?'#B52B43':c.score>=70?'#8B6914':'#3D5C3A';
       return '<div style="display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;">' +
           '<span style="font-family:IBM Plex Mono,monospace;font-size:8px;color:#C8D4DE;letter-spacing:.08em;">' + c.name + '</span>' +
           '<span style="font-family:IBM Plex Mono,monospace;font-size:9px;font-weight:600;color:' + (statusColor[c.status]||'#9AABB8') + ';min-width:28px;text-align:right;">' + c.score + '</span>' +
@@ -1228,7 +1228,7 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
     var items = document.querySelectorAll('#kig-sources span');
     if(items.length===0) return;
     var idx = Math.floor(Math.random()*items.length);
-    items[idx].style.borderColor = 'rgba(232,17,45,0.6)';
+    items[idx].style.borderColor = 'rgba(181,43,67,0.6)';
     items[idx].style.color = '#EDF2F7';
     setTimeout(function(){
       items[idx].style.borderColor = 'rgba(255,255,255,0.12)';
@@ -1348,29 +1348,29 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
   <path d="M590,150 L630,145 L650,165 L645,185 L620,190 L600,180 Z" fill="none" stroke="#3D3D3D" stroke-width="0.7"/>
   <path d="M630,80 L700,75 L720,95 L715,130 L695,145 L665,140 L640,120 L630,100 Z" fill="none" stroke="#3D3D3D" stroke-width="0.8"/>
   <path d="M435,40 L550,30 L650,35 L680,55 L660,70 L580,75 L500,70 L450,60 Z" fill="none" stroke="#3D3D3D" stroke-width="0.7"/>
-  <circle cx="198" cy="213" r="6" fill="#E8112D" opacity="0.9"/>
-  <circle cx="198" cy="213" r="10" fill="none" stroke="#E8112D" stroke-width="1" opacity="0.5"/>
-  <circle cx="198" cy="213" r="14" fill="none" stroke="#E8112D" stroke-width="0.5" opacity="0.25"><animate attributeName="r" values="10;18;10" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.25;0;0.25" dur="3s" repeatCount="indefinite"/></circle>
-  <text x="210" y="210" font-family="IBM Plex Mono,monospace" font-size="7" fill="#E8112D" letter-spacing="1" opacity="0.9">HAITI</text>
-  <circle cx="175" cy="258" r="5" fill="#E8112D" opacity="0.8"/>
-  <circle cx="175" cy="258" r="8" fill="none" stroke="#E8112D" stroke-width="0.8" opacity="0.4"/>
-  <text x="184" y="255" font-family="IBM Plex Mono,monospace" font-size="7" fill="#E8112D" opacity="0.8" letter-spacing="1">COLOMBIA</text>
-  <circle cx="140" cy="195" r="4" fill="#E8112D" opacity="0.7"/>
-  <text x="148" y="192" font-family="IBM Plex Mono,monospace" font-size="6" fill="#E8112D" opacity="0.7" letter-spacing="1">MEXICO / BORDER</text>
-  <circle cx="430" cy="185" r="5" fill="#E8112D" opacity="0.8"/>
-  <circle cx="430" cy="185" r="8" fill="none" stroke="#E8112D" stroke-width="0.8" opacity="0.35"/>
-  <text x="440" y="182" font-family="IBM Plex Mono,monospace" font-size="7" fill="#E8112D" opacity="0.8" letter-spacing="1">SUDAN</text>
-  <circle cx="415" cy="230" r="4" fill="#E8112D" opacity="0.6"/>
-  <text x="423" y="227" font-family="IBM Plex Mono,monospace" font-size="6" fill="#E8112D" opacity="0.7" letter-spacing="1">AFRICA</text>
-  <circle cx="490" cy="135" r="5" fill="#E8112D" opacity="0.75"/>
-  <circle cx="490" cy="135" r="8" fill="none" stroke="#E8112D" stroke-width="0.8" opacity="0.3"/>
-  <text x="500" y="132" font-family="IBM Plex Mono,monospace" font-size="7" fill="#E8112D" opacity="0.8" letter-spacing="1">MENA</text>
-  <circle cx="400" cy="72" r="4" fill="#E8112D" opacity="0.6"/>
-  <text x="408" y="69" font-family="IBM Plex Mono,monospace" font-size="6" fill="#E8112D" opacity="0.7" letter-spacing="1">EUROPE / SWEDEN</text>
-  <circle cx="590" cy="155" r="4" fill="#E8112D" opacity="0.6"/>
-  <text x="598" y="152" font-family="IBM Plex Mono,monospace" font-size="6" fill="#E8112D" opacity="0.7" letter-spacing="1">ASIA</text>
-  <circle cx="130" cy="135" r="5" fill="#E8112D" opacity="0.7"/>
-  <text x="140" y="132" font-family="IBM Plex Mono,monospace" font-size="7" fill="#E8112D" opacity="0.8" letter-spacing="1">USA HQ</text>
+  <circle cx="198" cy="213" r="6" fill="#B52B43" opacity="0.9"/>
+  <circle cx="198" cy="213" r="10" fill="none" stroke="#B52B43" stroke-width="1" opacity="0.5"/>
+  <circle cx="198" cy="213" r="14" fill="none" stroke="#B52B43" stroke-width="0.5" opacity="0.25"><animate attributeName="r" values="10;18;10" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.25;0;0.25" dur="3s" repeatCount="indefinite"/></circle>
+  <text x="210" y="210" font-family="IBM Plex Mono,monospace" font-size="7" fill="#B52B43" letter-spacing="1" opacity="0.9">HAITI</text>
+  <circle cx="175" cy="258" r="5" fill="#B52B43" opacity="0.8"/>
+  <circle cx="175" cy="258" r="8" fill="none" stroke="#B52B43" stroke-width="0.8" opacity="0.4"/>
+  <text x="184" y="255" font-family="IBM Plex Mono,monospace" font-size="7" fill="#B52B43" opacity="0.8" letter-spacing="1">COLOMBIA</text>
+  <circle cx="140" cy="195" r="4" fill="#B52B43" opacity="0.7"/>
+  <text x="148" y="192" font-family="IBM Plex Mono,monospace" font-size="6" fill="#B52B43" opacity="0.7" letter-spacing="1">MEXICO / BORDER</text>
+  <circle cx="430" cy="185" r="5" fill="#B52B43" opacity="0.8"/>
+  <circle cx="430" cy="185" r="8" fill="none" stroke="#B52B43" stroke-width="0.8" opacity="0.35"/>
+  <text x="440" y="182" font-family="IBM Plex Mono,monospace" font-size="7" fill="#B52B43" opacity="0.8" letter-spacing="1">SUDAN</text>
+  <circle cx="415" cy="230" r="4" fill="#B52B43" opacity="0.6"/>
+  <text x="423" y="227" font-family="IBM Plex Mono,monospace" font-size="6" fill="#B52B43" opacity="0.7" letter-spacing="1">AFRICA</text>
+  <circle cx="490" cy="135" r="5" fill="#B52B43" opacity="0.75"/>
+  <circle cx="490" cy="135" r="8" fill="none" stroke="#B52B43" stroke-width="0.8" opacity="0.3"/>
+  <text x="500" y="132" font-family="IBM Plex Mono,monospace" font-size="7" fill="#B52B43" opacity="0.8" letter-spacing="1">MENA</text>
+  <circle cx="400" cy="72" r="4" fill="#B52B43" opacity="0.6"/>
+  <text x="408" y="69" font-family="IBM Plex Mono,monospace" font-size="6" fill="#B52B43" opacity="0.7" letter-spacing="1">EUROPE / SWEDEN</text>
+  <circle cx="590" cy="155" r="4" fill="#B52B43" opacity="0.6"/>
+  <text x="598" y="152" font-family="IBM Plex Mono,monospace" font-size="6" fill="#B52B43" opacity="0.7" letter-spacing="1">ASIA</text>
+  <circle cx="130" cy="135" r="5" fill="#B52B43" opacity="0.7"/>
+  <text x="140" y="132" font-family="IBM Plex Mono,monospace" font-size="7" fill="#B52B43" opacity="0.8" letter-spacing="1">USA HQ</text>
 </svg>
       </div></div>
     </div>
@@ -1553,14 +1553,14 @@ if (mobileNavToggle && primaryNavigation) {
 
 <!-- KIG INTELLIGENCE CHAT WIDGET -->
 <style>
-#kig-chat-btn{position:fixed;bottom:28px;right:28px;z-index:9000;width:52px;height:52px;background:#E8112D;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(232,17,45,0.35);transition:all .2s;}
-#kig-chat-btn:hover{background:#FF1F3A;transform:translateY(-2px);}
+#kig-chat-btn{position:fixed;bottom:28px;right:28px;z-index:9000;width:52px;height:52px;background:#B52B43;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(181,43,67,0.35);transition:all .2s;}
+#kig-chat-btn:hover{background:#CE5368;transform:translateY(-2px);}
 #kig-chat-btn svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-#kig-chat-window{position:fixed;bottom:92px;right:28px;z-index:8999;width:360px;max-height:520px;background:#1a1a1a;border:1px solid rgba(232,17,45,0.35);display:none;flex-direction:column;box-shadow:0 8px 48px rgba(0,0,0,0.7);}
+#kig-chat-window{position:fixed;bottom:92px;right:28px;z-index:8999;width:360px;max-height:520px;background:#1a1a1a;border:1px solid rgba(181,43,67,0.35);display:none;flex-direction:column;box-shadow:0 8px 48px rgba(0,0,0,0.7);}
 #kig-chat-window.open{display:flex;}
 #kig-chat-hdr{padding:14px 18px;background:#222;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
 #kig-chat-hdr-left{display:flex;align-items:center;gap:10px;}
-.kig-chat-dot{width:6px;height:6px;border-radius:50%;background:#E8112D;animation:p 2.5s ease infinite;}
+.kig-chat-dot{width:6px;height:6px;border-radius:50%;background:#B52B43;animation:p 2.5s ease infinite;}
 #kig-chat-hdr-title{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#C8D4DE;}
 #kig-chat-close{background:none;border:none;cursor:pointer;color:#909090;font-size:16px;line-height:1;padding:0;transition:color .15s;}
 #kig-chat-close:hover{color:#C8D4DE;}
@@ -1568,10 +1568,10 @@ if (mobileNavToggle && primaryNavigation) {
 #kig-chat-msgs::-webkit-scrollbar{width:3px;}
 #kig-chat-msgs::-webkit-scrollbar-thumb{background:#3D3D3D;}
 .kig-msg{max-width:85%;font-family:'IBM Plex Sans',sans-serif;font-size:12px;line-height:1.6;padding:10px 13px;border:1px solid;}
-.kig-msg.agent{background:rgba(232,17,45,0.08);border-color:rgba(232,17,45,0.25);color:#C8D4DE;align-self:flex-start;}
+.kig-msg.agent{background:rgba(181,43,67,0.08);border-color:rgba(181,43,67,0.25);color:#C8D4DE;align-self:flex-start;}
 .kig-msg.user{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);color:#EDF2F7;align-self:flex-end;}
-.kig-typing{display:flex;gap:4px;align-items:center;padding:10px 13px;background:rgba(232,17,45,0.06);border:1px solid rgba(232,17,45,0.2);align-self:flex-start;}
-.kig-typing span{width:5px;height:5px;background:#E8112D;border-radius:50%;animation:kig-tdot 1.2s ease infinite;}
+.kig-typing{display:flex;gap:4px;align-items:center;padding:10px 13px;background:rgba(181,43,67,0.06);border:1px solid rgba(181,43,67,0.2);align-self:flex-start;}
+.kig-typing span{width:5px;height:5px;background:#B52B43;border-radius:50%;animation:kig-tdot 1.2s ease infinite;}
 .kig-typing span:nth-child(2){animation-delay:.2s;}
 .kig-typing span:nth-child(3){animation-delay:.4s;}
 @keyframes kig-tdot{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
@@ -1579,8 +1579,8 @@ if (mobileNavToggle && primaryNavigation) {
 #kig-chat-input{flex:1;background:#2C2C2C;border:1px solid #555;color:#EDF2F7;font-family:'IBM Plex Sans',sans-serif;font-size:12px;padding:9px 12px;outline:none;resize:none;line-height:1.4;}
 #kig-chat-input:focus{border-color:#C8D4DE;}
 #kig-chat-input::placeholder{color:#909090;}
-#kig-chat-send{background:#E8112D;border:none;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s;align-self:flex-end;}
-#kig-chat-send:hover{background:#FF1F3A;}
+#kig-chat-send{background:#B52B43;border:none;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s;align-self:flex-end;}
+#kig-chat-send:hover{background:#CE5368;}
 #kig-chat-send svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 
 
