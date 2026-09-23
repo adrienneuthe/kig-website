@@ -22,3 +22,8 @@ body{background:#1a1a1a;color:#e8f0f8;font-family:'IBM Plex Sans',sans-serif}
 .contact-wrap textarea{min-height:140px}
 .contact-wrap button{padding:16px 24px;background:#B52B43;border:0;color:white;font:600 12px 'IBM Plex Mono',monospace;cursor:pointer}
 .contact-wrap p{color:#c8d8e4;font-size:12px}
+.kig-press .forbes-mark{height:32px;width:118px;flex-shrink:0}
+.kig-press>span{text-transform:uppercase}
+.kig-footer-links a{display:inline-flex;align-items:center;min-height:44px}
+.contact-wrap :focus-visible{outline:2px solid #c8d8e4;outline-offset:3px}
+@media(max-width:600px){input,select,textarea{font-size:16px!important}.kig-press{gap:24px}.kig-press>span{width:100%}}
