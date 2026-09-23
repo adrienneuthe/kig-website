@@ -709,8 +709,9 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group" class="nav-logo-img" style="height:48px;width:auto;mix-blend-mode:screen;filter:brightness(1.1);"></a>
-  <ul class="nav-links">
+  <a href="/" class="nav-logo"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group" class="nav-logo-img" style="height:48px;width:auto;mix-blend-mode:screen;filter:brightness(1.1);"></a>
+  <button type="button" class="mobile-nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="primary-navigation">
     <li><a href="#pillar-01">Principal &amp; Executive Protective Intelligence</a></li>
     <li><a href="#pillar-02">Institutional &amp; Infrastructure Threat Intelligence</a></li>
     <li><a href="#pillar-03">Counterparty &amp; Deal-Level Intelligence</a></li>
@@ -1502,10 +1503,37 @@ document.getElementById('kig-contact-form').addEventListener('submit', function(
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.07,rootMargin:'0px 0px -24px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
+// Accessible mobile navigation.
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const primaryNavigation = document.getElementById('primary-navigation');
+if (mobileNavToggle && primaryNavigation) {
+  mobileNavToggle.addEventListener('click', () => {
+    const isOpen = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+    mobileNavToggle.setAttribute('aria-expanded', String(!isOpen));
+    mobileNavToggle.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+    document.querySelector('nav').classList.toggle('mobile-open', !isOpen);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mobileNavToggle.getAttribute('aria-expanded') === 'true') {
+      mobileNavToggle.setAttribute('aria-expanded', 'false');
+      mobileNavToggle.setAttribute('aria-label', 'Open navigation');
+      document.querySelector('nav').classList.remove('mobile-open');
+      mobileNavToggle.focus();
+    }
+  });
+  primaryNavigation.addEventListener('click', event => {
+    if (event.target.closest('a') && window.matchMedia('(max-width: 680px)').matches) {
+      mobileNavToggle.setAttribute('aria-expanded', 'false');
+      mobileNavToggle.setAttribute('aria-label', 'Open navigation');
+      document.querySelector('nav').classList.remove('mobile-open');
+    }
+  });
+}
+
 // ── HERO TICKER ──
 (function(){
   var ticker = document.getElementById('kig-ticker');
-  if(!ticker) return;
+  if(!ticker || window.matchMedia('(max-width: 680px)').matches) return;
   var clone = ticker.cloneNode(true);
   ticker.parentNode.appendChild(clone);
   var pos = 0;
@@ -1674,6 +1702,52 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   }
 }
 
+/* Tight, legible mobile layout: the fixed desktop status/nav and long ticker
+   previously forced the hero into a multi-thousand-pixel min-content column. */
+.mobile-nav-toggle{display:none}
+@media(max-width:680px){
+  html,body{width:100%;max-width:100%;overflow-x:clip}
+  nav{top:0;height:56px !important;padding:0 16px !important}
+  .mobile-nav-toggle{display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;width:40px;height:40px;flex:0 0 40px;border:1px solid var(--stone);background:transparent;color:var(--dust);cursor:pointer}
+  .mobile-nav-toggle span{display:block;width:16px;height:1px;background:currentColor}
+  .nav-links{display:none !important;position:absolute;top:56px;left:0;right:0;height:auto !important;margin:0;padding:8px 16px 16px !important;background:var(--ch);border-bottom:1px solid var(--border2);flex-direction:column;align-items:stretch;gap:0;box-shadow:0 12px 24px rgba(0,0,0,.35)}
+  nav.mobile-open .nav-links{display:flex !important}
+  .nav-links li{display:block !important}
+  .nav-links a{height:auto !important;min-height:44px;padding:12px 8px !important;border-left:0 !important;border-bottom:1px solid var(--border);font-size:10px !important;letter-spacing:.08em !important;white-space:normal !important}
+  .nav-links .nav-cta{display:flex !important;color:var(--crim) !important}
+  .status{top:56px;height:22px;padding:0 16px;gap:0}
+  .status .sdiv,.status .si:not(:first-child){display:none}
+  .hero{
+    min-height:0;
+    grid-template-columns:minmax(0,1fr);
+    padding:104px 20px 48px;
+    overflow:hidden;
+  }
+  .hero-l{min-width:0;width:100%;padding:32px 0 20px}
+  .hero-eyebrow{min-width:0;max-width:100%;font-size:8px;letter-spacing:.12em;line-height:1.5}
+  .hero-h{
+    width:100%;max-width:100%;min-width:0;
+    font-size:clamp(40px,11vw,68px);line-height:.98;
+    overflow-wrap:anywhere;
+  }
+  .hero-deck{width:100%;max-width:100%;min-width:0;font-size:15px}
+  .hero-ticker{width:100%;max-width:100%;min-width:0;white-space:normal !important}
+  .hero-ticker span{display:block;white-space:normal;overflow-wrap:anywhere;line-height:1.5}
+  .hero-ticker span::after{content:"";display:block}
+  .hero-ticker{font-size:0 !important}
+  .hero-ticker span{font-size:8px;letter-spacing:.1em}
+  .hero-actions{width:100%;min-width:0}
+  .hero-actions a{max-width:100%;white-space:normal;justify-content:center;text-align:center}
+  .logos{padding:16px;gap:18px}
+  .logos img{max-width:38vw;height:auto !important;max-height:28px;object-fit:contain}
+  .strip-dark,.strip-crim{padding:22px 20px}
+  #kig-chat-window{
+    width:calc(100vw - 32px);max-width:400px;
+    right:16px;bottom:80px;max-height:min(70svh,520px)
+  }
+  #kig-chat-btn{right:16px;bottom:16px}
+  [id]{scroll-margin-top:90px}
+}
 
 /* ── RADIO-BASED TAB SYSTEM (bulletproof, no JS) ── */
 

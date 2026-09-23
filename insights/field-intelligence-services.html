@@ -97,6 +97,20 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-i
 .footer-logo{font-family:var(--cond);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dust);}
 .footer-copy{font-family:var(--mono);font-size:10px;color:#555;}
 @media(max-width:768px){nav,footer{padding:16px 24px;}.hero{padding:60px 24px 40px;}article{padding:40px 24px 60px;}}
+@media(max-width:680px){
+html,body{width:100%;max-width:100%;overflow-x:clip}
+nav,footer{gap:12px;flex-wrap:wrap;padding:14px 20px}
+.nav-logo{font-size:13px;letter-spacing:.08em}
+.nav-back{font-size:9px;letter-spacing:.06em}
+.hero{width:100%;max-width:100%;padding:48px 20px 36px}
+h1{font-size:clamp(30px,8.5vw,44px);overflow-wrap:anywhere}
+.hero-meta{font-size:9px;line-height:1.7;overflow-wrap:anywhere}
+.hero-desc{font-size:16px}
+article{width:100%;max-width:760px;padding:32px 20px 52px;overflow-wrap:anywhere}
+article h2{font-size:24px;line-height:1.1}
+article pre,article table,.comparison-table{display:block;max-width:100%;overflow-x:auto}
+footer{padding:24px 20px}
+}
 </style>
 </head>
 <body>

@@ -48,6 +48,18 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-i
 .footer-logo{font-family:var(--cond);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dust);}
 .footer-copy{font-family:var(--mono);font-size:10px;color:#555;letter-spacing:.08em;}
 @media(max-width:768px){nav,footer{padding:16px 24px;}.hero{padding:60px 24px 40px;}.posts{padding:40px 24px;}.posts-grid{grid-template-columns:1fr;}}
+@media(max-width:680px){
+  html,body{width:100%;max-width:100%;overflow-x:clip}
+  nav,footer{gap:12px;flex-wrap:wrap}
+  nav{position:relative;padding:16px 20px}
+  .nav-logo{font-size:13px}
+  .nav-back{font-size:10px}
+  .hero{padding:48px 20px 36px}
+  .posts{padding:28px 16px}
+  .posts-grid{grid-template-columns:minmax(0,1fr)}
+  .post-card{min-width:0;padding:24px 20px}
+  .post-title,.post-desc{overflow-wrap:anywhere}
+}
 </style>
 </head>
 <body>
