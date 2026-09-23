@@ -20,6 +20,10 @@
 .demo-controls{display:flex;gap:8px;flex-wrap:wrap}
 .demo button,.service-switcher button{scroll-margin:150px 0}
 .demo-controls{position:relative;z-index:2}
+#monitor .demo-controls button{font:600 11px var(--mono);min-height:44px;padding:12px 16px;color:var(--parch);background:var(--gr);border:1px solid var(--stone);cursor:pointer}
+.terminal-extras{margin-top:24px;border:1px solid var(--stone)}
+.terminal-paused *{animation-play-state:paused!important;transition:none!important}
+#monitor{scroll-margin-top:110px}
 .demo-controls button{font-size:10px;padding:8px 12px}
 .demo-feed{list-style:none;margin:0;padding:0}
 .demo-feed li{padding:12px 0;border-bottom:1px solid var(--stone);font:13px/1.65 var(--sans)}
