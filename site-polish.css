@@ -1,8 +1,8 @@
 /* KIG: signal red, layered graphite, and cool parchment. No image payload. */
-:root{--signal-wash:color-mix(in srgb,#392642 65%,var(--ch));--cool-wash:color-mix(in srgb,var(--dust) 9%,var(--ch))}
+:root{--signal-wash:color-mix(in srgb,#243746 65%,var(--ch));--cool-wash:color-mix(in srgb,var(--dust) 9%,var(--ch))}
 :focus-visible{outline:2px solid var(--dust);outline-offset:5px}
 .hero{isolation:isolate;background-color:var(--ch)}
-.hero-l{background:linear-gradient(120deg,rgba(57,38,66,.55),transparent 65%)}
+.hero-l{background:linear-gradient(120deg,rgba(36,55,70,.55),transparent 65%)}
 .hero-panel{box-shadow:-24px 0 64px rgba(0,0,0,.25);border-top:2px solid var(--crim)}
 .hero-eyebrow{max-width:48ch;line-height:1.7}
 .svc-hdr{gap:40px}
@@ -39,7 +39,7 @@
 .build-card p{font-size:14px;line-height:1.8;color:var(--dust)}
 .build-card .eyebrow{color:var(--dust)}
 .insights-page .hero{background:linear-gradient(110deg,var(--signal-wash),var(--ch) 65%);position:relative;border-bottom:2px solid var(--crim)}
-.insights-page .hero::after{content:'';position:absolute;right:8%;top:20%;width:160px;height:160px;border:1px solid rgba(57,38,66,.65);box-shadow:24px 24px 0 rgba(57,38,66,.3);transform:rotate(45deg);pointer-events:none;z-index:-1}
+.insights-page .hero::after{content:'';position:absolute;right:8%;top:20%;width:160px;height:160px;border:1px solid rgba(36,55,70,.65);box-shadow:24px 24px 0 rgba(36,55,70,.3);transform:rotate(45deg);pointer-events:none;z-index:-1}
 .posts-grid{gap:24px}
 .post-card{display:flex;flex-direction:column;border-top:2px solid var(--crim);background:linear-gradient(140deg,var(--cool-wash),var(--gr));transition:transform .2s,border-color .2s}
 .post-card:hover{transform:translateY(-3px);border-color:var(--crim)}
@@ -56,3 +56,16 @@
 [hidden]{display:none!important}
 @media(max-width:900px){.layer-map,.build-cards{grid-template-columns:1fr}.layer-step{padding:20px}.build-card{padding:24px}.post-title{font-size:25px}.archive-tools{gap:16px}.archive-tools label{min-width:100%}.svc-panel .pl{padding-bottom:28px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important}}
+
+/* Restrained slate system: color supports hierarchy instead of competing with it. */
+.hero-h em,h2.headline em,.pl-h em,.cta-h2 em{color:var(--cream)}
+.svc-panel .pl>div:first-child,.hero-eyebrow,.eyebrow,.tac-tag,.es-label{color:var(--dust)!important}
+.svc-panel{border-top-color:var(--stone)!important}
+.layer-step,.build-card,.post-card{border-top-color:var(--dust)}
+.hero-panel{border-top-color:var(--stone)}
+#geo{border-top-color:var(--stone)}
+.insights-page .hero{border-bottom-color:var(--stone)}
+.strip-crim{background:linear-gradient(110deg,#243746,var(--ch));border-top:1px solid var(--stone);border-bottom:1px solid var(--stone)}
+.strip-text,.strip-text span{color:var(--cream)}
+.pl-cta{color:var(--parch)}
+.main-cta{border-top-color:var(--stone)}
