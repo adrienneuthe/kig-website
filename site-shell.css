@@ -1,7 +1,7 @@
 /* Shared KIG surfaces and brand treatment, including article and form pages. */
 body{background:#1a1a1a;color:#e8f0f8;font-family:'IBM Plex Sans',sans-serif}
 .kig-site-nav img,.kig-footer-logo{mix-blend-mode:screen!important;filter:brightness(1.1)!important;opacity:1!important;width:184px!important;height:48px!important;object-fit:contain!important}
-.insights-page .hero,.contact-main .hero{background:linear-gradient(110deg,#243746,#1a1a1a 70%);padding:56px max(24px,calc((100% - 1100px)/2));border-bottom:1px solid #3d3d3d}
+.insights-page .hero,.contact-main .hero{background:#1A1A1A;padding:56px max(24px,calc((100% - 1100px)/2));border-bottom:1px solid #3d3d3d}
 .insights-page h1,.contact-main h1{font-family:'Barlow Condensed',sans-serif;color:white}
 .kig-footer{display:block!important;padding:40px max(24px,calc((100% - 1100px)/2))!important;background:#222;border-top:1px solid #3d3d3d}
 .kig-footer-top{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
@@ -11,7 +11,7 @@ body{background:#1a1a1a;color:#e8f0f8;font-family:'IBM Plex Sans',sans-serif}
 .kig-press{display:flex;gap:28px;align-items:center;flex-wrap:wrap;border-top:1px solid #3d3d3d;margin-top:28px;padding-top:24px}
 .kig-press>span{font:10px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#c8d8e4}
 .kig-press a{display:flex;align-items:center;gap:12px}
-.kig-press img{height:22px;width:auto;max-width:130px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.82;transition:opacity .2s}
+.kig-press img{height:auto;width:104px;max-width:40vw;object-fit:contain;opacity:.85;transition:opacity .2s}
 
 .kig-press small{font-size:10px;max-width:140px}
 .kig-footer-note{font:10px/1.8 'IBM Plex Mono',monospace;color:#c8d8e4;margin-top:20px}
@@ -23,8 +23,8 @@ body{background:#1a1a1a;color:#e8f0f8;font-family:'IBM Plex Sans',sans-serif}
 .contact-wrap button{padding:16px 24px;background:#B52B43;border:0;color:white;font:600 12px 'IBM Plex Mono',monospace;cursor:pointer}
 .contact-wrap p{color:#c8d8e4;font-size:12px}
 .kig-press a:hover img{opacity:1}
-.kig-press img[alt='Fox News']{height:17px}
-.kig-press img[alt='Industrial Equipment News']{height:27px}
+.kig-press img[alt='Fox News']{width:112px}
+.kig-press img[alt='Industrial Equipment News']{width:74px}
 .kig-press{gap:32px}
 .kig-press>span{text-transform:uppercase}
 .kig-footer-links a{display:inline-flex;align-items:center;min-height:44px}
