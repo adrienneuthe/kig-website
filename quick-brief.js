@@ -21,6 +21,7 @@
       '<div id="qb-body">' +
       '<p class="qb-lede">Three fields. A member of our team responds personally within 24 hours.</p>' +
       '<form id="qb-form">' +
+      '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
       '<input type="text" name="name" placeholder="Name" aria-label="Name" required>' +
       '<input type="email" name="email" placeholder="Work email" aria-label="Work email" required>' +
       '<textarea name="need" placeholder="What do you need? (one or two lines is enough)" aria-label="What do you need?" required></textarea>' +
@@ -57,6 +58,7 @@
         email: form.email.value,
         _replyto: form.email.value,
         need: form.need.value,
+        _gotcha: form._gotcha.value,
         source: 'KIG website quick brief — ' + location.pathname
       };
       var submitBtn = form.querySelector('button');
