@@ -38,7 +38,13 @@
     const urlFor=n=>{const u=new URL(location.href);u.search='';if(n>1)u.searchParams.set('page',n);if(search.value)u.searchParams.set('q',search.value);if(month.value)u.searchParams.set('month',month.value);return u;};
     const link=(n,label)=>{const a=document.createElement('a');a.href=urlFor(n);a.textContent=label;if(n===page){a.setAttribute('aria-current','page');}a.addEventListener('click',e=>{if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();render(n,true);status.tabIndex=-1;status.focus({preventScroll:true});tools.scrollIntoView({block:'start'});});nav.append(a);};
     if(page>1)link(page-1,'Previous');
-    for(let n=1;n<=total;n++)if(n===1||n===total||Math.abs(n-page)<=2)link(n,String(n));
+    let prev=0;
+    for(let n=1;n<=total;n++){
+      if(n===1||n===total||Math.abs(n-page)<=2){
+        if(prev&&n-prev>1){const s=document.createElement('span');s.className='archive-gap';s.textContent='…';nav.appendChild(s);}
+        link(n,String(n));prev=n;
+      }
+    }
     if(page<total)link(page+1,'Next');
     if(update)history.pushState(null,'',urlFor(page));
   }

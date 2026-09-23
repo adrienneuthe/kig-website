@@ -3,82 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | Kronus Intelligence Group</title>
-<meta name="description" content="Meet the team behind Kronus Intelligence Group.">
-<link rel="canonical" href="https://kronusintelligencegroup.com/about">
-<meta property="og:title" content="About | Kronus Intelligence Group">
+<title>Contact | Kronus Intelligence Group</title>
+<meta name="description" content="Contact Kronus Intelligence Group about protective, institutional, counterparty, or narrative threat intelligence.">
+<link rel="canonical" href="https://kronusintelligencegroup.com/contact">
+<meta property="og:title" content="Contact | Kronus Intelligence Group">
 <meta property="og:description" content="Analysis and perspectives on private intelligence, narrative threats, geopolitical risk, and executive security.">
 <meta property="og:image" content="https://kronusintelligencegroup.com/meta.png">
 <link rel="icon" type="image/png" href="/images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@300;400;500;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --ch:#1A1A1A;--gr:#222222;--st:#2C2C2C;--stone:#3D3D3D;
-  --dust:#C8D8E4;--parch:#E8F0F8;--cream:#FFFFFF;
-  --crim:#B52B43;--border:rgba(255,255,255,0.06);
-  --serif:'Playfair Display',Georgia,serif;
-  --cond:'Barlow Condensed','Arial Narrow',sans-serif;
-  --mono:'IBM Plex Mono',monospace;
-  --sans:'IBM Plex Sans',sans-serif;
-}
-body{background:var(--ch);color:var(--parch);font-family:var(--sans);font-size:15px;line-height:1.7;}
-a{color:inherit;text-decoration:none;}
-nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--ch);z-index:100;}
-.nav-logo{font-family:var(--cond);font-size:15px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);}
-.nav-logo span{color:var(--crim);}
-.nav-logo-img{display:block;width:184px;height:48px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.1);}
-.nav-back{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--dust);text-transform:uppercase;}
-.nav-back:hover{color:var(--cream);}
-.hero{padding:80px 48px 60px;border-bottom:1px solid var(--border);}
-.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--crim);margin-bottom:16px;}
-h1{font-family:var(--cond);font-size:clamp(36px,5vw,60px);font-weight:800;color:var(--cream);line-height:.95;text-transform:uppercase;margin-bottom:20px;}
-h1 em{font-style:normal;color:var(--crim);}
-.hero p{font-size:15px;color:var(--dust);max-width:560px;line-height:1.75;}
-.posts{max-width:1160px;margin:0 auto;padding:60px 48px;}
-.posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:2px;}
-.post-card{background:var(--gr);padding:32px;border:1px solid var(--border);transition:border-color .2s;}
-.post-card:hover{border-color:rgba(181,43,67,0.3);}
-.post-date{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--crim);text-transform:uppercase;margin-bottom:12px;}
-.post-title{font-family:var(--cond);font-size:22px;font-weight:800;color:var(--cream);line-height:1.1;text-transform:uppercase;margin-bottom:12px;}
-.post-desc{font-size:13px;color:var(--dust);line-height:1.7;margin-bottom:20px;}
-.post-link{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--crim);text-transform:uppercase;}
-.post-link:hover{color:var(--cream);}
-footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
-.footer-logo{font-family:var(--cond);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dust);}
-.footer-copy{font-family:var(--mono);font-size:10px;color:#555;letter-spacing:.08em;}
-@media(max-width:768px){nav,footer{padding:16px 24px;}.hero{padding:60px 24px 40px;}.posts{padding:40px 24px;}.posts-grid{grid-template-columns:1fr;}}
-@media(max-width:900px){
-  html,body{width:100%;max-width:100%;overflow-x:clip}
-  nav,footer{gap:12px;flex-wrap:wrap}
-  nav{position:relative;padding:16px 20px}
-  .nav-logo-img{width:min(184px,52vw);height:auto;max-height:48px}
-  .nav-back{font-size:10px}
-  .hero{padding:48px 20px 36px}
-  .posts{padding:28px 16px}
-  .posts-grid{grid-template-columns:minmax(0,1fr)}
-  .post-card{min-width:0;padding:24px 20px}
-  .post-title,.post-desc{overflow-wrap:anywhere}
-}
-</style>
+<link rel="stylesheet" href="/kig-base.css">
 <link rel="stylesheet" href="/site-polish.css">
 
-<style>
-.team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 28px;max-width:1160px;margin:auto;padding:56px 32px 80px}
-.team-grid article{min-width:0}.team-grid img{display:block;width:100%;height:auto;aspect-ratio:10/11;object-fit:cover;object-position:center top;filter:grayscale(1)}
-.team-grid h2{font:700 28px/1.2 var(--cond);color:var(--cream);margin:20px 0 8px}
-.team-grid p{font:13px/1.7 var(--sans);color:var(--dust)}
-@media(max-width:800px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:32px 20px;gap:28px 20px}}
-@media(max-width:450px){.team-grid{grid-template-columns:1fr}.team-grid article{max-width:340px;width:100%;margin:auto}}
-</style><style>
-.team-grid{max-width:900px;gap:32px 24px}
-.team-grid article{text-align:center}
-.team-grid img{width:150px;height:165px;margin:0 auto;object-fit:cover}
-.team-grid h2{font-size:24px;margin-top:14px}
-@media(max-width:450px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px;padding:28px 16px}.team-grid img{width:110px;height:121px}.team-grid h2{font-size:21px}.team-grid p{font-size:12px}}
-</style><style>.team-bio{margin-top:12px;font-size:13px!important;line-height:1.75!important;max-width:28ch;margin-left:auto;margin-right:auto}</style><link rel="stylesheet" href="/navigation.css">
+<link rel="stylesheet" href="/navigation.css">
 <link rel="stylesheet" href="/site-shell.css">
+<link rel="stylesheet" href="/quick-brief.css">
+<script src="/quick-brief.js" defer></script>
 </head>
 <body class="insights-page">
 <nav class="kig-site-nav" aria-label="Main navigation"><a href="/" aria-label="Kronus Intelligence Group home"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-site-links"><a href="/#services">Services</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></nav>
