@@ -1431,6 +1431,7 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
       <form class="cta-form" id="kig-contact-form" action="https://formspree.io/f/mykbaegd" method="POST">
         <input type="hidden" name="_subject" id="kig-form-subject" value="KIG Website Inquiry">
         <input type="hidden" name="_referral" id="kig-form-referral" value="false">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="cta-fr">
           <input type="text" name="first_name" class="fi" placeholder="First name" aria-label="First name" required>
           <input type="text" name="last_name" class="fi" placeholder="Last name" aria-label="Last name" required>
@@ -1526,11 +1527,13 @@ if (mobileNavToggle && primaryNavigation) {
   var ticker = document.getElementById('kig-ticker');
   if(!ticker || window.matchMedia('(max-width: 680px)').matches) return;
   var clone = ticker.cloneNode(true);
+  clone.removeAttribute('id');
+  clone.textContent = '  \u00b7  ' + ticker.textContent;
   ticker.parentNode.appendChild(clone);
   var pos = 0;
   function step(){
     pos -= 0.5;
-    var w = ticker.scrollWidth / 2;
+    var w = ticker.offsetWidth;
     if(Math.abs(pos) >= w) pos = 0;
     ticker.parentNode.scrollLeft = 0;
     ticker.parentNode.style.textIndent = pos + 'px';
