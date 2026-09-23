@@ -711,6 +711,7 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 <link rel="stylesheet" href="/site-shell.css">
 <link rel="stylesheet" href="/quick-brief.css">
 <script src="/quick-brief.js" defer></script>
+<script src="/inquiry-form.js" defer></script>
 </head>
 <body>
 
@@ -1462,13 +1463,7 @@ function handleKIGInquiryType(val){
     ? 'This goes to a vetted partner, not KIG directly - we\'ll make the introduction.'
     : 'All communications are confidential · Someone on our team responds personally within 24 hours';
 }
-document.getElementById('kig-contact-form').addEventListener('submit', function(e){
-  var sel = document.getElementById('kig-inquiry-type');
-  if(!sel.value){ e.preventDefault(); sel.focus(); return; }
-  var btn = document.getElementById('sb');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-});
+
 </script>
   </div>
 </section>
