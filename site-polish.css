@@ -69,3 +69,6 @@
 .strip-text,.strip-text span{color:var(--cream)}
 .pl-cta{color:var(--parch)}
 .main-cta{border-top-color:var(--stone)}
+.hero-h .hero-intro,.hero-h .hero-outro{display:block;font-size:.42em;line-height:1.15;letter-spacing:.02em;color:var(--dust)}
+.hero-h .hero-category{display:block;font-weight:800;line-height:.94;color:var(--cream);margin:20px 0;padding-left:18px;border-left:5px solid var(--crim);text-shadow:0 2px 24px rgba(0,0,0,.2)}
+@media(max-width:600px){.hero-h .hero-category{padding-left:10px;border-left-width:3px;margin:16px 0;font-size:.9em}}
