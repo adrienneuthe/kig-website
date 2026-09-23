@@ -31,10 +31,9 @@
     "name": "Kronus Intelligence Group",
     "alternateName": "KIG",
     "url": "https://kronusintelligencegroup.com",
-    "logo": "https://kronusintelligencegroup.com/images/kig-logo.jpg",
+    "logo": "https://kronusintelligencegroup.com/images/kig-logo-horizontal.png",
     "image": "https://kronusintelligencegroup.com/images/hero-bg.jpeg",
     "email": "project@kronusintelligencegroup.com",
-    "telephone": "+17154181614",
     "slogan": "Intelligence You Can Move On",
     "description": "Kronus Intelligence Group builds custom intelligence infrastructure - HUMINT networks, narrative threat detection, electoral integrity, executive security, and counterparty vetting for organizations that cannot afford to be wrong.",
     "foundingDate": "2020",
@@ -710,7 +709,7 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo"><img src="/images/kig-logo.jpg" alt="Kronus Intelligence Group" class="nav-logo-img" style="height:110px;width:auto;mix-blend-mode:screen;filter:brightness(1.1);"></a>
+  <a href="#" class="nav-logo"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group" class="nav-logo-img" style="height:48px;width:auto;mix-blend-mode:screen;filter:brightness(1.1);"></a>
   <ul class="nav-links">
     <li><a href="#pillar-01">Principal &amp; Executive Protective Intelligence</a></li>
     <li><a href="#pillar-02">Institutional &amp; Infrastructure Threat Intelligence</a></li>
@@ -1418,7 +1417,6 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
       <p>Active situation, upcoming deployment, counterparty concern, or a capability you need built - send the details. Someone on our team responds personally within 24 hours. Everything is confidential.</p>
       <div class="contact-rows" style="margin-top:24px">
         <a href="mailto:project@kronusintelligencegroup.com" class="contact-row"><span class="cr-label">Email</span><span class="cr-val">project@kronusintelligencegroup.com</span></a>
-        <a href="tel:+17154181614" class="contact-row" data-kig-tel-row><span class="cr-label">Phone</span><span class="cr-val" data-kig-tel></span></a>
       </div>
     </div>
     <div class="reveal d2">
@@ -1484,7 +1482,7 @@ document.getElementById('kig-contact-form').addEventListener('submit', function(
 </section>
 
 <footer>
-  <div class="foot-logo"><img src="/images/kig-logo.jpg" alt="Kronus Intelligence Group" style="height:110px;width:auto;mix-blend-mode:screen;opacity:0.85;filter:brightness(1.1);"></div>
+  <div class="foot-logo"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group" style="height:48px;width:auto;mix-blend-mode:screen;opacity:0.85;filter:brightness(1.1);"></div>
   <ul class="foot-links">
     <li><a href="#pillar-01">Principal &amp; Executive</a></li>
     <li><a href="#pillar-02">Institutional &amp; Infrastructure</a></li>
@@ -1496,19 +1494,10 @@ document.getElementById('kig-contact-form').addEventListener('submit', function(
   </ul>
   <div class="foot-r">
     <div class="foot-copy">© 2026 Kronus Intelligence Group. All Rights Reserved.</div>
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#909090;margin-top:6px;"><a href="tel:+17154181614" data-kig-tel style="color:#909090;text-decoration:none;"></a></div>
   </div>
 </footer>
 
 <script>
-// ── PHONE CONSTANT ── swap one line to update everywhere
-const KIG_PHONE = '(715) 418-1614';
-const KIG_PHONE_HREF = 'tel:+17154181614';
-document.querySelectorAll('[data-kig-tel]').forEach(el=>{
-  el.textContent = KIG_PHONE;
-  el.href = KIG_PHONE_HREF;
-});
-
 // ── REVEAL OBSERVER ──
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.07,rootMargin:'0px 0px -24px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
