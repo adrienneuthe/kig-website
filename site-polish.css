@@ -86,3 +86,22 @@
 @media(max-width:600px){
   .kig-footer-links{gap:14px 18px}
 }
+
+/* ── CALM SYSTEM: flat surfaces, one accent, hairline structure ── */
+.services,#electoral,.main-cta,.build-section{background-image:none!important}
+.services,.build-section{background-color:var(--ch)!important}
+#electoral,.main-cta{background-color:var(--gr)!important}
+.hero-l{background:none}
+.svc-panel .pl,#pillar-02 .pl,#pillar-03 .pl{background:var(--gr)}
+.svc-panel .pr{background:rgba(0,0,0,.14)}
+.tactical-box{background:var(--gr);border-left:3px solid var(--crim)}
+.post-card{background:var(--gr)}
+.insights-page .hero{background:var(--ch);border-bottom:1px solid var(--stone)}
+.insights-page .hero::after{display:none}
+.strip-crim{background:var(--gr);border-top:1px solid var(--stone);border-bottom:1px solid var(--stone)}
+.layer-step,.build-card,.post-card,.svc-panel,.hero-panel{border-top-color:var(--stone)!important}
+.main-cta{border-top:1px solid var(--stone)}
+.capture-heading{background:var(--gr);border-bottom:1px solid var(--stone)}
+/* small accent labels: readable red, used sparingly */
+.sub-kicker,.tac-tag,.archive-status strong{color:#CE5368!important;font-weight:700!important;letter-spacing:.16em}
+.cam-state i{background:#8FA8BC}
