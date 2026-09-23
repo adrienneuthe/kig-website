@@ -11,6 +11,10 @@
 .svc-panel .pl{position:relative;background:linear-gradient(135deg,var(--signal-wash),var(--gr) 75%);overflow:hidden}
 #pillar-02 .pl,#pillar-03 .pl{background:linear-gradient(135deg,var(--cool-wash),var(--gr) 75%)}
 .svc-panel .pr{background:rgba(0,0,0,.12)}
+.svc-panel .pl>div:first-child,.hero-eyebrow,.eyebrow,.tac-tag,.es-label{
+  font-weight:700!important;
+  color:color-mix(in srgb,var(--crim-lt,#CE5368) 75%,white)!important;
+}
 .svc-item{border-bottom:1px solid var(--border);padding-bottom:16px}
 .svc-item:last-child{border-bottom:0}
 .capability-details{margin-top:8px}
