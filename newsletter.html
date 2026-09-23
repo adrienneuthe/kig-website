@@ -4,174 +4,77 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Subscribe | Kronus Intelligence Group</title>
-<meta name="description" content="Subscribe to receive Kronus Intelligence Group updates when new intelligence analysis is published.">
+<meta name="description" content="Add your email to receive occasional updates from Kronus Intelligence Group.">
 <link rel="canonical" href="https://kronusintelligencegroup.com/newsletter">
-<style>
-:root{
-  --bg:#0A0A0A;
-  --cream:#F5F2EC;
-  --parch:#C8D4DE;
-  --red:#B52B43;
-  --border:rgba(255,255,255,0.08);
-  --gr:linear-gradient(180deg,#0A0A0A 0%,#111 100%);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,sans-serif;
-  background:var(--bg);
-  color:var(--cream);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  height:72px;display:flex;align-items:center;justify-content:space-between;
-  padding:0 48px;background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-}
-.nav-logo-img{height:48px;width:auto;mix-blend-mode:screen;opacity:0.9;filter:brightness(1.1)}
-.nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{
-  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;
-  text-transform:uppercase;color:var(--parch);text-decoration:none;transition:color 0.2s;
-}
-.nav-links a:hover{color:var(--cream)}
-
-/* HERO */
-.hero{
-  padding:140px 48px 80px;min-height:40vh;display:flex;align-items:center;
-  background:var(--bg);
-}
-.hero-inner{max-width:800px}
-.eyebrow{
-  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;
-  text-transform:uppercase;color:var(--red);margin-bottom:16px;
-}
-.hero h1{
-  font-family:'IBM Plex Sans',sans-serif;font-size:clamp(2rem,5vw,3.5rem);
-  font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:var(--cream);
-  margin-bottom:20px;
-}
-.hero p{
-  font-size:15px;color:var(--parch);line-height:1.75;max-width:560px;
-}
-
-/* FORM SECTION */
-.form-section{
-  padding:80px 48px;background:var(--bg);
-  border-top:1px solid var(--border);
-}
-.form-inner{max-width:800px;margin:0 auto}
-.form-section h2{
-  font-family:'IBM Plex Sans',sans-serif;font-size:1.5rem;
-  font-weight:500;color:var(--cream);text-align:center;margin-bottom:0.5rem;
-}
-.form-section .subtitle{
-  font-size:0.9375rem;color:var(--parch);text-align:center;
-  margin-bottom:3rem;opacity:0.7;
-}
-.cta-blocks{
-  display:grid;grid-template-columns:1fr 1fr;gap:2rem;
-}
-.cta-blocks--single{grid-template-columns:minmax(0,480px);justify-content:center}
-.cta-block{
-  padding:1.5rem;border:1px solid rgba(255,255,255,0.15);border-radius:2px;
-}
-.cta-block h3{
-  font-family:'IBM Plex Sans',sans-serif;font-size:1.125rem;
-  font-weight:500;color:var(--cream);margin-bottom:0.5rem;
-}
-.cta-block p{
-  font-size:0.9375rem;color:var(--parch);margin-bottom:1.5rem;opacity:0.7;
-}
-.consent-line{
-  font-size:0.75rem;color:var(--parch);opacity:0.4;margin-top:0.75rem;
-}
-.consent-line a{
-  color:var(--parch);text-decoration:underline;opacity:0.5;
-}
-
-/* FOOTER */
-footer{
-  padding:48px;border-top:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-  background:var(--bg);
-}
-.foot-logo img{height:48px;width:auto;mix-blend-mode:screen;opacity:0.7;filter:brightness(1.1)}
-.foot-links{display:flex;gap:28px;list-style:none}
-.foot-links a{
-  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;
-  text-transform:uppercase;color:var(--parch);text-decoration:none;transition:color 0.2s;
-}
-.foot-links a:hover{color:var(--cream)}
-.foot-copy{
-  font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.14em;
-  text-transform:uppercase;color:rgba(200,212,222,0.4);
-}
-
-@media(max-width:768px){
-  nav{padding:0 20px;height:64px}
-  .nav-logo-img{height:40px}
-  .nav-links{gap:20px}
-  .nav-links a{font-size:9px}
-  .hero{padding:120px 20px 60px}
-  .form-section{padding:60px 20px}
-  .cta-blocks{grid-template-columns:1fr}
-  footer{flex-direction:column;gap:24px;padding:32px 20px;text-align:center}
-  .foot-links{flex-wrap:wrap;justify-content:center}
-}
-@media(max-width:900px){
-  html,body{width:100%;max-width:100%;overflow-x:clip}
-  nav{gap:12px;padding:0 16px;height:64px}
-  .nav-logo-img{height:auto;max-height:40px;width:auto;max-width:42vw;object-fit:contain}
-  .nav-links{gap:12px}
-  .nav-links a{font-size:7px;letter-spacing:.04em}
-  .hero{padding:104px 20px 48px;min-height:0}
-  .hero h1{font-size:clamp(32px,9vw,52px);overflow-wrap:anywhere}
-  .form-section{padding:48px 16px}
-  .form-inner,.cta-block{min-width:0;max-width:100%}
-  .cta-block{padding:20px 16px}
-  .cta-block iframe,.cta-block form,.cta-block input,.cta-block select{max-width:100%}
-  footer{gap:20px;padding:28px 16px}
-  .foot-logo img{max-width:50vw;height:auto;max-height:40px}
-  .foot-links{gap:16px}
-  .foot-links a{font-size:9px}
-}
-</style>
+<meta property="og:title" content="Subscribe | Kronus Intelligence Group">
+<meta property="og:description" content="Add your email to receive occasional updates from Kronus Intelligence Group.">
+<meta property="og:image" content="https://kronusintelligencegroup.com/meta.png">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@300;400;500;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/kig-base.css">
+<link rel="stylesheet" href="/site-polish.css">
 <link rel="stylesheet" href="/navigation.css">
 <link rel="stylesheet" href="/site-shell.css">
+<style>
+.sub-wrap{max-width:760px;margin:0 auto;padding:56px 48px 80px}
+.sub-card{background:var(--gr);border:1px solid var(--border);padding:32px}
+.sub-card h2{font-size:clamp(22px,2.4vw,28px);margin-bottom:18px}
+.sub-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--crim);margin-bottom:12px}
+.sub-card label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin:0 0 8px}
+.sub-card label span{color:#909090}
+.sub-card input[type=text],.sub-card input[type=email]{box-sizing:border-box;width:100%;padding:13px 14px;margin-bottom:18px;background:var(--st);border:1px solid #555;color:var(--parch);font-family:var(--sans);font-size:15px}
+.sub-card input:focus{outline:none;border-color:var(--dust)}
+.sub-card input::placeholder{color:#909090}
+.sub-card button{width:100%;padding:14px 20px;background:var(--crim);border:none;color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.sub-card button:hover{background:#CE5368}
+#kig-sub-done h3{font-family:var(--cond);font-size:24px;font-weight:800;text-transform:uppercase;color:var(--cream);margin-bottom:8px}
+@media(max-width:600px){.sub-card input[type=text],.sub-card input[type=email]{font-size:16px}}
+.sub-note{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:#909090;margin-top:16px;text-transform:uppercase}
+@media(max-width:768px){.sub-wrap{padding:36px 20px 56px}.sub-card{padding:24px 20px}}
+</style>
+<link rel="stylesheet" href="/quick-brief.css">
+<script src="/quick-brief.js" defer></script>
 </head>
-<body>
-
+<body class="insights-page">
 <nav class="kig-site-nav" aria-label="Main navigation"><a href="/" aria-label="Kronus Intelligence Group home"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-site-links"><a href="/#services">Services</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></nav>
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">Subscribe</div>
-    <h1>STAY ON THE LIST.</h1>
-    <p>Add your email and we will reach out when Kronus Intelligence Group publishes new analysis or opens a briefing.</p>
+<main>
+<div class="hero">
+  <div class="eyebrow">Subscribe</div>
+  <h1>KIG<br><em>UPDATES.</em></h1>
+  <p>Add your email to hear from Kronus Intelligence Group. Occasional updates only — no fixed schedule.</p>
+</div>
+<div class="sub-wrap">
+  <div class="sub-card">
+    <div class="sub-kicker">KIG // Mailing List</div>
+    <h2>Add Your Email</h2>
+    <form id="kig-sub-form" method="POST" action="https://kronusempire.activehosted.com/proc.php" target="kig-sub-sink">
+      <input type="hidden" name="u" value="6AB38C2055253">
+      <input type="hidden" name="f" value="3">
+      <input type="hidden" name="s">
+      <input type="hidden" name="c" value="0">
+      <input type="hidden" name="m" value="0">
+      <input type="hidden" name="act" value="sub">
+      <input type="hidden" name="v" value="2">
+      <input type="hidden" name="or" value="bc1d3977-0b5e-496a-acd4-aa03a255a47e">
+      <label for="kig-sub-name">Name <span>(optional)</span></label>
+      <input id="kig-sub-name" type="text" name="fullname" placeholder="Your name" autocomplete="name">
+      <label for="kig-sub-email">Email</label>
+      <input id="kig-sub-email" type="email" name="email" placeholder="you@organization.com" autocomplete="email" required>
+      <button type="submit">Subscribe &rarr;</button>
+      <p class="sub-note">Unsubscribe any time. We do not share your address.</p>
+    </form>
+    <div id="kig-sub-done" hidden><h3>You&rsquo;re on the list.</h3><p>We&rsquo;ll be in touch when there is something worth sending.</p></div>
   </div>
-</section>
-
-<section class="form-section">
-  <div class="form-inner">
-    <div class="cta-blocks cta-blocks--single">
-      <div class="cta-block">
-        <h3>Kronus Intelligence Group</h3>
-        <p>Security intelligence, risk analysis, and strategic briefings.</p>
-        <!-- ActiveCampaign Native Embed Form -->
-        <div class="_form_3"></div>
-        <script src="https://kronusempire.activehosted.com/f/embed.php?id=3" charset="utf-8"></script>
-        <p class="consent-line">By subscribing, you agree to receive emails. <a href="/privacy">Privacy policy</a>.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+</div>
+<iframe name="kig-sub-sink" title="Subscription handler" style="display:none" aria-hidden="true"></iframe>
+<script>
+document.getElementById('kig-sub-form').addEventListener('submit',function(){
+  var f=this, d=document.getElementById('kig-sub-done');
+  setTimeout(function(){f.style.display='none';d.hidden=false;},350);
+});
+</script>
+</main>
 <footer class="kig-footer"><div class="kig-footer-top"><a href="/"><img class="kig-footer-logo" src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-footer-links"><a href="/#services">Services</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></div><div class="kig-press"><span>Seen In</span><a href="https://www.forbes.com/sites/kolawolesamueladebayo/2025/06/05/ai-roi-isnt-just-dollars-how-to-measure-intangible-wins/" target="_blank" rel="noopener" aria-label="Forbes"><img src="/images/forbes-logo.svg" alt="Forbes"></a><a href="https://www.foxnews.com/video/6375181954112" target="_blank" rel="noopener" aria-label="Fox News"><img src="/images/fox-news-logo.svg" alt="Fox News"></a><a href="https://www.ien.com/redzone/blog/22950979/the-ai-race-rd-could-determine-the-outcome" target="_blank" rel="noopener" aria-label="Industrial Equipment News"><img src="/images/ien-logo.svg" alt="Industrial Equipment News"></a></div><p class="kig-footer-note">© 2026 Kronus Intelligence Group.</p></footer>
-
 </body>
 </html>

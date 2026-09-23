@@ -209,12 +209,12 @@
   ─ Steel:       #2C2C2C  card bg
   ─ Stone:       #3D3D3D  borders, dividers
   ─ Dust:        #6B6B6B  muted text
-  ─ Parchment:   #C0CAD4  body text - cool light gray
-  ─ Cream:       #E8EDF2  primary text - cold white
+  ─ Parchment:   #C8D8E4  body text - cool light gray
+  ─ Cream:       #E8F0F8  primary text - cold white
   ─ Signal Red:  #B52B43  single accent - vivid cold red
   ─ Crimson-dim: rgba(155,28,28,0.12)
-  ─ Amber:       #8B6914  secondary accent for geographic highlights
-  ─ Green-sig:   #1A5C35  "active / confirmed" signals only
+  ─ Amber:       #5E7F96  secondary accent for geographic highlights
+  ─ Green-sig:   #2F6B4A  "active / confirmed" signals only
 
   FONTS:
   ─ Playfair Display  - editorial serif. Authority without aggression.
@@ -225,7 +225,7 @@
   --ch:    #1A1A1A;
   --gr:    #222222;
   --st:    #2C2C2C;
-  --iron:  #353535;
+  --iron:  #3D3D3D;
   --stone: #3D3D3D;
   --dust:  #C8D8E4;
   --parch: #E8F0F8;
@@ -235,10 +235,10 @@
   --crim-lt:#CE5368;
   --crim-d:rgba(181,43,67,0.13);
   --crim-ln:rgba(181,43,67,0.45);
-  --amber: #8B6914;
-  --amb-d: rgba(139,105,20,0.15);
-  --amb-ln:rgba(139,105,20,0.4);
-  --green: #1A5C35;
+  --amber: #5E7F96;
+  --amb-d: rgba(94,127,150,0.16);
+  --amb-ln:rgba(94,127,150,0.42);
+  --green: #2F6B4A;
   --border:rgba(255,255,255,0.06);
   --border2:rgba(255,255,255,0.1);
   --serif:'Playfair Display',Georgia,serif;
@@ -351,8 +351,8 @@ nav{
 .ti{padding:12px 18px;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;transition:background .15s}
 .ti:hover{background:rgba(255,255,255,.02)}
 .sev{font-family:var(--mono);font-size:7px;letter-spacing:.08em;padding:2px 6px;flex-shrink:0;margin-top:2px;border:1px solid}
-.sev-h{background:var(--crim-d);color:#c04040;border-color:var(--crim-ln)}
-.sev-m{background:var(--amb-d);color:#a07020;border-color:var(--amb-ln)}
+.sev-h{background:var(--crim-d);color:#CE5368;border-color:var(--crim-ln)}
+.sev-m{background:var(--amb-d);color:#8FA8BC;border-color:var(--amb-ln)}
 .sev-l{background:rgba(255,255,255,.03);color:var(--dust);border-color:var(--border)}
 .ti-t{font-family:var(--sans);font-size:11px;font-weight:300;color:var(--parch);margin-bottom:2px;line-height:1.35}
 .ti-m{font-family:var(--mono);font-size:7.5px;color:var(--dust);letter-spacing:.07em}
@@ -430,8 +430,8 @@ h2.headline strong{font-weight:700}
 .region-sub{font-size:11px;color:var(--parch);line-height:1.5;margin-bottom:10px}
 .region-tags{display:flex;flex-wrap:wrap;gap:4px}
 .rtag{font-family:var(--mono);font-size:7px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--stone);color:var(--parch)}
-.rtag.hot{border-color:var(--crim-ln);color:#a04040;background:var(--crim-d)}
-.rtag.amber{border-color:var(--amb-ln);color:#8a7020;background:var(--amb-d)}
+.rtag.hot{border-color:var(--crim-ln);color:#CE5368;background:var(--crim-d)}
+.rtag.amber{border-color:var(--amb-ln);color:#8FA8BC;background:var(--amb-d)}
 
 /* ── SOLVE IT ── */
 .solve{background:var(--ch);border-top:1px solid var(--border)}
@@ -709,6 +709,8 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 <script src="/demo.js" defer></script>
 <link rel="stylesheet" href="/navigation.css">
 <link rel="stylesheet" href="/site-shell.css">
+<link rel="stylesheet" href="/quick-brief.css">
+<script src="/quick-brief.js" defer></script>
 </head>
 <body>
 
@@ -888,27 +890,28 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 
 
 <!-- KIG GLOBAL MONITOR SECTION -->
-<section id="monitor" style="background:#0D0D0D;padding:80px 48px;border-bottom:1px solid rgba(255,255,255,0.06);position:relative;"><div style="position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center/cover no-repeat;opacity:0.03;pointer-events:none;z-index:0;"></div>
+<section id="monitor" style="background:#1A1A1A;padding:80px 48px;border-bottom:1px solid rgba(255,255,255,0.06);position:relative;"><div style="position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center/cover no-repeat;opacity:0.03;pointer-events:none;z-index:0;"></div>
 <div style="max-width:1160px;margin:0 auto;position:relative;z-index:1;">
 
   <!-- Section Header -->
   <div class="reveal" style="margin-bottom:24px;">
     <div class="eyebrow" style="font-weight:700;">Narrative Threat Monitoring — Real-Time Global Intelligence</div>
     <h2 class="headline" style="margin-bottom:10px;">THIS IS WHAT<br><em>WE WATCH.</em></h2>
-    <p style="font-size:14px;color:#C0D0DC;max-width:560px;line-height:1.7;margin-bottom:12px;">Explore a sample operating picture: geographic exposure, intelligence signals, active theaters, and analyst assessments.</p>
+    <p style="font-size:14px;color:#C8D8E4;max-width:560px;line-height:1.7;margin-bottom:12px;">Explore a sample operating picture: geographic exposure, intelligence signals, active theaters, and analyst assessments.</p>
     <div style="font-size:11px;color:#9AABB8;max-width:560px;line-height:1.65;padding:9px 14px;border-left:2px solid rgba(181,43,67,0.45);background:rgba(181,43,67,0.05);">The data below is <strong style="color:#B52B43;">illustrative demo — not live intelligence</strong> — an illustration of what a KIG-built system surfaces. Your system is scoped and operated for your specific environment and threat reality.</div>
   </div>
 
   <div class="demo-controls" style="margin:20px 0"><button id="terminal-pause" type="button" aria-pressed="false">Pause animation</button><span style="font:11px/1.8 var(--mono);color:var(--dust)">SIMULATED DATA / NOT CURRENT THREAT ASSESSMENTS</span></div>
 <div class="capture-showcase">
-<div class="capture-heading"><span>KIG / MONITORING ENVIRONMENT</span><p>Selected still captures from supplied dashboard examples. Historical imagery and data—not live feeds or current assessments.</p></div>
-<figure class="capture-map"><a href="/images/monitor-map-capture.webp" target="_blank" rel="noopener"><img src="/images/monitor-map-capture.webp" alt="Geographic monitoring screenshot with layered location markers and regional overlays" loading="lazy" width="2314" height="632"></a><figcaption>GEOGRAPHIC CONTEXT / Expand image ↗</figcaption></figure>
-<div class="capture-cameras">
-<figure><div class="capture-label">VISUAL MONITORING / CITY VIEW</div><a href="/images/monitor-camera-city.webp" target="_blank" rel="noopener"><img src="/images/monitor-camera-city.webp" alt="Actual camera-view still cropped from the supplied dashboard screenshot" loading="lazy"></a><figcaption>ARCHIVED STILL / NOT LIVE</figcaption></figure>
-<figure><div class="capture-label">VISUAL MONITORING / MULTI-CAMERA VIEW</div><a href="/images/monitor-camera-multiview.webp" target="_blank" rel="noopener"><img src="/images/monitor-camera-multiview.webp" alt="Multiple camera-view stills from the supplied monitoring dashboard" loading="lazy"></a><figcaption>ARCHIVED STILL / NOT LIVE</figcaption></figure>
+<div class="capture-heading"><span>KIG / MONITORING ENVIRONMENT</span><p>Still captures from KIG-built monitoring environments. Historical imagery — not live feeds or current assessments.</p></div>
+<figure class="capture-map"><a href="/images/monitor-map-capture.webp" target="_blank" rel="noopener"><img src="/images/monitor-map-capture.webp" alt="Geographic monitoring view with layered location markers and regional overlays" loading="lazy" width="2308" height="628"></a><figcaption>GEOGRAPHIC CONTEXT / EXPAND ↗</figcaption></figure>
+<div class="camera-wall">
+<figure><div class="cam-frame"><img src="/images/cam-01.webp" alt="Archived camera still of an urban skyline under monitoring" loading="lazy" width="512" height="200"><span class="cam-id">CAM 01</span><span class="cam-state"><i></i>ARCHIVE</span></div><figcaption>URBAN OVERWATCH</figcaption></figure>
+<figure><div class="cam-frame"><img src="/images/cam-02.webp" alt="Archived camera still of a perimeter horizon under monitoring" loading="lazy" width="532" height="200"><span class="cam-id">CAM 02</span><span class="cam-state"><i></i>ARCHIVE</span></div><figcaption>PERIMETER / HORIZON</figcaption></figure>
+<figure><div class="cam-frame"><img src="/images/cam-03.webp" alt="Archived camera still of port and coastal infrastructure" loading="lazy" width="512" height="270"><span class="cam-id">CAM 03</span><span class="cam-state"><i></i>ARCHIVE</span></div><figcaption>PORT &amp; INFRASTRUCTURE</figcaption></figure>
 </div>
 </div>  <!-- Terminal Header Bar -->
-  <div style="background:#111;border:1px solid rgba(255,255,255,0.08);border-bottom:none;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;">
+  <div style="background:#141414;border:1px solid rgba(255,255,255,0.08);border-bottom:none;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;">
     <div style="display:flex;align-items:center;gap:16px;">
       <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;color:#B52B43;">KIG // GLOBAL INTELLIGENCE TERMINAL</span>
       <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#3D3D3D;">|</span>
@@ -916,7 +919,7 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
     </div>
     <div style="display:flex;align-items:center;gap:16px;">
       <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#505050;" id="kig-terminal-ts"></span>
-      <div style="display:flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.12em;color:#1A5C35;"><div class="pulse"></div>DEMO</div>
+      <div style="display:flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.12em;color:#2F6B4A;"><div class="pulse"></div>DEMO</div>
     </div>
   </div>
   <script>
@@ -939,24 +942,24 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
   </script>
 
   <!-- Data Ticker Strip -->
-  <div style="background:#111;border:1px solid rgba(255,255,255,0.08);border-top:1px solid rgba(255,255,255,0.04);border-bottom:none;padding:6px 16px;display:flex;gap:0;overflow:hidden;">
+  <div style="background:#141414;border:1px solid rgba(255,255,255,0.08);border-top:1px solid rgba(255,255,255,0.04);border-bottom:none;padding:6px 16px;display:flex;gap:0;overflow:hidden;">
     <div style="display:flex;align-items:center;gap:24px;font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.1em;white-space:nowrap;flex-wrap:nowrap;">
       <span style="color:#B52B43;margin-right:8px;">&#9632; SIGNALS</span>
-      <span style="color:#C8D4DE;">CONFLICT <span style="color:#B52B43;">HIGH ▲</span></span>
+      <span style="color:#C8D8E4;">CONFLICT <span style="color:#B52B43;">HIGH ▲</span></span>
       <span style="color:#3D3D3D;">|</span>
-      <span style="color:#C8D4DE;">NARRATIVE <span style="color:#B52B43;">ELEVATED</span></span>
+      <span style="color:#C8D8E4;">NARRATIVE <span style="color:#B52B43;">ELEVATED</span></span>
       <span style="color:#3D3D3D;">|</span>
-      <span style="color:#C8D4DE;">ELECTORAL <span style="color:#8B6914;">ACTIVE</span></span>
+      <span style="color:#C8D8E4;">ELECTORAL <span style="color:#5E7F96;">ACTIVE</span></span>
       <span style="color:#3D3D3D;">|</span>
-      <span style="color:#C8D4DE;">CYBER <span style="color:#8B6914;">MONITOR</span></span>
+      <span style="color:#C8D8E4;">CYBER <span style="color:#5E7F96;">MONITOR</span></span>
       <span style="color:#3D3D3D;">|</span>
-      <span style="color:#C8D4DE;">THEATERS <span style="color:#B52B43;">5 ACTIVE</span></span>
+      <span style="color:#C8D8E4;">THEATERS <span style="color:#B52B43;">5 ACTIVE</span></span>
       <span style="color:#3D3D3D;">|</span>
-      <span style="color:#C8D4DE;">SOURCES <span style="color:#1A5C35;">14 CONNECTED</span></span>
+      <span style="color:#C8D8E4;">SOURCES <span style="color:#2F6B4A;">14 CONNECTED</span></span>
       <span style="color:#3D3D3D;">|</span>
-      <span style="color:#C8D4DE;">LANGUAGES <span style="color:#C8D4DE;">25+</span></span>
+      <span style="color:#C8D8E4;">LANGUAGES <span style="color:#C8D8E4;">25+</span></span>
       <span style="color:#3D3D3D;">|</span>
-      <span style="color:#C8D4DE;">RISK INDEX <span style="color:#B52B43;">58 ELEVATED</span></span>
+      <span style="color:#C8D8E4;">RISK INDEX <span style="color:#B52B43;">58 ELEVATED</span></span>
     </div>
   </div>
 
@@ -964,9 +967,9 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
   <div style="display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:1px;background:rgba(255,255,255,0.07);margin-bottom:1px;border:1px solid rgba(255,255,255,0.08);" class="reveal mon-main-grid">
 
     <!-- PANEL 1: Country Instability -->
-    <div style="background:#111;">
+    <div style="background:#141414;">
       <div style="border-top:2px solid #B52B43;padding:10px 16px;background:#141414;display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D4DE;">COUNTRY INSTABILITY</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D8E4;">COUNTRY INSTABILITY</span>
         <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#B52B43;letter-spacing:.1em;" id="kig-defcon">DEFCON <span id="kig-defcon-num">4</span></span>
       </div>
       <div style="padding:16px;display:flex;flex-direction:column;gap:8px;" id="kig-instability">
@@ -975,10 +978,10 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
     </div>
 
     <!-- PANEL 2: Live Intel Feed -->
-    <div style="background:#111;display:flex;flex-direction:column;border-left:1px solid rgba(255,255,255,0.06);border-right:1px solid rgba(255,255,255,0.06);">
-      <div style="border-top:2px solid #1A5C35;padding:10px 16px;background:#141414;display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D4DE;">LIVE INTEL FEED</span>
-        <span style="color:#1A5C35;display:flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:7.5px;"><div class="pulse"></div><span id="kig-feed-count">0</span> SIGNALS</span>
+    <div style="background:#141414;display:flex;flex-direction:column;border-left:1px solid rgba(255,255,255,0.06);border-right:1px solid rgba(255,255,255,0.06);">
+      <div style="border-top:2px solid #2F6B4A;padding:10px 16px;background:#141414;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D8E4;">LIVE INTEL FEED</span>
+        <span style="color:#2F6B4A;display:flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:7.5px;"><div class="pulse"></div><span id="kig-feed-count">0</span> SIGNALS</span>
       </div>
       <div style="padding:16px;display:flex;flex-direction:column;gap:5px;flex:1;overflow-y:auto;max-height:380px;" id="kig-feed">
         <!-- populated by JS -->
@@ -986,10 +989,10 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
     </div>
 
     <!-- PANEL 3: Strategic Risk Overview -->
-    <div style="background:#111;">
-      <div style="border-top:2px solid #8B6914;padding:10px 16px;background:#141414;display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D4DE;">STRATEGIC RISK</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#8B6914;">OVERVIEW</span>
+    <div style="background:#141414;">
+      <div style="border-top:2px solid #5E7F96;padding:10px 16px;background:#141414;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D8E4;">STRATEGIC RISK</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#5E7F96;">OVERVIEW</span>
       </div>
       <div style="padding:16px;">
       <!-- Big risk dial -->
@@ -1009,7 +1012,7 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
           <text x="68" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#9AABB8">MED</text>
           <text x="130" y="96" font-family="IBM Plex Mono,monospace" font-size="7" fill="#9AABB8">CRIT</text>
           <!-- score -->
-          <text x="80" y="68" font-family="Barlow Condensed,sans-serif" font-size="26" font-weight="800" fill="#EDF2F7" text-anchor="middle" id="kig-risk-score">58</text>
+          <text x="80" y="68" font-family="Barlow Condensed,sans-serif" font-size="26" font-weight="800" fill="#E8F0F8" text-anchor="middle" id="kig-risk-score">58</text>
           <text x="80" y="78" font-family="IBM Plex Mono,monospace" font-size="6" fill="#9AABB8" text-anchor="middle">GLOBAL RISK INDEX</text>
         </svg>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:#B52B43;margin-top:4px;" id="kig-risk-label">ELEVATED</div>
@@ -1024,12 +1027,12 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
   </div><!-- /main grid -->
 
   <!-- Bottom row: Signal categories + cross-source aggregator -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.08);border-top:none;" class="reveal mon-bot-grid">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.08);border-top:none;" class="reveal mon-bot-grid kig-keep-grid">
 
     <!-- Signal Categories -->
-    <div style="background:#111;">
+    <div style="background:#141414;">
       <div style="border-top:2px solid #505050;padding:10px 16px;background:#141414;">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D4DE;">SIGNAL BREAKDOWN BY CATEGORY</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D8E4;">SIGNAL BREAKDOWN BY CATEGORY</span>
       </div>
       <div style="padding:16px;">
       <div style="display:flex;flex-direction:column;gap:8px;" id="kig-categories">
@@ -1039,9 +1042,9 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
     </div><!-- /signal categories -->
 
     <!-- Cross-Source Aggregator -->
-    <div style="background:#111;border-left:1px solid rgba(255,255,255,0.06);">
-      <div style="border-top:2px solid #1A5C35;padding:10px 16px;background:#141414;">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D4DE;">CROSS-SOURCE SIGNAL AGGREGATOR</span>
+    <div style="background:#141414;border-left:1px solid rgba(255,255,255,0.06);">
+      <div style="border-top:2px solid #2F6B4A;padding:10px 16px;background:#141414;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D8E4;">CROSS-SOURCE SIGNAL AGGREGATOR</span>
       </div>
       <div style="padding:16px;">
         <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;" id="kig-sources">
@@ -1049,19 +1052,19 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
         </div>
         <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:12px;">
           <div style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.14em;text-transform:uppercase;color:#505050;margin-bottom:8px;">AI STRATEGIC POSTURE</div>
-          <div style="font-size:11.5px;color:#C8D4DE;line-height:1.7;font-family:'IBM Plex Sans',sans-serif;" id="kig-posture">Analyzing cross-theater signals...</div>
+          <div style="font-size:11.5px;color:#C8D8E4;line-height:1.7;font-family:'IBM Plex Sans',sans-serif;" id="kig-posture">Analyzing cross-theater signals...</div>
         </div>
       </div>
     </div>
   </div><!-- /bottom grid -->
 
   <!-- CTA -->
-  <div class="reveal" style="margin-top:1px;padding:24px 28px;background:rgba(181,43,67,0.05);border:1px solid rgba(181,43,67,0.18);border-top:2px solid rgba(181,43,67,0.4);display:flex;align-items:center;justify-content:space-between;gap:24px;">
+  <div class="reveal mon-cta-row" style="margin-top:1px;padding:24px 28px;background:rgba(181,43,67,0.05);border:1px solid rgba(181,43,67,0.18);border-top:2px solid rgba(181,43,67,0.4);display:flex;align-items:center;justify-content:space-between;gap:24px;">
     <div>
       <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#B52B43;margin-bottom:6px;">// REPRESENTATIVE SAMPLE ONLY</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#EDF2F7;">We build this for your environment — your threats, your regions, your sources.</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#E8F0F8;">We build this for your environment — your threats, your regions, your sources.</div>
     </div>
-    <a href="#contact" class="btn-primary" style="flex-shrink:0;white-space:nowrap;">Schedule a Confidential Call →</a>
+    <a href="#contact" class="btn-primary mon-cta" style="flex-shrink:0;">Schedule a Confidential Call →</a>
   </div>
 
 </div>
@@ -1099,8 +1102,8 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
   var categories = [
     {name:'Conflict',      count:34, pct:80, color:'#B52B43'},
     {name:'Narrative',     count:28, pct:65, color:'#B52B43'},
-    {name:'Political',     count:22, pct:52, color:'#8B6914'},
-    {name:'Cyber',         count:18, pct:42, color:'#8B6914'},
+    {name:'Political',     count:22, pct:52, color:'#5E7F96'},
+    {name:'Cyber',         count:18, pct:42, color:'#5E7F96'},
     {name:'Supply Chain',  count:14, pct:33, color:'#909090'},
     {name:'Market',        count:11, pct:26, color:'#909090'},
     {name:'Military',      count:9,  pct:21, color:'#909090'},
@@ -1116,23 +1119,23 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
     'Supply chain disruption signals compounding with geopolitical instability. Black Sea and Strait of Hormuz corridors flagged for client exposure.',
   ];
 
-  var sevColors = {HIGH:'#c04040', ACT:'#a07020', MON:'#9AABB8'};
+  var sevColors = {HIGH:'#CE5368', ACT:'#8FA8BC', MON:'#9AABB8'};
   var sevBg     = {HIGH:'rgba(181,43,67,0.1)', ACT:'rgba(139,105,20,0.1)', MON:'rgba(255,255,255,0.03)'};
   var sevBorder = {HIGH:'rgba(181,43,67,0.3)', ACT:'rgba(139,105,20,0.3)', MON:'rgba(255,255,255,0.08)'};
-  var statusColor= {CRIT:'#B52B43', ELEV:'#8B6914', NORM:'#1A5C35'};
+  var statusColor= {CRIT:'#B52B43', ELEV:'#5E7F96', NORM:'#2F6B4A'};
 
   function buildInstability(){
     var el = document.getElementById('kig-instability');
     if(!el) return;
     el.innerHTML = countries.map(function(c){
       var w = c.score + '%';
-      var col = c.score>=90?'#B52B43':c.score>=70?'#8B6914':'#3D5C3A';
+      var col = c.score>=90?'#B52B43':c.score>=70?'#5E7F96':'#2F6B4A';
       return '<div style="display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;">' +
-          '<span style="font-family:IBM Plex Mono,monospace;font-size:8px;color:#C8D4DE;letter-spacing:.08em;">' + c.name + '</span>' +
+          '<span style="font-family:IBM Plex Mono,monospace;font-size:8px;color:#C8D8E4;letter-spacing:.08em;">' + c.name + '</span>' +
           '<span style="font-family:IBM Plex Mono,monospace;font-size:9px;font-weight:600;color:' + (statusColor[c.status]||'#9AABB8') + ';min-width:28px;text-align:right;">' + c.score + '</span>' +
           '<span style="font-family:IBM Plex Mono,monospace;font-size:7px;padding:1px 5px;border:1px solid ' + (statusColor[c.status]||'#9AABB8') + ';color:' + (statusColor[c.status]||'#9AABB8') + ';">' + c.status + '</span>' +
         '</div>' +
-        '<div style="height:2px;background:#1E1E1E;margin-bottom:2px;">' +
+        '<div style="height:2px;background:#222222;margin-bottom:2px;">' +
           '<div style="height:2px;background:' + col + ';width:0;transition:width 1.5s ease;" class="kig-bar" data-w="' + w + '"></div>' +
         '</div>';
     }).join('');
@@ -1147,7 +1150,7 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
       return '<div style="display:flex;gap:8px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);">' +
         '<span style="font-family:IBM Plex Mono,monospace;font-size:7px;letter-spacing:.06em;padding:2px 5px;border:1px solid ' + sevBorder[item.sev] + ';background:' + sevBg[item.sev] + ';color:' + sevColors[item.sev] + ';flex-shrink:0;margin-top:1px;">' + item.sev + '</span>' +
         '<div>' +
-          '<div style="font-size:11px;color:#C8D4DE;line-height:1.35;margin-bottom:2px;">' + item.text + '</div>' +
+          '<div style="font-size:11px;color:#C8D8E4;line-height:1.35;margin-bottom:2px;">' + item.text + '</div>' +
           '<div style="font-family:IBM Plex Mono,monospace;font-size:7px;color:#909090;letter-spacing:.08em;">' + item.cat + '</div>' +
         '</div>' +
       '</div>';
@@ -1159,7 +1162,7 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
     if(!el) return;
     el.innerHTML = theaters.map(function(t){
       return '<div style="display:flex;align-items:center;justify-content:space-between;padding:7px 10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">' +
-        '<span style="font-family:IBM Plex Mono,monospace;font-size:9px;color:#C8D4DE;letter-spacing:.06em;">' + t.name + '</span>' +
+        '<span style="font-family:IBM Plex Mono,monospace;font-size:9px;color:#C8D8E4;letter-spacing:.06em;">' + t.name + '</span>' +
         '<div style="display:flex;align-items:center;gap:8px;">' +
           '<span style="font-family:IBM Plex Mono,monospace;font-size:7.5px;color:#909090;">' + t.detail + '</span>' +
           '<span style="font-family:IBM Plex Mono,monospace;font-size:7px;padding:2px 6px;border:1px solid ' + (statusColor[t.status]||'#9AABB8') + ';color:' + (statusColor[t.status]||'#9AABB8') + ';opacity:.8;">' + t.status + '</span>' +
@@ -1173,7 +1176,7 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
     if(!el) return;
     el.innerHTML = categories.map(function(c){
       return '<div style="display:grid;grid-template-columns:90px 1fr 32px;gap:8px;align-items:center;">' +
-        '<span style="font-family:IBM Plex Mono,monospace;font-size:8px;letter-spacing:.08em;color:#C8D4DE;">' + c.name + '</span>' +
+        '<span style="font-family:IBM Plex Mono,monospace;font-size:8px;letter-spacing:.08em;color:#C8D8E4;">' + c.name + '</span>' +
         '<div style="height:3px;background:#2C2C2C;">' +
           '<div style="height:3px;background:' + c.color + ';width:0%;transition:width 1.8s ease;" class="kig-bar" data-w="' + c.pct + '%"></div>' +
         '</div>' +
@@ -1187,7 +1190,7 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
     if(!el) return;
     el.innerHTML = sources.map(function(s){
       var active = Math.random() > 0.3;
-      return '<span style="font-family:IBM Plex Mono,monospace;font-size:7px;letter-spacing:.1em;padding:3px 8px;border:1px solid rgba(255,255,255,' + (active?'0.12':'0.05') + ');color:' + (active?'#C8D4DE':'#3D3D3D') + ';transition:all .3s;">' + s + '</span>';
+      return '<span style="font-family:IBM Plex Mono,monospace;font-size:7px;letter-spacing:.1em;padding:3px 8px;border:1px solid rgba(255,255,255,' + (active?'0.12':'0.05') + ');color:' + (active?'#C8D8E4':'#3D3D3D') + ';transition:all .3s;">' + s + '</span>';
     }).join('');
   }
 
@@ -1234,10 +1237,10 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
     if(items.length===0) return;
     var idx = Math.floor(Math.random()*items.length);
     items[idx].style.borderColor = 'rgba(181,43,67,0.6)';
-    items[idx].style.color = '#EDF2F7';
+    items[idx].style.color = '#E8F0F8';
     setTimeout(function(){
       items[idx].style.borderColor = 'rgba(255,255,255,0.12)';
-      items[idx].style.color = '#C8D4DE';
+      items[idx].style.color = '#C8D8E4';
     }, 600);
   }
 
@@ -1544,35 +1547,11 @@ if (mobileNavToggle && primaryNavigation) {
 
 <!-- KIG INTELLIGENCE CHAT WIDGET -->
 <style>
-#kig-chat-btn{position:fixed;bottom:28px;right:28px;z-index:9000;width:52px;height:52px;background:#B52B43;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(181,43,67,0.35);transition:all .2s;}
-#kig-chat-btn:hover{background:#CE5368;transform:translateY(-2px);}
-#kig-chat-btn svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-#kig-chat-window{position:fixed;bottom:92px;right:28px;z-index:8999;width:360px;max-height:520px;background:#1a1a1a;border:1px solid rgba(181,43,67,0.35);display:none;flex-direction:column;box-shadow:0 8px 48px rgba(0,0,0,0.7);}
-#kig-chat-window.open{display:flex;}
-#kig-chat-hdr{padding:14px 18px;background:#222;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-#kig-chat-hdr-left{display:flex;align-items:center;gap:10px;}
-.kig-chat-dot{width:6px;height:6px;border-radius:50%;background:#B52B43;animation:p 2.5s ease infinite;}
-#kig-chat-hdr-title{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#C8D4DE;}
-#kig-chat-close{background:none;border:none;cursor:pointer;color:#909090;font-size:16px;line-height:1;padding:0;transition:color .15s;}
-#kig-chat-close:hover{color:#C8D4DE;}
-#kig-chat-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:200px;max-height:340px;}
-#kig-chat-msgs::-webkit-scrollbar{width:3px;}
-#kig-chat-msgs::-webkit-scrollbar-thumb{background:#3D3D3D;}
-.kig-msg{max-width:85%;font-family:'IBM Plex Sans',sans-serif;font-size:12px;line-height:1.6;padding:10px 13px;border:1px solid;}
-.kig-msg.agent{background:rgba(181,43,67,0.08);border-color:rgba(181,43,67,0.25);color:#C8D4DE;align-self:flex-start;}
-.kig-msg.user{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);color:#EDF2F7;align-self:flex-end;}
 .kig-typing{display:flex;gap:4px;align-items:center;padding:10px 13px;background:rgba(181,43,67,0.06);border:1px solid rgba(181,43,67,0.2);align-self:flex-start;}
 .kig-typing span{width:5px;height:5px;background:#B52B43;border-radius:50%;animation:kig-tdot 1.2s ease infinite;}
 .kig-typing span:nth-child(2){animation-delay:.2s;}
 .kig-typing span:nth-child(3){animation-delay:.4s;}
 @keyframes kig-tdot{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
-#kig-chat-input-row{padding:12px;border-top:1px solid rgba(255,255,255,0.07);display:flex;gap:8px;flex-shrink:0;background:#1a1a1a;}
-#kig-chat-input{flex:1;background:#2C2C2C;border:1px solid #555;color:#EDF2F7;font-family:'IBM Plex Sans',sans-serif;font-size:12px;padding:9px 12px;outline:none;resize:none;line-height:1.4;}
-#kig-chat-input:focus{border-color:#C8D4DE;}
-#kig-chat-input::placeholder{color:#909090;}
-#kig-chat-send{background:#B52B43;border:none;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s;align-self:flex-end;}
-#kig-chat-send:hover{background:#CE5368;}
-#kig-chat-send svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 
 
 /* ── MOBILE RESPONSIVE FIXES ── */
@@ -1734,11 +1713,9 @@ if (mobileNavToggle && primaryNavigation) {
   .logos{padding:16px;gap:18px}
   .logos img{max-width:38vw;height:auto !important;max-height:28px;object-fit:contain}
   .strip-dark,.strip-crim{padding:22px 20px}
-  #kig-chat-window{
     width:calc(100vw - 32px);max-width:400px;
     right:16px;bottom:80px;max-height:min(70svh,520px)
   }
-  #kig-chat-btn{right:16px;bottom:16px}
   [id]{scroll-margin-top:90px}
 }
 
@@ -1807,151 +1784,7 @@ if (mobileNavToggle && primaryNavigation) {
 }
 </style>
 
-<button id="kig-chat-btn" onclick="toggleKIGChat()" aria-label="Speak with KIG">
-  <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-</button>
 
-<div id="kig-chat-window">
-  <div id="kig-chat-hdr">
-    <div id="kig-chat-hdr-left">
-      <div class="kig-chat-dot"></div>
-      <span id="kig-chat-hdr-title">KIG // Intelligence Desk</span>
-    </div>
-    <button id="kig-chat-close" onclick="toggleKIGChat()">&#x2715;</button>
-  </div>
-  <div id="kig-chat-msgs"></div>
-  <div id="kig-chat-input-row">
-    <textarea id="kig-chat-input" placeholder="Describe your situation or what you need..." aria-label="Describe your situation or what you need..." rows="2"></textarea>
-    <button id="kig-chat-send" onclick="sendKIGMessage()">
-      <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-    </button>
-  </div>
-</div>
-
-<script>
-(function(){
-  (function(){
-  var FORMSPREE = 'https://formspree.io/f/mykbaegd'; // Molly: replace with actual Formspree form ID
-
-  var SYSTEM = 'You are the KIG Intelligence Desk - a professional intake specialist for Kronus Intelligence Group (KIG). Your job is to have a brief, focused conversation to understand the visitor\'s project, then collect their contact details so the KIG team can follow up.\n\nConduct the intake in this order:\n1. Greet them and ask what brings them in (active situation, capability they need built, or something else)\n2. Ask ONE clarifying follow-up question about their specific situation or need\n3. Ask what region or geography is relevant (if applicable)\n4. Ask for their name, organization, and best email address\n5. Confirm everything and tell them the KIG team will be in touch within 24 hours\n\nRules:\n- Keep responses to 2-3 sentences max\n- Be direct and professional - intelligence industry tone\n- Never discuss pricing\n- Never make promises about outcomes\n- When you have collected name, org, email, and project summary, say exactly: INTAKE_COMPLETE followed by a JSON block like: {"name":"X","org":"Y","email":"Z","summary":"W"}';
-
-  var msgs = [];
-  var chatOpen = false;
-  var intakeData = null;
-
-  function toggleKIGChat(){
-    chatOpen = !chatOpen;
-    var win = document.getElementById('kig-chat-window');
-    if(chatOpen){
-      win.classList.add('open');
-      if(msgs.length===0) initChat();
-      setTimeout(function(){document.getElementById('kig-chat-input').focus();},100);
-    } else {
-      win.classList.remove('open');
-    }
-  }
-  window.toggleKIGChat = toggleKIGChat;
-
-  function initChat(){
-    addMsg('agent','KIG Intelligence Desk. What brings you here today - active situation, capability you need built, or something else?');
-  }
-
-  function addMsg(role, text){
-    var c = document.getElementById('kig-chat-msgs');
-    var d = document.createElement('div');
-    d.className = 'kig-msg ' + role;
-    // Strip INTAKE_COMPLETE and JSON from display
-    var displayText = text.replace(/INTAKE_COMPLETE[\s\S]*/,'').trim();
-    if(!displayText) displayText = 'Thank you. A member of the KIG team will be in touch within 24 hours.';
-    d.textContent = displayText;
-    c.appendChild(d);
-    c.scrollTop = c.scrollHeight;
-    msgs.push({role: role==='agent'?'assistant':'user', content: text});
-    // Check for intake completion
-    if(role==='agent' && text.indexOf('INTAKE_COMPLETE')>-1){
-      var jsonMatch = text.match(/\{[\s\S]+\}/);
-      if(jsonMatch){
-        try{
-          intakeData = JSON.parse(jsonMatch[0]);
-          submitIntake(intakeData);
-        }catch(e){}
-      }
-    }
-  }
-
-  function submitIntake(data){
-    // Send to Formspree → email to project@kronusintelligencegroup.com
-    fetch(FORMSPREE, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify({
-        subject: 'KIG Website Inquiry - ' + (data.org || 'Unknown Org'),
-        name: data.name || 'Unknown',
-        email: data.email || 'Unknown',
-        organization: data.org || 'Unknown',
-        summary: data.summary || 'No summary captured',
-        source: 'KIG Website Chat Widget',
-        _replyto: data.email || ''
-      })
-    }).then(function(r){
-      console.log('KIG intake submitted:', r.status);
-    }).catch(function(e){
-      console.log('Intake submission error:', e);
-    });
-  }
-
-  function showTyping(){
-    var c = document.getElementById('kig-chat-msgs');
-    var d = document.createElement('div');
-    d.className='kig-typing'; d.id='kig-typing';
-    d.innerHTML='<span></span><span></span><span></span>';
-    c.appendChild(d); c.scrollTop=c.scrollHeight;
-  }
-
-  function removeTyping(){
-    var t=document.getElementById('kig-typing');
-    if(t) t.remove();
-  }
-
-  async function callClaude(){
-    showTyping();
-    try {
-      var res = await fetch('https://api.anthropic.com/v1/messages',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({
-          model:'claude-sonnet-4-20250514',
-          max_tokens:300,
-          system:SYSTEM,
-          messages:msgs.filter(function(m){return m.role!=='assistant'||!m.content.includes('INTAKE_COMPLETE');})
-        })
-      });
-      var data = await res.json();
-      removeTyping();
-      var reply = data.content && data.content[0] ? data.content[0].text : 'Thank you. Please email us directly at project@kronusintelligencegroup.com';
-      addMsg('agent',reply);
-    } catch(err){
-      removeTyping();
-      addMsg('agent','Connection issue. Please email us directly: project@kronusintelligencegroup.com');
-    }
-  }
-
-  function sendKIGMessage(){
-    var input = document.getElementById('kig-chat-input');
-    var text = input.value.trim();
-    if(!text) return;
-    input.value='';
-    addMsg('user',text);
-    callClaude();
-  }
-  window.sendKIGMessage = sendKIGMessage;
-
-  document.getElementById('kig-chat-input').addEventListener('keydown',function(e){
-    if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendKIGMessage();}
-  });
-})();})();
-</script>
-<!-- END KIG CHAT -->
 
 </body>
 </html>
