@@ -1137,7 +1137,11 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
     }, 600);
   }
 
-  // Build everything
+  // Build everything — deferred off the critical initial-load path (matches
+  // the camera-wall hydration pattern) so this doesn't cost main-thread time
+  // during first paint. Runs on idle, or immediately if idle callbacks aren't
+  // available.
+  function runMonitorInit(){
   buildInstability();
   buildFeed();
   buildTheaters();
@@ -1196,6 +1200,10 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
     }, {threshold:0.1});
     monObs.observe(monSec);
   }
+  } // end runMonitorInit
+
+  if('requestIdleCallback' in window){ requestIdleCallback(runMonitorInit, {timeout:1500}); }
+  else { setTimeout(runMonitorInit, 150); }
 })();
 </script>
 <!-- END KIG MONITOR SECTION -->
