@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="/kig-base.css">
 <link rel="stylesheet" href="/site-polish.css">
 <link rel="stylesheet" href="/navigation.css">
+<script src="/nav-dropdown.js" defer></script>
 <link rel="stylesheet" href="/site-shell.css">
 <link rel="stylesheet" href="/quick-brief.css">
 <style>
@@ -539,17 +540,33 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 .pillar-insights a:hover{color:var(--cream);text-decoration:underline}
 .pillar-cta-row{padding:56px 48px;text-align:center}
 @media(max-width:800px){.pillar-caps,.pillar-deliv{grid-template-columns:1fr}}
+
+/* Sept 25 revision: texture, callout, sample panel, cross-page nav */
+body::before{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:100% 80px}
+.pillar-hero{position:relative;overflow:hidden}
+.pillar-hero::before{content:'';position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center 35%/cover no-repeat;opacity:.24;z-index:0;pointer-events:none}
+.pillar-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,26,26,0.88) 0%,rgba(26,26,26,0.97) 100%);z-index:0;pointer-events:none}
+.pillar-hero>*{position:relative;z-index:1}
+.pillar-callout{font-family:var(--mono);font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--crim-lt,#CE5368);margin-bottom:8px;display:block}
+.pillar-sample{max-width:460px;border:1px solid var(--border);background:var(--gr);margin-top:8px}
+.pillar-sample-hdr{padding:10px 18px;border-bottom:1px solid var(--border);font-family:var(--mono);font-size:8px;letter-spacing:.12em;color:var(--dust);display:flex;justify-content:space-between}
+.pillar-dash-link{display:inline-block;margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--crim-lt,#CE5368);text-decoration:none;letter-spacing:.03em}
+.pillar-dash-link:hover{text-decoration:underline}
+.pillar-nav-between{max-width:1160px;margin:0 auto;padding:0 48px 56px;display:flex;justify-content:space-between;gap:16px;font-family:var(--mono);font-size:12px;letter-spacing:.03em}
+.pillar-nav-between a{color:var(--crim-lt,#CE5368);text-decoration:none;max-width:46%}
+.pillar-nav-between a:hover{text-decoration:underline}
+@media(max-width:700px){.pillar-nav-between{flex-direction:column;gap:14px}.pillar-nav-between a{max-width:100%}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Kronus Intelligence Group","alternateName":"KIG","url":"https://kronusintelligencegroup.com/","logo":"https://kronusintelligencegroup.com/images/kig-logo-horizontal.png","description":"Protective intelligence firm that builds and operates intelligence programs for principals, institutions, and dealmakers.","email":"project@kronusintelligencegroup.com","sameAs":["https://www.linkedin.com/company/kronus-intelligence-group"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Executive Protective Intelligence","provider":{"@type":"Organization","name":"Kronus Intelligence Group"},"url":"https://kronusintelligencegroup.com/principal-protective-intelligence"}</script>
 </head>
 <body class="insights-page">
-<nav class="kig-site-nav" aria-label="Main navigation"><a href="/" aria-label="Kronus Intelligence Group home"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-site-links"><a href="/#services">Services</a><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></nav>
+<nav class="kig-site-nav" aria-label="Main navigation"><a href="/" aria-label="Kronus Intelligence Group home"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-site-links"><div class="kig-nav-drop"><button type="button" class="kig-nav-drop-btn" aria-expanded="false" aria-haspopup="true">Services</button><div class="kig-nav-drop-menu" role="menu"><a role="menuitem" href="/principal-protective-intelligence">Principal &amp; Executive Protective Intelligence</a><a role="menuitem" href="/institutional-threat-intelligence">Institutional &amp; Infrastructure Threat Intelligence</a><a role="menuitem" href="/counterparty-deal-intelligence">Counterparty &amp; Deal-Level Intelligence</a><a role="menuitem" href="/narrative-threat-intelligence">Narrative &amp; Reputational Threat Intelligence</a><a role="menuitem" href="/#services">All Services</a></div></div><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></nav>
 <main>
 <div class="pillar-hero">
 <div class="eyebrow">01 // Protective Intelligence</div>
 <h1>PRINCIPAL &amp; <em>EXECUTIVE PROTECTIVE INTELLIGENCE</em></h1>
-<p class="pillar-audience">Protection built around a specific person's actual exposure - not a generic security template.</p>
+<div class="pillar-callout">// WHO THIS IS FOR</div><p class="pillar-audience">Protection built around a specific person's actual exposure - not a generic security template.</p>
 <p class="pillar-audience">For principals, executives, and family offices where the security detail, the motorcade, and the hardened office only matter once a more fundamental question has been answered: who actually poses a threat, and what are they prepared to do.</p>
 </div>
 
@@ -557,12 +574,13 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 <h2 class="headline">WHAT WE <em>BUILD AND OPERATE.</em></h2>
 <div class="pillar-caps">
 <div class="pillar-cap svc-item"><div class="svc-line"></div><div><div class="svc-name">Threat &amp; Vulnerability Assessment</div><div class="svc-desc">Baseline risk profile across physical, digital, and reputational exposure before anything is deployed. It is a structured analytical process that evaluates the full threat environment around a specific individual - mapping actors, motivation, capability, intent, and trajectory - rather than a background check or a social media audit.</div></div></div>
-<div class="pillar-cap svc-item"><div class="svc-line"></div><div><div class="svc-name">Protective Intelligence Advance</div><div class="svc-desc">Threat analysis for destinations and events on your principal's calendar, so travel and appearances are evaluated against a real threat picture rather than assumed to be safe by default. Like the rest of a KIG protective intelligence program, findings are analyst-reviewed and scoped to the principal's actual itinerary, not a generic template.</div></div></div>
+<div class="pillar-cap svc-item"><div class="svc-line"></div><div><div class="svc-name">Protective Intelligence Advance</div><div class="svc-desc">Threat analysis for destinations and events on your principal's calendar, so travel and appearances are evaluated against a real threat picture rather than assumed to be safe by default. Like the rest of a KIG protective intelligence program, findings are analyst-reviewed and scoped to the principal's actual itinerary.</div></div></div>
 <div class="pillar-cap svc-item"><div class="svc-line"></div><div><div class="svc-name">Digital Footprint Reduction</div><div class="svc-desc">Identify and prioritize exposure across data brokers, social platforms, and open-source sources, then coordinate lawful reduction measures. Senior executives present an asymmetric intelligence problem: the data aggregated about them through public records, broker databases, social platforms, and filings can give an adversary enough raw material to build a targeting package. This is the disciplined process of auditing that exposure, suppressing what is most operationally exploitable, hardening what cannot be removed, and monitoring continuously for re-emergence.</div></div></div>
 <div class="pillar-cap svc-item"><div class="svc-line"></div><div><div class="svc-name">Ongoing Monitoring</div><div class="svc-desc">Continuous watch for direct threats, doxxing, and targeting patterns tied to the principal, so the threat picture built during assessment stays current rather than going stale the day it is delivered. Findings are reviewed by analysts on an ongoing basis, not generated and left unattended.</div></div></div>
 </div>
 </section>
 
+<section class="pillar-section" style="padding-top:0"><div class="pillar-callout">// SAMPLE SIGNAL</div><div class="pillar-sample"><div class="pillar-sample-hdr"><span>SIGNAL FEED</span><span>SAMPLE</span></div><div class="ti"><span class="sev sev-h">HIGH</span><div><div class="ti-t">Coordinated disinformation targeting executive leadership</div><div class="ti-m">NARRATIVE · SOCIAL · BOT-AMPLIFIED</div></div></div></div><a class="pillar-dash-link" href="/dashboards">See everything a KIG dashboard can include →</a></section>
 <section class="pillar-section">
 <h2 class="headline">WHAT YOU <em>GET.</em></h2>
 <div class="pillar-deliv">
@@ -585,6 +603,7 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 <a href="/contact?inquiry=principal" class="btn-primary">Schedule a Confidential Call →</a>
 </div>
 </main>
-<footer class="kig-footer"><div class="kig-footer-top"><a href="/"><img class="kig-footer-logo" src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-footer-links"><a href="/#services">Services</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></div><div class="kig-press"><span>Seen In</span><a href="https://www.forbes.com/sites/kolawolesamueladebayo/2025/06/05/ai-roi-isnt-just-dollars-how-to-measure-intangible-wins/" target="_blank" rel="noopener" aria-label="Forbes"><img src="/images/forbes-logo.png" alt="Forbes" width="600" height="162"></a><a href="https://www.foxnews.com/video/6375181954112" target="_blank" rel="noopener" aria-label="Fox News"><img src="/images/fox-news-logo.png" alt="Fox News" width="600" height="113"></a><a href="https://www.ien.com/redzone/blog/22950979/the-ai-race-rd-could-determine-the-outcome" target="_blank" rel="noopener" aria-label="Industrial Equipment News"><img src="/images/ien-logo.png" alt="Industrial Equipment News" width="600" height="291"></a></div><p class="kig-footer-note">© 2026 Kronus Intelligence Group.</p></footer>
+<div class="pillar-nav-between"><a href="/narrative-threat-intelligence">← Narrative &amp; Reputational Threat Intelligence</a><a href="/institutional-threat-intelligence">Institutional &amp; Infrastructure Threat Intelligence →</a></div>
+<footer class="kig-footer"><div class="kig-footer-top"><a href="/"><img class="kig-footer-logo" src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-footer-links"><a href="/#services">Services</a><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></div><div class="kig-press"><span>Seen In</span><a href="https://www.forbes.com/sites/kolawolesamueladebayo/2025/06/05/ai-roi-isnt-just-dollars-how-to-measure-intangible-wins/" target="_blank" rel="noopener" aria-label="Forbes"><img src="/images/forbes-logo.png" alt="Forbes" width="600" height="162"></a><a href="https://www.foxnews.com/video/6375181954112" target="_blank" rel="noopener" aria-label="Fox News"><img src="/images/fox-news-logo.png" alt="Fox News" width="600" height="113"></a><a href="https://www.ien.com/redzone/blog/22950979/the-ai-race-rd-could-determine-the-outcome" target="_blank" rel="noopener" aria-label="Industrial Equipment News"><img src="/images/ien-logo.png" alt="Industrial Equipment News" width="600" height="291"></a></div><p class="kig-footer-note">© 2026 Kronus Intelligence Group.</p></footer>
 </body>
 </html>

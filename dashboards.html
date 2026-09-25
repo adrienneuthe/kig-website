@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="/kig-base.css">
 <link rel="stylesheet" href="/site-polish.css">
 <link rel="stylesheet" href="/navigation.css">
+<script src="/nav-dropdown.js" defer></script>
 <link rel="stylesheet" href="/site-shell.css">
 <link rel="stylesheet" href="/quick-brief.css">
 <link rel="stylesheet" href="/demo.css">
@@ -548,12 +549,18 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 .dash-cta-row{padding:56px 48px;text-align:center}
 @media(max-width:900px){.dash-mod-grid,.dash-aud-grid,.dash-process{grid-template-columns:1fr}}
 @media(min-width:901px) and (max-width:1100px){.dash-mod-grid{grid-template-columns:repeat(2,1fr)}}
+/* Sept 25 revision: texture treatment to match pillar pages */
+body::before{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:100% 80px}
+.dash-hero{position:relative;overflow:hidden}
+.dash-hero::before{content:'';position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center 35%/cover no-repeat;opacity:.24;z-index:0;pointer-events:none}
+.dash-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,26,26,0.88) 0%,rgba(26,26,26,0.97) 100%);z-index:0;pointer-events:none}
+.dash-hero>*{position:relative;z-index:1}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Kronus Intelligence Group","alternateName":"KIG","url":"https://kronusintelligencegroup.com/","logo":"https://kronusintelligencegroup.com/images/kig-logo-horizontal.png","description":"Protective intelligence firm that builds and operates intelligence programs for principals, institutions, and dealmakers.","email":"project@kronusintelligencegroup.com","sameAs":["https://www.linkedin.com/company/kronus-intelligence-group"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Dashboards | Kronus Intelligence Group","url":"https://kronusintelligencegroup.com/dashboards"}</script>
 </head>
 <body class="insights-page">
-<nav class="kig-site-nav" aria-label="Main navigation"><a href="/" aria-label="Kronus Intelligence Group home"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-site-links"><a href="/#services">Services</a><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></nav>
+<nav class="kig-site-nav" aria-label="Main navigation"><a href="/" aria-label="Kronus Intelligence Group home"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-site-links"><div class="kig-nav-drop"><button type="button" class="kig-nav-drop-btn" aria-expanded="false" aria-haspopup="true">Services</button><div class="kig-nav-drop-menu" role="menu"><a role="menuitem" href="/principal-protective-intelligence">Principal &amp; Executive Protective Intelligence</a><a role="menuitem" href="/institutional-threat-intelligence">Institutional &amp; Infrastructure Threat Intelligence</a><a role="menuitem" href="/counterparty-deal-intelligence">Counterparty &amp; Deal-Level Intelligence</a><a role="menuitem" href="/narrative-threat-intelligence">Narrative &amp; Reputational Threat Intelligence</a><a role="menuitem" href="/#services">All Services</a></div></div><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></nav>
 <main>
 <div class="dash-hero">
 <div class="eyebrow" style="justify-content:center;display:flex;">Dashboards</div>
@@ -574,17 +581,17 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 <div class="dash-mod"><div class="dash-mod-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#CE5368" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V9"/><path d="M10 19V5"/><path d="M16 19v-7"/><path d="M20 19v-3"/></svg></div><div class="dash-mod-name">Markets, commodities &amp; supply-chain chokepoints</div><div class="dash-mod-desc">Visibility into the market, commodity, and chokepoint signals that affect operations.</div></div>
 <div class="dash-mod"><div class="dash-mod-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#CE5368" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6 8v4l6 4M18 8v4l-6 4"/></svg></div><div class="dash-mod-name">Infrastructure dependencies (cables, pipelines, ports)</div><div class="dash-mod-desc">Mapping of the physical infrastructure a facility or operation actually depends on.</div></div>
 <div class="dash-mod"><div class="dash-mod-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#CE5368" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6Z"/><path d="M9.5 12l1.8 1.8L14.5 10"/></svg></div><div class="dash-mod-name">Sanctions &amp; counterparty watchlists</div><div class="dash-mod-desc">Screening views tied to the entities and individuals behind a relationship or deal.</div></div>
-<div class="dash-mod"><div class="dash-mod-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#CE5368" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="13" height="10" rx="1.5"/><path d="M16 10.5l5-2.5v8l-5-2.5Z"/></svg></div><div class="dash-mod-name">Live camera views of locations of interest</div><div class="dash-mod-desc">Camera views of sites of interest, built the same way the homepage sample terminal is.</div></div>
+<div class="dash-mod"><div class="dash-mod-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#CE5368" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="13" height="10" rx="1.5"/><path d="M16 10.5l5-2.5v8l-5-2.5Z"/></svg></div><div class="dash-mod-name">Live camera views of locations of interest</div><div class="dash-mod-desc">Camera views of the sites, routes, and assets you need eyes on.</div></div>
 <div class="dash-mod"><div class="dash-mod-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#CE5368" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6Z"/><path d="M15 3v4h4"/><path d="M8.5 12h7M8.5 15h7M8.5 9h3"/></svg></div><div class="dash-mod-name">Analyst briefs &amp; daily summaries</div><div class="dash-mod-desc">Analyst-reviewed written briefs summarizing the picture for a given day or period.</div></div>
 <div class="dash-mod"><div class="dash-mod-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#CE5368" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a5 5 0 0 0-5 5c0 5-2 6-2 8h14c0-2-2-3-2-8a5 5 0 0 0-5-5Z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg></div><div class="dash-mod-name">Custom alerts by keyword, region, or entity</div><div class="dash-mod-desc">Alerting configured around the specific keywords, regions, or entities that matter to you.</div></div>
 </div>
 </section>
 
 <section class="dash-section">
-<h2 class="headline">BUILT FOR <em>USE.</em></h2>
+<h2 class="headline">WHO WE <em>BUILD FOR.</em></h2>
 <div class="dash-aud-grid">
 <div class="dash-aud"><div class="dash-aud-name">Private Companies &amp; Enterprises</div><ul class="dash-aud-list"><li>Facilities &amp; sites</li><li>Supply-chain chokepoints</li><li>Executive exposure</li><li>Brand narrative</li></ul></div>
-<div class="dash-aud"><div class="dash-aud-name">NGOs &amp; International Organizations</div><ul class="dash-aud-list"><li>Field staff &amp; office locations</li><li>Regional stability</li><li>Program-area threats</li><li>Narrative targeting mission</li></ul></div>
+<div class="dash-aud"><div class="dash-aud-name">NGOs &amp; International Organizations</div><ul class="dash-aud-list"><li>Field staff &amp; office locations</li><li>Regional stability</li><li>Program-area threats</li><li>Narrative targeting the mission</li></ul></div>
 <div class="dash-aud"><div class="dash-aud-name">Contractors &amp; Government-Adjacent Firms</div><ul class="dash-aud-list"><li>Operating-region threats</li><li>Sanctions &amp; counterparty watchlists</li><li>Infrastructure dependencies</li><li>Reputational exposure</li></ul></div>
 <div class="dash-aud"><div class="dash-aud-name">HNWIs, Executives &amp; Family Offices</div><ul class="dash-aud-list"><li>Residences</li><li>Travel &amp; event advance</li><li>Family digital exposure</li><li>Personal narrative</li></ul></div>
 </div>
@@ -599,9 +606,6 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 </div>
 </section>
 
-<section class="dash-section" style="border-bottom:none;padding-bottom:0;">
-<h2 class="headline">SEE A <em>SAMPLE.</em></h2>
-</section>
 <!-- KIG GLOBAL MONITOR SECTION -->
 <section id="monitor" style="background:#1A1A1A;padding:80px 48px;border-bottom:1px solid rgba(255,255,255,0.06);position:relative;"><div style="position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center/cover no-repeat;opacity:0.03;pointer-events:none;z-index:0;"></div>
 <div style="max-width:1160px;margin:0 auto;position:relative;z-index:1;">
@@ -610,8 +614,7 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
   <div class="reveal" style="margin-bottom:24px;">
     <div class="eyebrow" style="font-weight:700;">Sample Operating Picture</div>
     <h2 class="headline" style="margin-bottom:10px;">A SAMPLE<br><em>KIG DASHBOARD.</em></h2>
-    <p style="font-size:14px;color:#C8D8E4;max-width:560px;line-height:1.7;margin-bottom:12px;">The same sample instrument shown on the homepage: geographic exposure, intelligence signals, active theaters, and analyst assessments. Every panel below is a representative sample, not a live feed.</p>
-    <div style="font-size:11px;color:#9AABB8;max-width:560px;line-height:1.65;padding:9px 14px;border-left:2px solid rgba(181,43,67,0.45);background:rgba(181,43,67,0.05);">The data below is <strong style="color:#B52B43;">illustrative demo — not live intelligence</strong> — an illustration of what a KIG-built system surfaces. Your system is scoped and operated for your specific environment and threat reality.</div>
+    <p style="font-size:14px;color:#C8D8E4;max-width:560px;line-height:1.7;margin-bottom:12px;">The same sample instrument shown on the homepage: geographic exposure, intelligence signals, active theaters, and analyst assessments.</p>
   </div>
 
   <div class="demo-controls" style="margin:20px 0"><button id="terminal-pause" type="button" aria-pressed="false">Pause animation</button><span style="font:11px/1.8 var(--mono);color:var(--dust)">SIMULATED DATA / NOT CURRENT THREAT ASSESSMENTS</span></div>
@@ -715,8 +718,8 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
       var el = document.getElementById('kig-terminal-ts');
       if(!el) return;
       var now = new Date();
-      var d = now.toUTCString().replace(' GMT','').toUpperCase();
-      el.textContent = d + ' UTC';
+      function pad(n){return n<10?'0'+n:''+n;}
+      el.textContent = pad(now.getUTCHours())+':'+pad(now.getUTCMinutes())+':'+pad(now.getUTCSeconds())+' UTC';
     }
     updateTs();
     terminalInterval(updateTs, 1000);
@@ -1208,9 +1211,6 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
 </script>
 <!-- END KIG MONITOR SECTION -->
 
-<div class="dash-cta-row">
-<a href="/contact?inquiry=dashboard" class="btn-primary">Schedule a Confidential Call →</a>
-</div>
 </main>
 <script>
 (function(){
@@ -1226,6 +1226,6 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
   button.addEventListener("click", function(){ state(monitor.dataset.paused !== "true"); });
 })();
 </script>
-<footer class="kig-footer"><div class="kig-footer-top"><a href="/"><img class="kig-footer-logo" src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-footer-links"><a href="/#services">Services</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></div><div class="kig-press"><span>Seen In</span><a href="https://www.forbes.com/sites/kolawolesamueladebayo/2025/06/05/ai-roi-isnt-just-dollars-how-to-measure-intangible-wins/" target="_blank" rel="noopener" aria-label="Forbes"><img src="/images/forbes-logo.png" alt="Forbes" width="600" height="162"></a><a href="https://www.foxnews.com/video/6375181954112" target="_blank" rel="noopener" aria-label="Fox News"><img src="/images/fox-news-logo.png" alt="Fox News" width="600" height="113"></a><a href="https://www.ien.com/redzone/blog/22950979/the-ai-race-rd-could-determine-the-outcome" target="_blank" rel="noopener" aria-label="Industrial Equipment News"><img src="/images/ien-logo.png" alt="Industrial Equipment News" width="600" height="291"></a></div><p class="kig-footer-note">© 2026 Kronus Intelligence Group.</p></footer>
+<footer class="kig-footer"><div class="kig-footer-top"><a href="/"><img class="kig-footer-logo" src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-footer-links"><a href="/#services">Services</a><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></div><div class="kig-press"><span>Seen In</span><a href="https://www.forbes.com/sites/kolawolesamueladebayo/2025/06/05/ai-roi-isnt-just-dollars-how-to-measure-intangible-wins/" target="_blank" rel="noopener" aria-label="Forbes"><img src="/images/forbes-logo.png" alt="Forbes" width="600" height="162"></a><a href="https://www.foxnews.com/video/6375181954112" target="_blank" rel="noopener" aria-label="Fox News"><img src="/images/fox-news-logo.png" alt="Fox News" width="600" height="113"></a><a href="https://www.ien.com/redzone/blog/22950979/the-ai-race-rd-could-determine-the-outcome" target="_blank" rel="noopener" aria-label="Industrial Equipment News"><img src="/images/ien-logo.png" alt="Industrial Equipment News" width="600" height="291"></a></div><p class="kig-footer-note">© 2026 Kronus Intelligence Group.</p></footer>
 </body>
 </html>
