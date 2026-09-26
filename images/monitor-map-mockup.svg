@@ -1,0 +1,60 @@
+<svg role="img" aria-label="Illustrative KIG geographic monitoring mockup with layered location markers" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2308 628" width="2308" height="628">
+<style>
+.kig-map-pulse{animation:kigMapPulse 2.8s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.kig-map-blink{animation:kigMapBlink 1.8s steps(1) infinite}
+@keyframes kigMapPulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+@keyframes kigMapBlink{0%,60%{opacity:1}61%,100%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.kig-map-pulse,.kig-map-blink{animation:none}}
+</style>
+<rect width="2308" height="628" fill="#1A1A1A"/>
+<g stroke="#2C2C2C" stroke-width="1">
+<line x1="0" y1="104" x2="2308" y2="104"/><line x1="0" y1="208" x2="2308" y2="208"/><line x1="0" y1="312" x2="2308" y2="312"/><line x1="0" y1="416" x2="2308" y2="416"/><line x1="0" y1="520" x2="2308" y2="520"/>
+<line x1="288" y1="0" x2="288" y2="628"/><line x1="576" y1="0" x2="576" y2="628"/><line x1="864" y1="0" x2="864" y2="628"/><line x1="1152" y1="0" x2="1152" y2="628"/><line x1="1440" y1="0" x2="1440" y2="628"/><line x1="1728" y1="0" x2="1728" y2="628"/><line x1="2016" y1="0" x2="2016" y2="628"/>
+</g>
+<g fill="none" stroke="#3D3D3D" stroke-width="1.1">
+<path d="M260,150 L420,120 L500,170 L520,260 L470,330 L410,380 L350,430 L300,480 L240,460 L190,410 L170,320 L190,220 Z"/>
+<path d="M370,430 L400,480 L385,520 L355,540 L340,510 L355,460 Z"/>
+<path d="M470,440 L530,420 L560,440 L590,455 L570,475 L540,465 Z"/>
+<path d="M355,540 L470,510 L560,540 L610,610 L590,628" />
+<path d="M840,90 L940,75 L1010,105 L1030,155 L980,190 L920,200 L850,180 L820,140 Z"/>
+<path d="M810,110 L840,95 L855,125 L830,140 Z"/>
+<path d="M900,55 L930,45 L965,60 L975,95 L935,110 L905,95 Z"/>
+<path d="M870,250 L990,235 L1090,265 L1130,340 L1145,440 L1130,530 L1090,600 L1030,628" />
+<path d="M1030,220 L1150,205 L1230,235 L1245,300 L1210,340 L1140,330 L1080,290 L1040,250 Z"/>
+<path d="M1245,250 L1350,230 L1400,265 L1390,330 L1340,360 L1290,345 L1255,300 Z"/>
+<path d="M1400,310 L1490,295 L1530,335 L1520,375 L1460,390 L1415,360 Z"/>
+<path d="M1530,160 L1680,140 L1740,190 L1725,270 L1670,300 L1590,280 L1540,230 Z"/>
+<path d="M1020,80 L1280,55 L1490,65 L1550,110 L1500,145 L1330,155 L1150,140 L1050,110 Z"/>
+</g>
+<g>
+<circle cx="425" cy="460" r="6" fill="#B52B43" class="kig-map-blink"/>
+<circle cx="425" cy="460" r="14" fill="none" stroke="#B52B43" stroke-width="1.4" class="kig-map-pulse"/>
+<text x="440" y="456" font-family="IBM Plex Mono,monospace" font-size="14" fill="#E8F0F8" letter-spacing="1">HAITI</text>
+</g>
+<g>
+<circle cx="378" cy="535" r="5" fill="#B52B43" class="kig-map-blink"/>
+<circle cx="378" cy="535" r="12" fill="none" stroke="#B52B43" stroke-width="1.2" class="kig-map-pulse"/>
+<text x="392" y="531" font-family="IBM Plex Mono,monospace" font-size="13" fill="#C8D8E4" letter-spacing="1">COLOMBIA</text>
+</g>
+<g>
+<circle cx="1200" cy="330" r="6" fill="#B52B43" class="kig-map-blink"/>
+<circle cx="1200" cy="330" r="14" fill="none" stroke="#B52B43" stroke-width="1.4" class="kig-map-pulse"/>
+<text x="1216" y="326" font-family="IBM Plex Mono,monospace" font-size="14" fill="#E8F0F8" letter-spacing="1">SUDAN</text>
+</g>
+<g>
+<circle cx="1370" cy="300" r="5" fill="#B52B43" class="kig-map-blink"/>
+<circle cx="1370" cy="300" r="12" fill="none" stroke="#B52B43" stroke-width="1.2" class="kig-map-pulse"/>
+<text x="1384" y="296" font-family="IBM Plex Mono,monospace" font-size="13" fill="#C8D8E4" letter-spacing="1">MENA</text>
+</g>
+<g>
+<circle cx="1610" cy="220" r="5" fill="#B52B43" class="kig-map-blink"/>
+<circle cx="1610" cy="220" r="12" fill="none" stroke="#B52B43" stroke-width="1.2" class="kig-map-pulse"/>
+<text x="1624" y="216" font-family="IBM Plex Mono,monospace" font-size="13" fill="#C8D8E4" letter-spacing="1">ASIA</text>
+</g>
+<g>
+<circle cx="300" cy="220" r="5" fill="#B52B43" class="kig-map-blink"/>
+<circle cx="300" cy="220" r="12" fill="none" stroke="#B52B43" stroke-width="1.2" class="kig-map-pulse"/>
+<text x="314" y="216" font-family="IBM Plex Mono,monospace" font-size="13" fill="#C8D8E4" letter-spacing="1">USA HQ</text>
+</g>
+<rect x="0" y="0" width="2308" height="628" fill="none" stroke="#3D3D3D" stroke-width="1"/>
+</svg>

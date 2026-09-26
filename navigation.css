@@ -8,3 +8,29 @@ nav.kig-site-nav{box-sizing:border-box;position:relative!important;top:auto!impo
 body>.status{position:relative!important;top:auto!important}
 body>.hero:has(.hero-l){padding-top:0!important}
 @media(max-width:700px){nav.kig-site-nav{padding:16px 20px!important;gap:12px;flex-direction:column;align-items:flex-start}.kig-site-links{gap:0 18px;width:100%}.kig-site-links a{font-size:11px}}
+.kig-nav-drop{position:relative;display:inline-flex}
+.kig-nav-drop-btn{background:none;border:none;font:500 12px/1.5 'IBM Plex Mono',monospace;color:#e8f0f8;cursor:pointer;padding:12px 0;min-height:44px;display:inline-flex;align-items:center}
+.kig-nav-drop-btn:hover,.kig-nav-drop-btn[aria-expanded="true"]{color:#fff;text-decoration:underline;text-underline-offset:6px}
+.kig-nav-drop-menu{position:absolute;top:100%;left:0;background:#1a1a1a;border:1px solid #3d3d3d;min-width:280px;display:none;flex-direction:column;z-index:1001;padding:6px 0}
+.kig-nav-drop-menu a{display:block;padding:10px 16px;font:500 11px/1.5 'IBM Plex Mono',monospace;color:#e8f0f8;text-decoration:none;white-space:normal;min-height:auto}
+.kig-nav-drop-menu a:hover{background:#222222;color:#fff;text-decoration:none}
+.kig-nav-drop.open .kig-nav-drop-menu,.kig-nav-drop:hover .kig-nav-drop-menu{display:flex}
+@media(max-width:700px){.kig-nav-drop{display:flex;flex-direction:column;width:100%}.kig-nav-drop-menu{position:static;border:none;padding-left:8px;background:none}.kig-nav-drop:hover .kig-nav-drop-menu{display:none}.kig-nav-drop.open .kig-nav-drop-menu{display:flex}}
+.kig-nav-cta{background:#B52B43!important;color:#fff!important;font-weight:700!important;padding:10px 18px!important;border-radius:2px;min-height:40px;display:inline-flex!important;align-items:center;text-decoration:none!important;white-space:nowrap;margin-left:4px}
+.kig-nav-cta:hover{background:#c8354f!important;text-decoration:none!important}
+@media(max-width:700px){nav.kig-site-nav{flex-direction:row!important;flex-wrap:wrap;align-items:center!important}.kig-nav-cta{order:2;margin-left:auto;font-size:11px;padding:8px 14px!important}.kig-site-links{order:3;width:100%}}
+.kig-social-links{display:inline-flex;align-items:center;gap:14px;margin-left:8px}
+.kig-social-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;color:#e8f0f8;transition:color .2s}
+.kig-social-icon svg{width:18px;height:18px;fill:currentColor}
+.kig-social-icon:hover{color:#B52B43}
+.kig-footer .kig-social-links{margin-left:16px}
+.about-cta .kig-social-links{justify-content:center;margin:20px auto 0}
+.kig-menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,0.25);border-radius:2px;width:40px;height:40px;padding:0;cursor:pointer;flex-shrink:0;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.kig-menu-toggle span{display:block;width:18px;height:2px;background:#e8f0f8}
+@media(max-width:700px){
+  nav.kig-site-nav{flex-wrap:wrap}
+  .kig-menu-toggle{display:inline-flex;order:3;margin-left:8px}
+  .kig-site-links{order:4;width:100%;display:none;flex-direction:column;align-items:flex-start;gap:2px 0;margin-top:12px;border-top:1px solid rgba(255,255,255,0.1);padding-top:10px}
+  nav.kig-site-nav.kig-nav-open .kig-site-links{display:flex}
+  .kig-site-links a{width:100%}
+}

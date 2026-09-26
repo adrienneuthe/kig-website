@@ -15,15 +15,28 @@
 <link rel="stylesheet" href="/kig-base.css">
 <link rel="stylesheet" href="/site-polish.css">
 <script src="/insights/archive.js" defer></script>
+<style>
+.insights-filter-chip{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dust);background:transparent;border:1px solid rgba(255,255,255,0.14);padding:9px 18px;cursor:pointer;transition:border-color .15s,color .15s}
+.insights-filter-chip:hover{border-color:rgba(181,43,67,0.5)}
+.insights-filter-chip.is-active{color:var(--cream);border-color:var(--crim);background:rgba(181,43,67,0.12)}
+.post-card.is-hidden{display:none}
+</style>
 <link rel="stylesheet" href="/navigation.css">
+<script src="/nav-dropdown.js" defer></script>
+<link rel="stylesheet" href="/sticky-cta.css">
+<script src="/sticky-cta.js" defer></script>
 <link rel="stylesheet" href="/site-shell.css">
 <link rel="stylesheet" href="/quick-brief.css">
 <script src="/quick-brief.js" defer></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Kronus Intelligence Group","alternateName":"KIG","url":"https://kronusintelligencegroup.com/","logo":"https://kronusintelligencegroup.com/images/kig-logo-horizontal.png","description":"Protective intelligence firm that builds and operates intelligence programs for principals, institutions, and dealmakers.","email":"project@kronusintelligencegroup.com","founder":{"@type":"Person","name":"Adrienne Uthe"},"sameAs":["https://www.linkedin.com/company/kronus-intelligence-group"]}</script>
+<link rel="stylesheet" href="/bottom-form.css">
+<script src="/bottom-form.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Kronus Intelligence Group","alternateName":"KIG","url":"https://kronusintelligencegroup.com/","logo":"https://kronusintelligencegroup.com/images/kig-logo-horizontal.png","description":"Protective intelligence firm that builds and operates intelligence programs for principals, institutions, and dealmakers.","email":"project@kronusintelligencegroup.com","founder":{"@type":"Person","name":"Adrienne Uthe"},"sameAs":["https://www.linkedin.com/company/kronus-intelligence-group","https://www.instagram.com/kronusintel/"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Intelligence Insights","url":"https://kronusintelligencegroup.com/insights/","isPartOf":{"@type":"WebSite","name":"Kronus Intelligence Group","url":"https://kronusintelligencegroup.com/"}}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0KEYQ4PBX5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-0KEYQ4PBX5");</script>
 </head>
 <body class="insights-page">
-<nav class="kig-site-nav" aria-label="Main navigation"><a href="/" aria-label="Kronus Intelligence Group home"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-site-links"><a href="/#services">Services</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></nav>
+<nav class="kig-site-nav" aria-label="Main navigation"><a href="/" aria-label="Kronus Intelligence Group home"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-site-links"><div class="kig-nav-drop"><button type="button" class="kig-nav-drop-btn" aria-expanded="false" aria-haspopup="true">Services</button><div class="kig-nav-drop-menu" role="menu"><a role="menuitem" href="/principal-protective-intelligence">Principal &amp; Executive Protective Intelligence</a><a role="menuitem" href="/institutional-threat-intelligence">Institutional &amp; Infrastructure Threat Intelligence</a><a role="menuitem" href="/counterparty-deal-intelligence">Counterparty &amp; Deal-Level Intelligence</a><a role="menuitem" href="/narrative-threat-intelligence">Narrative &amp; Reputational Threat Intelligence</a><a role="menuitem" href="/#services">All Services</a></div></div><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/contact">Contact</a></div><a href="/contact" class="kig-nav-cta">Start a Project →</a><button type="button" class="kig-menu-toggle" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button></nav>
 
 <div class="hero">
   <div class="eyebrow">Intelligence Insights</div>
@@ -32,177 +45,184 @@
 </div>
 
 <div class="posts" id="posts-container">
+  <div class="insights-filters" role="group" aria-label="Filter by pillar" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 auto 32px;max-width:1160px;padding:0 32px;">
+    <button type="button" class="insights-filter-chip is-active" data-filter="all">All</button>
+    <button type="button" class="insights-filter-chip" data-filter="principal">Protective</button>
+    <button type="button" class="insights-filter-chip" data-filter="institutional">Institutional</button>
+    <button type="button" class="insights-filter-chip" data-filter="counterparty">Counterparty</button>
+    <button type="button" class="insights-filter-chip" data-filter="narrative">Narrative</button>
+  </div>
   <div class="posts-grid" id="posts-grid">
     <!-- Posts injected here by cron -->
-    <a href="/insights/red-flags-in-due-diligence" class="post-card">
+    <a href="/insights/red-flags-in-due-diligence" class="post-card" data-pillar="counterparty">
       <div class="post-date">September 25, 2026</div>
       <div class="post-title">RED FLAGS IN DUE DILIGENCE: WHAT PRIVATE INTELLIGENCE FIRMS ACTUALLY LOOK FOR</div>
       <div class="post-desc">Standard due diligence checks what a counterparty discloses. Private intelligence firms look for what they didn't — undisclosed control, prior-venture patterns, and financial exposure that never made a balance sheet.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/competitive-intelligence-firm" class="post-card">
+    <a href="/insights/competitive-intelligence-firm" class="post-card" data-pillar="counterparty">
       <div class="post-date">September 24, 2026</div>
       <div class="post-title">COMPETITIVE INTELLIGENCE FIRM: WHAT TO LOOK FOR AND WHEN TO HIRE</div>
       <div class="post-desc">A competitive intelligence firm does more than monitor competitors. What the function covers, what separates serious firms from rebranded research shops, and when you need one.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/geopolitical-risk-for-businesses" class="post-card">
+    <a href="/insights/geopolitical-risk-for-businesses" class="post-card" data-pillar="institutional">
       <div class="post-date">September 7, 2026</div>
       <div class="post-title">GEOPOLITICAL RISK FOR BUSINESSES: A PRACTICAL FRAMEWORK</div>
       <div class="post-desc">Geopolitical risk for businesses is the measurable operational exposure created by political instability, regulatory arbitrage, and state-level conflict.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/how-to-detect-disinformation-campaigns" class="post-card">
+    <a href="/insights/how-to-detect-disinformation-campaigns" class="post-card" data-pillar="narrative">
       <div class="post-date">September 6, 2026</div>
       <div class="post-title">HOW TO DETECT DISINFORMATION CAMPAIGNS</div>
       <div class="post-desc">Signal indicators, attribution methodology, and the intelligence infrastructure required to detect coordinated disinformation before it reaches mainstream amplification.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/what-is-executive-protection-intelligence" class="post-card">
+    <a href="/insights/what-is-executive-protection-intelligence" class="post-card" data-pillar="principal">
       <div class="post-date">September 5, 2026</div>
       <div class="post-title">WHAT IS EXECUTIVE PROTECTION INTELLIGENCE?</div>
       <div class="post-desc">Executive protection intelligence is the analytical layer that makes physical security decisions defensible — threat assessment, advance intel, digital footprint analysis, and ongoing monitoring.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/how-to-vet-a-business-partner" class="post-card">
+    <a href="/insights/how-to-vet-a-business-partner" class="post-card" data-pillar="counterparty">
       <div class="post-date">September 4, 2026</div>
       <div class="post-title">HOW TO VET A BUSINESS PARTNER: AN INTELLIGENCE-LED FRAMEWORK</div>
       <div class="post-desc">Vetting a business partner requires more than legal screening. An intelligence-led framework surfaces hidden risk — beneficial ownership opacity, network exposure, behavioral red flags — before it becomes a liability.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/what-is-narrative-intelligence" class="post-card">
+    <a href="/insights/what-is-narrative-intelligence" class="post-card" data-pillar="narrative">
       <div class="post-date">September 3, 2026</div>
       <div class="post-title">WHAT IS NARRATIVE INTELLIGENCE?</div>
       <div class="post-desc">Narrative intelligence is the structured collection and analysis of how information moves, mutates, and weaponizes — before the damage is visible on the surface.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/humint-vs-osint" class="post-card">
+    <a href="/insights/humint-vs-osint" class="post-card" data-pillar="narrative">
       <div class="post-date">September 2, 2026</div>
       <div class="post-title">HUMINT VS OSINT: UNDERSTANDING THE DIFFERENCE AND WHEN EACH APPLIES</div>
       <div class="post-desc">HUMINT and OSINT serve different intelligence requirements. Understanding which to deploy — and when to combine both — separates effective programs from expensive noise.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/how-do-private-intelligence-firms-work" class="post-card">
+    <a href="/insights/how-do-private-intelligence-firms-work" class="post-card" data-pillar="narrative">
       <div class="post-date">September 1, 2026</div>
       <div class="post-title">HOW DO PRIVATE INTELLIGENCE FIRMS WORK?</div>
       <div class="post-desc">Private intelligence firms collect, analyze, and deliver verified intelligence through HUMINT, OSINT, and technical collection — for clients who need ground truth that governments and public data can't supply.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/corporate-osint" class="post-card">
+    <a href="/insights/corporate-osint" class="post-card" data-pillar="counterparty">
       <div class="post-date">August 31, 2026</div>
       <div class="post-title">CORPORATE OSINT: HOW ORGANIZATIONS USE OPEN SOURCE INTELLIGENCE</div>
       <div class="post-desc">Corporate OSINT applies open source intelligence discipline to business decision-making — counterparty risk, competitive insight, threat detection, and due diligence.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/counterintelligence-consulting" class="post-card">
+    <a href="/insights/counterintelligence-consulting" class="post-card" data-pillar="institutional">
       <div class="post-date">August 30, 2026</div>
       <div class="post-title">COUNTERINTELLIGENCE CONSULTING: WHAT IT IS AND WHEN ORGANIZATIONS NEED IT</div>
       <div class="post-desc">Counterintelligence consulting identifies insider threats, foreign collection, and adversarial penetration before they compromise operations, personnel, or sensitive information.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/field-intelligence-services" class="post-card">
+    <a href="/insights/field-intelligence-services" class="post-card" data-pillar="institutional">
       <div class="post-date">August 29, 2026</div>
       <div class="post-title">FIELD INTELLIGENCE SERVICES: WHAT THEY ARE AND WHEN YOU NEED THEM</div>
-      <div class="post-desc">Field intelligence services deploy trained personnel to collect ground-truth information human sources, physical environments, and contexts that open-source research cannot reach.</div>
+      <div class="post-desc">Field intelligence services deploy trained personnel to collect ground-truth information from human sources, physical environments, and contexts that open-source research cannot reach.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/pattern-of-life-analysis" class="post-card">
+    <a href="/insights/pattern-of-life-analysis" class="post-card" data-pillar="principal">
       <div class="post-date">August 28, 2026</div>
       <div class="post-title">PATTERN OF LIFE ANALYSIS: WHAT IT IS AND HOW INTELLIGENCE TEAMS USE IT</div>
       <div class="post-desc">Pattern of life analysis maps behavioral routines to detect anomalies, predict actions, and support threat assessment, executive protection, and counterintelligence operations.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/executive-digital-footprint-reduction" class="post-card">
+    <a href="/insights/executive-digital-footprint-reduction" class="post-card" data-pillar="principal">
       <div class="post-date">August 26, 2026</div>
       <div class="post-title">EXECUTIVE DIGITAL FOOTPRINT REDUCTION</div>
       <div class="post-desc">How organizations audit and suppress executive digital exposure to mitigate targeting, social engineering, kidnap risk, and reputational exploitation.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/electoral-integrity-monitoring" class="post-card">
+    <a href="/insights/electoral-integrity-monitoring" class="post-card" data-pillar="institutional">
       <div class="post-date">August 25, 2026</div>
       <div class="post-title">ELECTORAL INTEGRITY MONITORING: WHAT IT IS AND WHY IT MATTERS</div>
       <div class="post-desc">Electoral integrity monitoring uses OSINT, HUMINT, and narrative analysis to detect foreign interference, disinformation, and covert influence operations before they shape an outcome.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/deepfake-detection-services" class="post-card">
+    <a href="/insights/deepfake-detection-services" class="post-card" data-pillar="narrative">
       <div class="post-date">August 24, 2026</div>
       <div class="post-title">DEEPFAKE DETECTION SERVICES: HOW ORGANIZATIONS IDENTIFY AND COUNTER SYNTHETIC MEDIA THREATS</div>
       <div class="post-desc">Deepfake detection services identify synthetic audio, video, and image content used in fraud, disinformation, and targeted deception operations against organizations.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/tscm-services" class="post-card">
+    <a href="/insights/tscm-services" class="post-card" data-pillar="principal">
       <div class="post-date">August 23, 2026</div>
       <div class="post-title">TSCM SERVICES: TECHNICAL SURVEILLANCE COUNTERMEASURES EXPLAINED</div>
       <div class="post-desc">TSCM services detect and neutralize electronic eavesdropping, covert devices, and technical surveillance threats in high-risk environments.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/narrative-intelligence-firm" class="post-card">
+    <a href="/insights/narrative-intelligence-firm" class="post-card" data-pillar="narrative">
       <div class="post-date">August 22, 2026</div>
       <div class="post-title">WHAT IS A NARRATIVE INTELLIGENCE FIRM?</div>
       <div class="post-desc">A narrative intelligence firm maps how information moves, distorts, and weaponizes — giving organizations the warning time to respond before damage is done.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/what-is-humint-intelligence" class="post-card">
+    <a href="/insights/what-is-humint-intelligence" class="post-card" data-pillar="institutional">
       <div class="post-date">August 21, 2026</div>
       <div class="post-title">WHAT IS HUMINT INTELLIGENCE? DEFINITION, METHODOLOGY, AND OPERATIONAL ROLE</div>
       <div class="post-desc">HUMINT intelligence is information collected from human sources — a discipline with defined tradecraft, legal constraints, and strategic limits that OSINT cannot replicate.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/private-intelligence-firm-vs-security-firm" class="post-card">
+    <a href="/insights/private-intelligence-firm-vs-security-firm" class="post-card" data-pillar="principal">
       <div class="post-date">August 20, 2026</div>
       <div class="post-title">PRIVATE INTELLIGENCE FIRM VS. SECURITY FIRM: UNDERSTANDING THE DIFFERENCE</div>
       <div class="post-desc">Private intelligence firms and security firms serve fundamentally different functions. Here's how to tell them apart — and when each one is the right call.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/geopolitical-risk-assessment" class="post-card">
+    <a href="/insights/geopolitical-risk-assessment" class="post-card" data-pillar="institutional">
       <div class="post-date">August 19, 2026</div>
       <div class="post-title">GEOPOLITICAL RISK ASSESSMENT: A PRACTITIONER'S FRAMEWORK</div>
       <div class="post-desc">Geopolitical risk assessment translates political instability into operational exposure — here's how serious organizations build and use them.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/disinformation-detection" class="post-card">
+    <a href="/insights/disinformation-detection" class="post-card" data-pillar="narrative">
       <div class="post-date">August 18, 2026</div>
       <div class="post-title">DISINFORMATION DETECTION: IDENTIFYING AND COUNTERING FALSE NARRATIVES</div>
       <div class="post-desc">Disinformation detection requires more than media monitoring — it demands collection, analysis, and escalation protocols built around specific adversarial actors and pre-positioning signals.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/what-is-osint" class="post-card">
+    <a href="/insights/what-is-osint" class="post-card" data-pillar="counterparty">
       <div class="post-date">August 17, 2026</div>
       <div class="post-title">WHAT IS OSINT? OPEN SOURCE INTELLIGENCE EXPLAINED</div>
       <div class="post-desc">OSINT is the systematic collection and analysis of publicly available information to produce actionable intelligence — not internet research, but a rigorous discipline with defined limits.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/executive-threat-assessment" class="post-card">
+    <a href="/insights/executive-threat-assessment" class="post-card" data-pillar="principal">
       <div class="post-date">August 16, 2026</div>
       <div class="post-title">EXECUTIVE THREAT ASSESSMENT: A PRACTITIONER'S FRAMEWORK</div>
       <div class="post-desc">Executive threat assessment identifies who poses credible risk to senior leaders — and why. A practitioner's guide to methodology, triggers, and common failures.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/counterparty-vetting" class="post-card">
+    <a href="/insights/counterparty-vetting" class="post-card" data-pillar="counterparty">
       <div class="post-date">August 15, 2026</div>
       <div class="post-title">COUNTERPARTY VETTING: THE INTELLIGENCE FRAMEWORK FOR HIGH-STAKES DEALS</div>
       <div class="post-desc">Counterparty vetting goes beyond standard due diligence — surfacing beneficial ownership opacity, political linkages, and behavioral risk that legal screening misses.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/corporate-intelligence-services" class="post-card">
+    <a href="/insights/corporate-intelligence-services" class="post-card" data-pillar="counterparty">
       <div class="post-date">August 14, 2026</div>
       <div class="post-title">CORPORATE INTELLIGENCE SERVICES: WHAT THEY ARE AND WHEN YOU NEED THEM</div>
       <div class="post-desc">Corporate intelligence services give organizations the insight to move decisively in contested environments — on counterparties, markets, threats, and adversaries.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/narrative-threat-monitoring" class="post-card">
+    <a href="/insights/narrative-threat-monitoring" class="post-card" data-pillar="narrative">
       <div class="post-date">August 13, 2026</div>
       <div class="post-title">NARRATIVE THREAT MONITORING: WHAT IT IS AND WHY IT MATTERS</div>
       <div class="post-desc">Narrative threat monitoring tracks how damaging stories about your organization form, spread, and weaponize — before they become crises you can't contain.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/humint-services" class="post-card">
+    <a href="/insights/humint-services" class="post-card" data-pillar="counterparty">
       <div class="post-date">August 12, 2026</div>
       <div class="post-title">HUMINT SERVICES: WHAT THEY ARE AND WHEN ORGANIZATIONS NEED THEM</div>
       <div class="post-desc">HUMINT services provide intelligence sourced from human networks — the conversations, source relationships, and field reporting that no database can replicate.</div>
       <div class="post-link">Read Analysis →</div>
     </a>
-    <a href="/insights/what-is-a-private-intelligence-firm" class="post-card">
+    <a href="/insights/what-is-a-private-intelligence-firm" class="post-card" data-pillar="counterparty">
       <div class="post-date">August 11, 2026</div>
       <div class="post-title">WHAT IS A PRIVATE INTELLIGENCE FIRM?</div>
       <div class="post-desc">Private intelligence firms collect, analyze, and deliver actionable intelligence for clients who cannot rely on governments or public information alone.</div>
@@ -211,6 +231,27 @@
   </div>
 </div>
 
-<footer class="kig-footer"><div class="kig-footer-top"><a href="/"><img class="kig-footer-logo" src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-footer-links"><a href="/#services">Services</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></div><div class="kig-press"><span>Seen In</span><a href="https://www.forbes.com/sites/kolawolesamueladebayo/2025/06/05/ai-roi-isnt-just-dollars-how-to-measure-intangible-wins/" target="_blank" rel="noopener" aria-label="Forbes"><img src="/images/forbes-logo.png" alt="Forbes" width="600" height="162"></a><a href="https://www.foxnews.com/video/6375181954112" target="_blank" rel="noopener" aria-label="Fox News"><img src="/images/fox-news-logo.png" alt="Fox News" width="600" height="113"></a><a href="https://www.ien.com/redzone/blog/22950979/the-ai-race-rd-could-determine-the-outcome" target="_blank" rel="noopener" aria-label="Industrial Equipment News"><img src="/images/ien-logo.png" alt="Industrial Equipment News" width="600" height="291"></a></div><p class="kig-footer-note">© 2026 Kronus Intelligence Group.</p></footer>
+<div class="article-newsletter" style="max-width:1160px;margin:8px auto 48px;background:var(--gr);border:1px solid var(--border);padding:24px 32px;"><p style="font-family:var(--cond);font-size:16px;font-weight:700;color:var(--cream);text-transform:uppercase;margin:0 0 12px;">Get KIG briefings in your inbox.</p><form class="kig-article-sub-form" method="POST" action="https://kronusempire.activehosted.com/proc.php" target="kig-index-sub-sink" style="display:flex;gap:10px;flex-wrap:wrap;"><input type="hidden" name="u" value="6AB38C2055253"><input type="hidden" name="f" value="3"><input type="hidden" name="s"><input type="hidden" name="c" value="0"><input type="hidden" name="m" value="0"><input type="hidden" name="act" value="sub"><input type="hidden" name="v" value="2"><input type="hidden" name="or" value="bc1d3977-0b5e-496a-acd4-aa03a255a47e"><input type="email" name="email" placeholder="you@organization.com" required style="flex:1;min-width:200px;box-sizing:border-box;padding:12px 14px;background:var(--ch);border:1px solid #555;color:var(--parch);font-family:var(--sans);font-size:15px;"><button type="submit" style="padding:12px 20px;background:var(--crim);border:none;color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;">Subscribe &rarr;</button></form><p style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:#909090;text-transform:uppercase;margin:10px 0 0;">Confidential. See our <a href="/privacy" style="color:#909090;">Privacy Policy</a>.</p><iframe name="kig-index-sub-sink" title="Subscription handler" style="display:none" aria-hidden="true"></iframe></div>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.insights-filter-chip');
+  var cards = document.querySelectorAll('#posts-grid .post-card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('is-active'); });
+      chip.classList.add('is-active');
+      var f = chip.getAttribute('data-filter');
+      cards.forEach(function(card){
+        var show = (f === 'all') || (card.getAttribute('data-pillar') === f);
+        card.classList.toggle('is-hidden', !show);
+      });
+    });
+  });
+})();
+</script>
+
+<div id="kig-bottom-form" data-inquiry="General Inquiry" data-page="insights-index"></div>
+<footer class="kig-footer"><div class="kig-footer-top"><a href="/"><img class="kig-footer-logo" src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-footer-links"><a href="/#services">Services</a><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><span class="kig-social-links"><a class="kig-social-icon" href="https://www.linkedin.com/company/kronus-intelligence-group" target="_blank" rel="noopener" aria-label="KIG on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a class="kig-social-icon" href="https://www.instagram.com/kronusintel/" target="_blank" rel="noopener" aria-label="KIG on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.41.56.21.96.47 1.38.89.42.42.68.82.89 1.38.17.42.36 1.05.41 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.41 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.17-1.05.36-2.22.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.41a3.72 3.72 0 0 1-1.38-.89 3.72 3.72 0 0 1-.89-1.38c-.17-.42-.36-1.05-.41-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.41-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.17 1.05-.36 2.22-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.66.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.66 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a></span></div></div><div class="kig-press"><span>Seen In</span><a href="https://www.forbes.com/sites/kolawolesamueladebayo/2025/06/05/ai-roi-isnt-just-dollars-how-to-measure-intangible-wins/" target="_blank" rel="noopener" aria-label="Forbes"><img src="/images/forbes-logo.png" alt="Forbes" width="600" height="162"></a><a href="https://www.foxnews.com/video/6375181954112" target="_blank" rel="noopener" aria-label="Fox News"><img src="/images/fox-news-logo.png" alt="Fox News" width="600" height="113"></a><a href="https://www.ien.com/redzone/blog/22950979/the-ai-race-rd-could-determine-the-outcome" target="_blank" rel="noopener" aria-label="Industrial Equipment News"><img src="/images/ien-logo.png" alt="Industrial Equipment News" width="600" height="291"></a></div><p class="kig-footer-note">© 2026 Kronus Intelligence Group.</p></footer>
 </body>
 </html>

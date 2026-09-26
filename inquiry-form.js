@@ -4,18 +4,24 @@
   if(!form) return;
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    var sel=document.getElementById('kig-inquiry-type');
-    if(sel&&!sel.value){sel.focus();return;}
     var btn=form.querySelector('button[type=submit]');
     var note=document.getElementById('kig-form-note');
+    var sel=document.getElementById('kig-inquiry-type');
+    if(sel&&!sel.value){sel.value='General Inquiry';}
+    var finalInquiryType=(sel||{}).value||'General Inquiry';
+    var pageSlug=(location.pathname==='/')?'home':(location.pathname.replace(/^\/+|\/+$/g,'')||'home');
     btn.disabled=true;btn.textContent='Sending…';
-    fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+    var fd=new FormData(form);
+    fd.set('page',pageSlug);
+    fd.set('source','KIG website contact form — '+location.pathname);
+    fetch(form.action,{method:'POST',body:fd,headers:{Accept:'application/json'}})
       .then(function(r){if(!r.ok)throw new Error('bad');
+        if(typeof window.gtag==='function'){window.gtag('event','generate_lead',{page:pageSlug,inquiry_type:finalInquiryType});}
         var done=document.createElement('div');
         done.className='form-done';
-        done.innerHTML='<h3>Received.</h3><p>Someone from the KIG team will respond personally within 24 hours.</p>';
+        done.innerHTML='<h3>Received.</h3><p>Someone on our team will respond personally within 24 hours.</p>';
         form.parentNode.replaceChild(done,form);})
-      .catch(function(){btn.disabled=false;btn.textContent='Schedule a Confidential Call →';
+      .catch(function(){btn.disabled=false;btn.textContent='Start a Project →';
         if(note){note.textContent='Could not send. Please email project@kronusintelligencegroup.com';note.style.color='#CE5368';}});
   },true);
 })();

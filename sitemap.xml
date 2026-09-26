@@ -186,10 +186,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-<url><loc>https://kronusintelligencegroup.com/about</loc></url><url><loc>https://kronusintelligencegroup.com/contact</loc></url>  <url>
+<url><loc>https://kronusintelligencegroup.com/about</loc></url><url><loc>https://kronusintelligencegroup.com/contact</loc></url><url><loc>https://kronusintelligencegroup.com/privacy</loc></url>  <url>
     <loc>https://kronusintelligencegroup.com/newsletter</loc>
     <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://kronusintelligencegroup.com/dashboards</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kronusintelligencegroup.com/principal-protective-intelligence</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kronusintelligencegroup.com/institutional-threat-intelligence</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kronusintelligencegroup.com/counterparty-deal-intelligence</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kronusintelligencegroup.com/narrative-threat-intelligence</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
