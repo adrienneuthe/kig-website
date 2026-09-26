@@ -16,6 +16,9 @@
 .kig-bf-done h3{font:800 22px/1.2 var(--cond,'Oswald',sans-serif);color:#F4EFE7;text-transform:uppercase;margin:0 0 8px;text-align:center}
 .kig-bf-done p{font:15px/1.6 var(--sans,'Inter',sans-serif);color:#9A9A9A;text-align:center;margin:0}
 .kig-bf-note{font:12px/1.5 'IBM Plex Mono',monospace;color:#CE5368;text-align:center;margin-top:6px}
+.kig-bf-privacy{font:11px/1.5 'IBM Plex Mono',monospace;color:#9A9A9A;text-align:center;margin-top:10px}
+.kig-bf-privacy a{color:#CE5368;text-decoration:none}
+.kig-bf-privacy a:hover{text-decoration:underline}
 @media(max-width:500px){.kig-bf{padding:48px 20px}}
 
 /* Mid-article CTA card */

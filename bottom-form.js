@@ -45,6 +45,7 @@
     '</div>' +
     '<textarea name="message" placeholder="What do you need?" aria-label="What do you need?" required></textarea>' +
     '<button type="submit">Send Message &rarr;</button>' +
+    '<p class="kig-bf-privacy">Confidential. See our <a href="/privacy">Privacy Policy</a>.</p>' +
     '</form>' +
     '<p class="kig-bf-email">Prefer email? <a href="mailto:project@kronusintelligencegroup.com">project@kronusintelligencegroup.com</a></p>';
 
