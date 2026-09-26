@@ -22,13 +22,13 @@
       '<p class="qb-lede">Three fields. A member of our team responds personally within 24 hours.</p>' +
       '<form id="qb-form">' +
       '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
-      '<input type="text" name="name" placeholder="Name" aria-label="Name" required>' +
+      '<input type="text" name="name" placeholder="Name (optional)" aria-label="Name">' +
       '<input type="email" name="email" placeholder="Work email" aria-label="Work email" required>' +
       '<textarea name="need" placeholder="What do you need? (one or two lines is enough)" aria-label="What do you need?" required></textarea>' +
       '<button type="submit">Send &rarr;</button>' +
       '<p id="qb-note">Confidential &middot; No sales sequence &middot; Or email project@kronusintelligencegroup.com</p>' +
       '</form></div>' +
-      '<div id="qb-done"><h4>Received.</h4><p>Someone from the KIG team will be in touch within 24 hours.</p></div>';
+      '<div id="qb-done"><h4>Received.</h4><p>Someone on our team will respond personally within 24 hours.</p></div>';
 
     document.body.appendChild(btn);
     document.body.appendChild(panel);
@@ -70,6 +70,9 @@
         body: JSON.stringify(data)
       }).then(function (r) {
         if (!r.ok) throw new Error('bad status');
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'generate_lead', { page: location.pathname, inquiry_type: 'Quick Brief' });
+        }
         form.parentNode.style.display = 'none';
         panel.querySelector('#qb-done').classList.add('on');
       }).catch(function () {
