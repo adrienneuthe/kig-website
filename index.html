@@ -193,7 +193,8 @@
 ]
 </script>
 <link rel="icon" type="image/png" href="/images/favicon.png">
-<link rel="preload" as="image" href="/images/hero-bg.jpeg" fetchpriority="high">
+<link rel="preload" as="image" href="/images/hero-bg-mobile.webp" fetchpriority="high" media="(max-width: 768px)">
+<link rel="preload" as="image" href="/images/hero-bg.webp" fetchpriority="high" media="(min-width: 769px)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@300;400;500;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -223,6 +224,7 @@
   ─ IBM Plex Sans     - body copy. Clean. Readable.
 */
 :root{
+  --hero-img: url('/images/hero-bg.webp');
   --ch:    #1A1A1A;
   --gr:    #222222;
   --st:    #2C2C2C;
@@ -283,7 +285,12 @@ nav{
 .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(to bottom right,transparent 0%,black 30%,black 70%,transparent 100%);pointer-events:none;z-index:3}
 
 /* Hero bg - map image with heavy dark overlay, warm-tinted */
+/* JPEG fallback first (kept for browsers without WebP/custom-property image() support), then WebP via CSS var (mobile-swapped below) */
 .hero-bg{position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center 35%/cover no-repeat;z-index:0;}
+.hero-bg{background-image:var(--hero-img);}
+/* Same-file WebP swap (with jpeg inline fallback preserved) for the 3 low-opacity texture overlays elsewhere on the page, so all 4 usages share one cached download */
+.hero-bg-tex{background-image:var(--hero-img) !important;}
+@media (max-width:768px){:root{--hero-img:url('/images/hero-bg-mobile.webp');}}
 .hero-ov{
   position:absolute;inset:0;z-index:1;
   background:
@@ -897,7 +904,7 @@ section{padding:80px 48px}.inner{max-width:1160px;margin:0 auto}
 
 
 <!-- KIG GLOBAL MONITOR SECTION -->
-<section id="monitor" style="background:#1A1A1A;padding:80px 48px;border-bottom:1px solid rgba(255,255,255,0.06);position:relative;"><div style="position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center/cover no-repeat;opacity:0.03;pointer-events:none;z-index:0;"></div>
+<section id="monitor" style="background:#1A1A1A;padding:80px 48px;border-bottom:1px solid rgba(255,255,255,0.06);position:relative;"><div class="hero-bg-tex" style="position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center/cover no-repeat;opacity:0.03;pointer-events:none;z-index:0;"></div>
 <div style="max-width:1160px;margin:0 auto;position:relative;z-index:1;">
 
   <!-- Section Header -->
@@ -1544,7 +1551,7 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
 </section>
 
 <!-- WHERE WE OPERATE -->
-<section id="geo" style="background:var(--ch);padding:80px 48px;position:relative;"><div style="position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center/cover no-repeat;opacity:0.06;pointer-events:none;z-index:0;"></div>
+<section id="geo" style="background:var(--ch);padding:80px 48px;position:relative;"><div class="hero-bg-tex" style="position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center/cover no-repeat;opacity:0.06;pointer-events:none;z-index:0;"></div>
   <div class="inner" style="position:relative;z-index:1;">
     <div class="geo-intro">
       <div class="reveal">
@@ -1637,7 +1644,7 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
 </section>
 
 <!-- CONTACT -->
-<section class="main-cta" id="contact" style="position:relative;"><div style="position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center/cover no-repeat;opacity:0.04;pointer-events:none;z-index:0;"></div>
+<section class="main-cta" id="contact" style="position:relative;"><div class="hero-bg-tex" style="position:absolute;inset:0;background:url('/images/hero-bg.jpeg') center/cover no-repeat;opacity:0.04;pointer-events:none;z-index:0;"></div>
   <div class="cta-inner" style="position:relative;z-index:1;">
     <div class="reveal">
       <div class="eyebrow" style="font-weight:700;">Get In Touch</div>
