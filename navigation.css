@@ -19,3 +19,9 @@ body>.hero:has(.hero-l){padding-top:0!important}
 .kig-nav-cta{background:#B52B43!important;color:#fff!important;font-weight:700!important;padding:10px 18px!important;border-radius:2px;min-height:40px;display:inline-flex!important;align-items:center;text-decoration:none!important;white-space:nowrap;margin-left:4px}
 .kig-nav-cta:hover{background:#c8354f!important;text-decoration:none!important}
 @media(max-width:700px){nav.kig-site-nav{flex-direction:row!important;flex-wrap:wrap;align-items:center!important}.kig-nav-cta{order:2;margin-left:auto;font-size:11px;padding:8px 14px!important}.kig-site-links{order:3;width:100%}}
+.kig-social-links{display:inline-flex;align-items:center;gap:14px;margin-left:8px}
+.kig-social-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;color:#e8f0f8;transition:color .2s}
+.kig-social-icon svg{width:18px;height:18px;fill:currentColor}
+.kig-social-icon:hover{color:#B52B43}
+.kig-footer .kig-social-links{margin-left:16px}
+.about-cta .kig-social-links{justify-content:center;margin:20px auto 0}
