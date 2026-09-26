@@ -54,13 +54,14 @@
     var btn = form.querySelector('button');
     btn.disabled = true;
     btn.textContent = 'Sending…';
+    var resolvedInquiryType = form.inquiry_type.value || 'General Inquiry';
     var data = {
       _subject: 'KIG Website Inquiry — ' + pageName,
       name: form.name.value,
       email: form.email.value,
       _replyto: form.email.value,
       organization: form.organization.value,
-      inquiry_type: form.inquiry_type.value,
+      inquiry_type: resolvedInquiryType,
       message: form.message.value,
       _gotcha: form._gotcha.value,
       page: pageName,

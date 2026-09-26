@@ -57,6 +57,7 @@
         name: form.name.value,
         email: form.email.value,
         _replyto: form.email.value,
+        inquiry_type: 'Quick Brief',
         need: form.need.value,
         _gotcha: form._gotcha.value,
         source: 'KIG website quick brief — ' + location.pathname
