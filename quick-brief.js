@@ -26,7 +26,8 @@
       '<input type="email" name="email" placeholder="Work email" aria-label="Work email" required>' +
       '<textarea name="need" placeholder="What do you need? (one or two lines is enough)" aria-label="What do you need?" required></textarea>' +
       '<button type="submit">Send &rarr;</button>' +
-      '<p id="qb-note">Confidential &middot; No sales sequence &middot; Or email project@kronusintelligencegroup.com</p>' +
+      '<p id="qb-note">No sales sequence &middot; Or email project@kronusintelligencegroup.com</p>' +
+      '<p id="qb-privacy">Confidential. See our <a href="/privacy">Privacy Policy</a>.</p>' +
       '</form></div>' +
       '<div id="qb-done"><h4>Received.</h4><p>Someone on our team will respond personally within 24 hours.</p></div>';
 
