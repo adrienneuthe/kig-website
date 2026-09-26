@@ -15,7 +15,7 @@
         done.className='form-done';
         done.innerHTML='<h3>Received.</h3><p>Someone from the KIG team will respond personally within 24 hours.</p>';
         form.parentNode.replaceChild(done,form);})
-      .catch(function(){btn.disabled=false;btn.textContent='Schedule a Confidential Call →';
+      .catch(function(){btn.disabled=false;btn.textContent='Start a Project →';
         if(note){note.textContent='Could not send. Please email project@kronusintelligencegroup.com';note.style.color='#CE5368';}});
   },true);
 })();

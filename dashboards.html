@@ -19,8 +19,12 @@
 <link rel="stylesheet" href="/site-polish.css">
 <link rel="stylesheet" href="/navigation.css">
 <script src="/nav-dropdown.js" defer></script>
+<link rel="stylesheet" href="/sticky-cta.css">
+<script src="/sticky-cta.js" defer></script>
 <link rel="stylesheet" href="/site-shell.css">
 <link rel="stylesheet" href="/quick-brief.css">
+<link rel="stylesheet" href="/bottom-form.css">
+<script src="/bottom-form.js" defer></script>
 <link rel="stylesheet" href="/demo.css">
 <style>
 
@@ -560,13 +564,13 @@ body::before{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Dashboards | Kronus Intelligence Group","url":"https://kronusintelligencegroup.com/dashboards"}</script>
 </head>
 <body class="insights-page">
-<nav class="kig-site-nav" aria-label="Main navigation"><a href="/" aria-label="Kronus Intelligence Group home"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-site-links"><div class="kig-nav-drop"><button type="button" class="kig-nav-drop-btn" aria-expanded="false" aria-haspopup="true">Services</button><div class="kig-nav-drop-menu" role="menu"><a role="menuitem" href="/principal-protective-intelligence">Principal &amp; Executive Protective Intelligence</a><a role="menuitem" href="/institutional-threat-intelligence">Institutional &amp; Infrastructure Threat Intelligence</a><a role="menuitem" href="/counterparty-deal-intelligence">Counterparty &amp; Deal-Level Intelligence</a><a role="menuitem" href="/narrative-threat-intelligence">Narrative &amp; Reputational Threat Intelligence</a><a role="menuitem" href="/#services">All Services</a></div></div><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></nav>
+<nav class="kig-site-nav" aria-label="Main navigation"><a href="/" aria-label="Kronus Intelligence Group home"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-site-links"><div class="kig-nav-drop"><button type="button" class="kig-nav-drop-btn" aria-expanded="false" aria-haspopup="true">Services</button><div class="kig-nav-drop-menu" role="menu"><a role="menuitem" href="/principal-protective-intelligence">Principal &amp; Executive Protective Intelligence</a><a role="menuitem" href="/institutional-threat-intelligence">Institutional &amp; Infrastructure Threat Intelligence</a><a role="menuitem" href="/counterparty-deal-intelligence">Counterparty &amp; Deal-Level Intelligence</a><a role="menuitem" href="/narrative-threat-intelligence">Narrative &amp; Reputational Threat Intelligence</a><a role="menuitem" href="/#services">All Services</a></div></div><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div><a href="/contact" class="kig-nav-cta">Start a Project →</a></nav>
 <main>
 <div class="dash-hero">
 <div class="eyebrow" style="justify-content:center;display:flex;">Dashboards</div>
 <h1>YOUR OPERATING PICTURE.<br><em>BUILT FOR YOU.</em></h1>
 <p>Every KIG dashboard is configured, built, and operated by KIG for your environment - scoped to your regions, your threats, and your sources, and reviewed by analysts rather than left to run unattended.</p>
-<a href="/contact?inquiry=dashboard" class="btn-primary">Schedule a Confidential Call →</a>
+<a href="/contact?inquiry=dashboard" class="btn-primary">Start a Project →</a>
 </div>
 
 <section class="dash-section">
@@ -790,7 +794,7 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
     <div class="kig-watch-panel" style="background:#141414;">
       <div style="border-top:2px solid #B52B43;padding:10px 16px;background:#141414;display:flex;justify-content:space-between;align-items:center;">
         <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D8E4;">REGIONAL STABILITY INDEX</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#B52B43;letter-spacing:.1em;" id="kig-defcon">DEFCON <span id="kig-defcon-num">4</span></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#B52B43;letter-spacing:.1em;" id="kig-defcon">ELEVATED</span>
       </div>
       <div style="padding:16px;display:flex;flex-direction:column;gap:8px;" id="kig-instability">
         <!-- populated by JS -->
@@ -812,7 +816,7 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
     <div class="kig-watch-panel" style="background:#141414;">
       <div style="border-top:2px solid #5E7F96;padding:10px 16px;background:#141414;display:flex;justify-content:space-between;align-items:center;">
         <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#C8D8E4;">KIG RISK INDEX</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#5E7F96;">LIVE</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:#5E7F96;">SAMPLE</span>
       </div>
       <div style="padding:16px;">
       <!-- Big risk dial -->
@@ -884,7 +888,7 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
       <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#B52B43;margin-bottom:6px;">// REPRESENTATIVE SAMPLE ONLY</div>
       <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#E8F0F8;">We build this for your environment — your threats, your regions, your sources.</div>
     </div>
-    <a href="/contact?inquiry=dashboard" class="btn-primary mon-cta" style="flex-shrink:0;">Schedule a Confidential Call →</a>
+    <a href="/contact?inquiry=dashboard" class="btn-primary mon-cta" style="flex-shrink:0;">Start a Project →</a>
   </div>
 
 </div>
@@ -1226,6 +1230,7 @@ var rect=m.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return
   button.addEventListener("click", function(){ state(monitor.dataset.paused !== "true"); });
 })();
 </script>
+<div id="kig-bottom-form" data-inquiry="Custom Dashboard" data-page="dashboards"></div>
 <footer class="kig-footer"><div class="kig-footer-top"><a href="/"><img class="kig-footer-logo" src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-footer-links"><a href="/#services">Services</a><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a></div></div><div class="kig-press"><span>Seen In</span><a href="https://www.forbes.com/sites/kolawolesamueladebayo/2025/06/05/ai-roi-isnt-just-dollars-how-to-measure-intangible-wins/" target="_blank" rel="noopener" aria-label="Forbes"><img src="/images/forbes-logo.png" alt="Forbes" width="600" height="162"></a><a href="https://www.foxnews.com/video/6375181954112" target="_blank" rel="noopener" aria-label="Fox News"><img src="/images/fox-news-logo.png" alt="Fox News" width="600" height="113"></a><a href="https://www.ien.com/redzone/blog/22950979/the-ai-race-rd-could-determine-the-outcome" target="_blank" rel="noopener" aria-label="Industrial Equipment News"><img src="/images/ien-logo.png" alt="Industrial Equipment News" width="600" height="291"></a></div><p class="kig-footer-note">© 2026 Kronus Intelligence Group.</p></footer>
 </body>
 </html>
