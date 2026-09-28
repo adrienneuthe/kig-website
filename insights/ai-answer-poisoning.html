@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Answer Poisoning: A New Narrative-Threat Vector | KIG</title>
+<meta name="description" content="Attackers are seeding fake support numbers and login pages into ChatGPT, Gemini, and AI Overview answers. What the Dark Sourcery disclosure does and does not establish.">
+<link rel="canonical" href="https://kronusintelligencegroup.com/insights/ai-answer-poisoning">
+<meta property="og:title" content="AI Answer Poisoning: A New Narrative-Threat Vector | KIG">
+<meta property="og:description" content="Attackers are seeding fake support numbers and login pages into ChatGPT, Gemini, and AI Overview answers. What the Dark Sourcery disclosure does and does not establish.">
+<meta property="og:image" content="https://kronusintelligencegroup.com/og/kig-share-1200x630.png">
+<meta property="og:url" content="https://kronusintelligencegroup.com/insights/ai-answer-poisoning">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0KEYQ4PBX5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-0KEYQ4PBX5");</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ch:#1A1A1A;--gr:#222222;--stone:#3D3D3D;--dust:#C8D8E4;--parch:#E8F0F8;--cream:#FFFFFF;--crim:#B52B43;--border:rgba(255,255,255,0.06);--cond:"Barlow Condensed","Arial Narrow",sans-serif;--mono:"IBM Plex Mono",monospace;--sans:"IBM Plex Sans",sans-serif;}
+body{background:var(--ch);color:var(--parch);font-family:var(--sans);font-size:16px;line-height:1.75;}
+a{color:inherit;text-decoration:none;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--ch);z-index:100;}
+.nav-logo{font-family:var(--cond);font-size:15px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);}
+.nav-logo span{color:var(--crim);}
+.nav-back{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--dust);text-transform:uppercase;}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--crim);margin-bottom:14px;}
+.hero{padding:80px 48px 60px;max-width:856px;margin:0 auto;width:100%;border-bottom:1px solid var(--border);}
+h1{font-family:var(--cond);font-size:clamp(36px,5vw,60px);font-weight:800;color:var(--cream);line-height:1.05;text-transform:uppercase;margin-bottom:20px;}
+.hero-meta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#555;text-transform:uppercase;margin-bottom:20px;}
+.hero-desc{font-size:17px;color:var(--dust);max-width:640px;line-height:1.75;}
+article{max-width:856px;margin:0 auto;padding:60px 48px 80px;}
+article h2{font-family:var(--cond);font-size:26px;font-weight:800;color:var(--cream);text-transform:uppercase;margin:48px 0 16px;}
+article p{margin-bottom:20px;color:var(--parch);line-height:1.8;}
+article ul,article ol{margin:0 0 20px 24px;color:var(--parch);line-height:1.8;}
+article li{margin-bottom:8px;}
+article strong{color:var(--cream);}
+.cta-block{background:var(--gr);border:1px solid rgba(181,43,67,0.25);padding:32px;margin:48px 0 0;border-left:3px solid var(--crim);}
+.cta-block p{margin:0 0 16px;color:var(--dust);}
+.cta-block a{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--crim);border:1px solid rgba(181,43,67,0.4);padding:10px 20px;}
+.cta-block a:hover{background:rgba(181,43,67,0.08);}
+footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.footer-logo{font-family:var(--cond);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dust);}
+.footer-copy{font-family:var(--mono);font-size:10px;color:#555;}
+@media(max-width:768px){nav,footer{padding:16px 24px;}.hero{padding:60px 24px 40px;}article{padding:40px 24px 60px;}}
+
+.related-insights{background:var(--gr);border:1px solid var(--border);padding:32px;margin:56px 0 0;}
+.related-insights .eyebrow{margin-bottom:20px;}
+.related-insights ul{list-style:none;margin:0;padding:0;}
+.related-insights li{border-top:1px solid var(--border);padding:16px 0;}
+.related-insights li:first-child{border-top:none;padding-top:0;}
+.related-insights a{font-family:var(--cond);font-size:17px;font-weight:700;color:var(--cream);text-transform:uppercase;letter-spacing:.04em;}
+.related-insights a:hover{color:var(--crim);}
+.related-insights .rel-desc{font-family:var(--mono);font-size:11px;color:var(--dust);margin-top:4px;letter-spacing:.06em;}
+@media(max-width:900px){
+html,body{width:100%;max-width:100%;overflow-x:clip}
+nav,footer{gap:12px;flex-wrap:wrap;padding:14px 20px}
+.nav-logo{font-size:13px;letter-spacing:.08em}
+.nav-back{font-size:9px;letter-spacing:.06em}
+.hero{width:100%;max-width:100%;padding:48px 20px 36px}
+h1{font-size:clamp(30px,8.5vw,44px);overflow-wrap:anywhere}
+.hero-meta{font-size:9px;line-height:1.7;overflow-wrap:anywhere}
+.hero-desc{font-size:16px}
+article{width:100%;max-width:856px;padding:32px 20px 52px;overflow-wrap:anywhere}
+article h2{font-size:24px;line-height:1.1}
+article pre,article table,.comparison-table{display:block;max-width:100%;overflow-x:auto}
+footer{padding:24px 20px}
+}
+</style>
+
+<link rel="stylesheet" href="/navigation.css">
+<script src="/nav-dropdown.js" defer></script>
+<link rel="stylesheet" href="/sticky-cta.css">
+<script src="/sticky-cta.js" defer></script>
+<link rel="stylesheet" href="/site-shell.css">
+<link rel="stylesheet" href="/quick-brief.css">
+<script src="/quick-brief.js" defer></script>
+<link rel="stylesheet" href="/bottom-form.css">
+<script src="/bottom-form.js" defer></script>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kronus Intelligence Group">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Kronus Intelligence Group — We build and run the protective intelligence layer.">
+<meta name="twitter:title" content="AI Answer Poisoning: A New Narrative-Threat Vector | KIG">
+<meta name="twitter:description" content="Attackers are seeding fake support numbers and login pages into ChatGPT, Gemini, and AI Overview answers. What the Dark Sourcery disclosure does and does not establish.">
+<meta name="twitter:image" content="https://kronusintelligencegroup.com/og/kig-share-1200x630.png">
+<meta property="article:published_time" content="2026-09-28">
+<meta property="article:modified_time" content="2026-09-28">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI Answer Poisoning: What the Dark Sourcery Disclosure Means for Brand Reputation", "description": "Attackers are seeding fake support numbers and login pages into ChatGPT, Gemini, and AI Overview answers. What the Dark Sourcery disclosure does and does not establish.", "image": "https://kronusintelligencegroup.com/og/kig-share-1200x630.png", "datePublished": "2026-09-28", "dateModified": "2026-09-28", "mainEntityOfPage": "https://kronusintelligencegroup.com/insights/ai-answer-poisoning", "url": "https://kronusintelligencegroup.com/insights/ai-answer-poisoning", "author": {"@type": "Organization", "name": "Kronus Intelligence Group"}, "publisher": {"@type": "Organization", "name": "Kronus Intelligence Group", "logo": {"@type": "ImageObject", "url": "https://kronusintelligencegroup.com/images/kig-logo-horizontal.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kronusintelligencegroup.com/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://kronusintelligencegroup.com/insights/"}, {"@type": "ListItem", "position": 3, "name": "AI Answer Poisoning: What the Dark Sourcery Disclosure Means for Brand Reputation", "item": "https://kronusintelligencegroup.com/insights/ai-answer-poisoning"}]}</script>
+</head>
+<body>
+<nav class="kig-site-nav" aria-label="Main navigation"><a href="/" aria-label="Kronus Intelligence Group home"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-site-links"><div class="kig-nav-drop"><button type="button" class="kig-nav-drop-btn" aria-expanded="false" aria-haspopup="true">Services</button><div class="kig-nav-drop-menu" role="menu"><a role="menuitem" href="/principal-protective-intelligence">Principal &amp; Executive Protective Intelligence</a><a role="menuitem" href="/institutional-threat-intelligence">Institutional &amp; Infrastructure Threat Intelligence</a><a role="menuitem" href="/counterparty-deal-intelligence">Counterparty &amp; Deal-Level Intelligence</a><a role="menuitem" href="/narrative-threat-intelligence">Narrative &amp; Reputational Threat Intelligence</a><a role="menuitem" href="/#services">All Services</a></div></div><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/contact">Contact</a></div><a href="/contact" class="kig-nav-cta">Start a Project →</a><button type="button" class="kig-menu-toggle" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button></nav>
+<div class="hero"><div class="eyebrow">Intelligence Insights</div><h1>AI ANSWER POISONING: WHAT THE DARK SOURCERY DISCLOSURE MEANS FOR BRAND REPUTATION</h1><div class="hero-meta">September 28, 2026 &nbsp;|&nbsp; Kronus Intelligence Group</div><p class="hero-desc">Security researchers say attackers are seeding fake support numbers and login pages into ChatGPT, Gemini, and Google AI Overview answers for hundreds of brands. Here is what is established, what is not, and what it means for narrative-threat monitoring.</p></div>
+<article>
+
+<p><strong>BLUF:</strong> A September 2026 disclosure dubbed "Dark Sourcery," from the security research firm Vigilance, reports that attackers are flooding the web with fake support pages, reviews, and PDFs engineered to get ChatGPT, Gemini, and Google AI Overview to repeat fraudulent phone numbers, email addresses, and login pages as if they were a brand's own contact information. Vigilance names 374 affected organizations, including major airlines, banks, and travel platforms. Independent outlets have covered the disclosure; none have independently reproduced the 374-company figure or the "tens of thousands of pages" claim. The mechanism is well understood and consistent with how large language models source and cite information. The scale claim is not yet independently verified. Organizations should treat this as a real and growing category of narrative risk, and treat the specific numbers as one research team's measurement, not an audited fact.</p>
+
+<h2>What Vigilance Says Is Happening</h2>
+
+<p>According to the disclosure, published by Vigilance vice president of research Ariel Simon and covered by Dark Reading, IANS, and Express Computer between September 22 and 26, 2026, the campaign works by repurposing generative engine optimization — the same techniques legitimate marketers use to get their content cited by AI systems — for fraud. Attackers publish large volumes of content engineered to look authoritative: FAQ-formatted posts, fake customer-support pages, and PDFs carrying a target brand's name alongside a phone number, email address, or login link the attackers control.</p>
+
+<p>The content is written to survive the filtering AI systems apply before citing a source. Researchers describe the same phone number rendered dozens of different ways — spacing changes, spelled-out digits, character substitutions — so that a naive duplicate-detection filter sees many different strings while a language model still reads them as the same number. Reporting also describes "manufactured urgency" language (canceled flights, locked accounts, refund requests) designed to make the fabricated content more likely to be surfaced when a real user asks a real question.</p>
+
+<p>Vigilance says it built a measurement pipeline that queried the three AI platforms for information about target brands, then scored the sources each platform cited for signs of this manipulation. Across that pipeline, the firm reports 374 affected companies — spanning Fortune 100 organizations, airlines including Delta, Lufthansa, and Qatar Airways, and banks including Bank of America, Chase, and Wells Fargo — and says it has already seen reports of people being asked for payment details by numbers surfaced this way.</p>
+
+<h2>What Is Verified, and What Is Not</h2>
+
+<p>This is the distinction that matters for anyone deciding how much organizational attention this deserves, and it is where most of the coverage has been thin. The mechanism is credible and does not depend on trusting Vigilance's scale claim: language models cite sources, sources can be gamed, and GEO techniques for legitimate citation and for fraudulent citation are the same techniques pointed at different content. That much requires no independent audit — it follows from how retrieval-augmented AI answers are built.</p>
+
+<p>The scale claim is a different matter. As of this writing, no outlet has published an independently reproduced count of affected companies or malicious pages. Vigilance's own disclosure acknowledges the incidents it counted were "statistical" — querying the same question about the same brand did not reliably reproduce the same fraudulent answer every time, which is consistent with how LLM outputs vary by model version, location, and phrasing. No public dataset, query log, or reproducible test set accompanied the disclosure, and neither OpenAI nor Google has issued a public confirmation or rebuttal as of September 28, 2026.</p>
+
+<p>None of that means the finding is wrong. It means the finding is one research team's measurement, obtained with an undisclosed methodology, and it should be cited that way — a real and plausible threat pattern, with an unaudited scale claim attached to it. Organizations briefing leadership on this should say exactly that, rather than repeating "374 companies" as an established count.</p>
+
+<h2>Why This Is a Narrative-Threat Problem, Not Only a Security One</h2>
+
+<p>Most of the coverage to date has framed Dark Sourcery as a phishing and fraud story, which it is. It is also a reputational-exposure story that the affected brands did not create and, in most cases, do not yet know about. A customer who calls a fraudulent number they found in a chatbot answer, gets asked for banking details, and loses money will not blame the AI platform. They will blame the airline or the bank whose name appeared next to the number — a reputational cost imposed on an organization with zero involvement in the underlying attack, delivered through a channel (an AI assistant's answer) that the organization does not control and, in most cases, cannot directly monitor with existing brand-protection tooling.</p>
+
+<p>This is the same structural problem narrative-threat monitoring exists to address, applied to a new surface. Traditional brand and media monitoring watches what is published about an organization on the open web and in the press. It was not built to watch what a language model synthesizes and presents as a direct answer — a layer with its own citation logic, its own update cadence, and, as this disclosure illustrates, its own exploitable trust assumptions.</p>
+
+<h2>What This Should Change for Organizations Operating in Contested Environments</h2>
+
+<p>Three practical implications follow from treating this as a real, if not yet fully quantified, risk category.</p>
+
+<p><strong>Query your own brand across AI assistants as a matter of routine, not curiosity.</strong> Ask ChatGPT, Gemini, and Google AI Overview basic customer-facing questions about your organization — support contact, login process, account recovery — the same way a fraud campaign would probe them. If a fabricated number or link surfaces, that is a live incident, not a hypothetical one, regardless of how many other companies are affected.</p>
+
+<p><strong>Treat AI-surfaced contact information as a distinct monitoring category, not a subset of existing web monitoring.</strong> The content driving these answers frequently lives on platforms and page types — fake support forums, PDF hosts, review sites — that standard media-monitoring and brand-mention tools were not configured to prioritize, because it was never optimized to attract human readers. It was optimized to attract a citation algorithm.</p>
+
+<p><strong>Do not amplify unverified scale claims internally without labeling them as such.</strong> A board briefing that states "374 companies including us may be affected" as settled fact, when the underlying figure is one vendor's unaudited measurement, creates its own credibility problem later if the number is revised. State the mechanism as established and the scale as reported-but-unverified — that framing survives scrutiny either way.</p>
+
+<div class="kig-article-cta"><p>Watching for this on your own environment?</p><a href="/contact?inquiry=narrative">Start a Project &rarr;</a></div>
+
+<h2>The Broader Pattern</h2>
+
+<p>Dark Sourcery is a specific disclosure, but it fits a pattern this publication has tracked across the narrative-threat landscape: the same infrastructure that makes generative AI useful — its willingness to synthesize an answer from whatever sources it can find and present it with confident, unhedged authority — is also what makes it exploitable. A search engine result carries visible source links a skeptical user can check. A chatbot answer frequently does not, or presents it in a way most users skip. That gap between how confidently an answer is delivered and how verifiable its sourcing actually is will keep producing exactly this kind of exposure, for reasons that have nothing to do with any single vendor's disclosure.</p>
+
+<p>Kronus Intelligence Group builds and operates custom narrative-monitoring infrastructure for organizations that need to know what is being said about them — and, increasingly, what is being synthesized about them — before a customer or a journalist finds it first.</p>
+
+<div class="cta-block"><p>Kronus Intelligence Group builds and operates custom intelligence infrastructure for organizations that cannot afford to be wrong. If your environment requires it, we want to hear from you.</p><a href="/contact?inquiry=narrative">Start a Project &rarr;</a></div>
+<div class="related-insights"><div class="eyebrow">Related Insights</div><ul>
+    <li><a href="/insights/disinformation-detection">Disinformation Detection: How Organizations Identify and Counter False Narratives</a><div class="rel-desc">The signal framework this incident maps directly onto.</div></li>
+    <li><a href="/insights/what-is-narrative-intelligence">What Is Narrative Intelligence?</a><div class="rel-desc">The discipline behind monitoring how information about an organization moves and mutates.</div></li>
+  </ul></div>
+
+<div class="related-service-card" style="margin-top:24px;"><a href="/narrative-threat-intelligence" style="display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--gr);border:1px solid rgba(255,255,255,0.06);padding:20px 24px;text-decoration:none;transition:border-color .2s;"><span style="color:var(--cream);font-size:14px;font-weight:600;">Related service: Narrative & Reputational Threat Intelligence</span><span style="color:var(--crim);font-family:var(--mono);font-size:14px;flex-shrink:0;">&rarr;</span></a></div>
+<div class="article-newsletter" style="margin-top:24px;background:var(--gr);border:1px solid var(--border);padding:24px;"><p style="font-family:var(--cond);font-size:16px;font-weight:700;color:var(--cream);text-transform:uppercase;margin:0 0 12px;">Get KIG briefings in your inbox.</p><form class="kig-article-sub-form" method="POST" action="https://kronusempire.activehosted.com/proc.php" target="kig-article-sub-sink" style="display:flex;gap:10px;flex-wrap:wrap;"><input type="hidden" name="u" value="6AB38C2055253"><input type="hidden" name="f" value="3"><input type="hidden" name="s"><input type="hidden" name="c" value="0"><input type="hidden" name="m" value="0"><input type="hidden" name="act" value="sub"><input type="hidden" name="v" value="2"><input type="hidden" name="or" value="bc1d3977-0b5e-496a-acd4-aa03a255a47e"><input type="email" name="email" placeholder="you@organization.com" required style="flex:1;min-width:200px;box-sizing:border-box;padding:12px 14px;background:var(--ch);border:1px solid #555;color:var(--parch);font-family:var(--sans);font-size:15px;"><button type="submit" style="padding:12px 20px;background:var(--crim);border:none;color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;">Subscribe &rarr;</button></form><p style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:#909090;text-transform:uppercase;margin:10px 0 0;">Confidential. See our <a href="/privacy" style="color:#909090;">Privacy Policy</a>.</p><iframe name="kig-article-sub-sink" title="Subscription handler" style="display:none" aria-hidden="true"></iframe></div>
+</article>
+<div id="kig-bottom-form" data-inquiry="General Inquiry" data-page="insights-ai-answer-poisoning"></div>
+<footer class="kig-footer"><div class="kig-footer-top"><a href="/"><img class="kig-footer-logo" src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-footer-links"><a href="/#services">Services</a><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><span class="kig-social-links"><a class="kig-social-icon" href="https://www.linkedin.com/company/kronus-intelligence-group" target="_blank" rel="noopener" aria-label="KIG on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a class="kig-social-icon" href="https://www.instagram.com/kronusintel/" target="_blank" rel="noopener" aria-label="KIG on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.41.56.21.96.47 1.38.89.42.42.68.82.89 1.38.17.42.36 1.05.41 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.41 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.17-1.05.36-2.22.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.41a3.72 3.72 0 0 1-1.38-.89 3.72 3.72 0 0 1-.89-1.38c-.17-.42-.36-1.05-.41-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.41-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.17 1.05-.36 2.22-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.66.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.66 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a></span></div></div><div class="kig-press"><span>Seen In</span><a href="https://www.forbes.com/sites/kolawolesamueladebayo/2025/06/05/ai-roi-isnt-just-dollars-how-to-measure-intangible-wins/" target="_blank" rel="noopener" aria-label="Forbes"><img src="/images/forbes-logo.png" alt="Forbes" width="600" height="162"></a><a href="https://www.foxnews.com/video/6375181954112" target="_blank" rel="noopener" aria-label="Fox News"><img src="/images/fox-news-logo.png" alt="Fox News" width="600" height="113"></a><a href="https://www.ien.com/redzone/blog/22950979/the-ai-race-rd-could-determine-the-outcome" target="_blank" rel="noopener" aria-label="Industrial Equipment News"><img src="/images/ien-logo.png" alt="Industrial Equipment News" width="600" height="291"></a></div><p class="kig-footer-note">© 2026 Kronus Intelligence Group.</p></footer>
+</body>
+</html>
