@@ -52,3 +52,8 @@ h1{font-family:var(--cond);font-size:clamp(36px,5vw,60px);font-weight:800;line-h
 h2{font-family:var(--cond);font-size:clamp(26px,3.2vw,40px);font-weight:800;line-height:1.05;text-transform:uppercase;color:var(--cream)}
 h3{font-family:var(--cond);font-size:clamp(19px,2vw,24px);font-weight:700;line-height:1.15;text-transform:uppercase;color:var(--cream)}
 p{font-size:15px;line-height:1.75;color:var(--dust)}
+
+/* CSI badge — footer, original colors, exempt from grayscale (2026-09-29) */
+.kig-footer .kig-csi{display:flex;align-items:center;gap:12px;margin-top:20px}
+.kig-footer .kig-csi img{filter:none!important;opacity:1!important;mix-blend-mode:normal!important;width:80px!important;height:80px!important;flex:none;object-fit:contain;border:0;border-radius:0;box-shadow:none;background:none}
+.kig-footer .kig-csi span{font:10px/1.6 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#c8d8e4;max-width:240px}
