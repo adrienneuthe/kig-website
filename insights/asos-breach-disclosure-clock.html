@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asos Breach: When Attackers Set the Disclosure Clock | KIG</title>
+<meta name="description" content="Asos hackers impersonated a trusted contact, hijacked the app's own push channel, then contacted the BBC as the company's first statement understated the data taken. What is established and what to do.">
+<link rel="canonical" href="https://kronusintelligencegroup.com/insights/asos-breach-disclosure-clock">
+<meta property="og:title" content="Asos Breach: When Attackers Set the Disclosure Clock | KIG">
+<meta property="og:description" content="Asos hackers impersonated a trusted contact, hijacked the app's own push channel, then contacted the BBC as the company's first statement understated the data taken. What is established and what to do.">
+<meta property="og:image" content="https://kronusintelligencegroup.com/og/kig-share-v2-1200x630.png">
+<meta property="og:url" content="https://kronusintelligencegroup.com/insights/asos-breach-disclosure-clock">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0KEYQ4PBX5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-0KEYQ4PBX5");</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ch:#1A1A1A;--gr:#222222;--stone:#3D3D3D;--dust:#C8D8E4;--parch:#E8F0F8;--cream:#FFFFFF;--crim:#B52B43;--border:rgba(255,255,255,0.06);--cond:"Barlow Condensed","Arial Narrow",sans-serif;--mono:"IBM Plex Mono",monospace;--sans:"IBM Plex Sans",sans-serif;}
+body{background:var(--ch);color:var(--parch);font-family:var(--sans);font-size:16px;line-height:1.75;}
+a{color:inherit;text-decoration:none;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--ch);z-index:100;}
+.nav-logo{font-family:var(--cond);font-size:15px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);}
+.nav-logo span{color:var(--crim);}
+.nav-back{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--dust);text-transform:uppercase;}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--crim);margin-bottom:14px;}
+.hero{padding:80px 48px 60px;max-width:856px;margin:0 auto;width:100%;border-bottom:1px solid var(--border);}
+h1{font-family:var(--cond);font-size:clamp(36px,5vw,60px);font-weight:800;color:var(--cream);line-height:1.05;text-transform:uppercase;margin-bottom:20px;}
+.hero-meta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#555;text-transform:uppercase;margin-bottom:20px;}
+.hero-desc{font-size:17px;color:var(--dust);max-width:640px;line-height:1.75;}
+article{max-width:856px;margin:0 auto;padding:60px 48px 80px;}
+article h2{font-family:var(--cond);font-size:26px;font-weight:800;color:var(--cream);text-transform:uppercase;margin:48px 0 16px;}
+article p{margin-bottom:20px;color:var(--parch);line-height:1.8;}
+article ul,article ol{margin:0 0 20px 24px;color:var(--parch);line-height:1.8;}
+article li{margin-bottom:8px;}
+article strong{color:var(--cream);}
+.cta-block{background:var(--gr);border:1px solid rgba(181,43,67,0.25);padding:32px;margin:48px 0 0;border-left:3px solid var(--crim);}
+.cta-block p{margin:0 0 16px;color:var(--dust);}
+.cta-block a{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--crim);border:1px solid rgba(181,43,67,0.4);padding:10px 20px;}
+.cta-block a:hover{background:rgba(181,43,67,0.08);}
+footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.footer-logo{font-family:var(--cond);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dust);}
+.footer-copy{font-family:var(--mono);font-size:10px;color:#555;}
+@media(max-width:768px){nav,footer{padding:16px 24px;}.hero{padding:60px 24px 40px;}article{padding:40px 24px 60px;}}
+
+.related-insights{background:var(--gr);border:1px solid var(--border);padding:32px;margin:56px 0 0;}
+.related-insights .eyebrow{margin-bottom:20px;}
+.related-insights ul{list-style:none;margin:0;padding:0;}
+.related-insights li{border-top:1px solid var(--border);padding:16px 0;}
+.related-insights li:first-child{border-top:none;padding-top:0;}
+.related-insights a{font-family:var(--cond);font-size:17px;font-weight:700;color:var(--cream);text-transform:uppercase;letter-spacing:.04em;}
+.related-insights a:hover{color:var(--crim);}
+.related-insights .rel-desc{font-family:var(--mono);font-size:11px;color:var(--dust);margin-top:4px;letter-spacing:.06em;}
+@media(max-width:900px){
+html,body{width:100%;max-width:100%;overflow-x:clip}
+nav,footer{gap:12px;flex-wrap:wrap;padding:14px 20px}
+.nav-logo{font-size:13px;letter-spacing:.08em}
+.nav-back{font-size:9px;letter-spacing:.06em}
+.hero{width:100%;max-width:100%;padding:48px 20px 36px}
+h1{font-size:clamp(30px,8.5vw,44px);overflow-wrap:anywhere}
+.hero-meta{font-size:9px;line-height:1.7;overflow-wrap:anywhere}
+.hero-desc{font-size:16px}
+article{width:100%;max-width:856px;padding:32px 20px 52px;overflow-wrap:anywhere}
+article h2{font-size:24px;line-height:1.1}
+article pre,article table,.comparison-table{display:block;max-width:100%;overflow-x:auto}
+footer{padding:24px 20px}
+}
+</style>
+
+<link rel="stylesheet" href="/navigation.css">
+<script src="/nav-dropdown.js" defer></script>
+<link rel="stylesheet" href="/sticky-cta.css">
+<script src="/sticky-cta.js" defer></script>
+<link rel="stylesheet" href="/site-shell.css">
+<link rel="stylesheet" href="/quick-brief.css">
+<script src="/quick-brief.js" defer></script>
+<link rel="stylesheet" href="/bottom-form.css">
+<script src="/bottom-form.js" defer></script>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kronus Intelligence Group">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Kronus Intelligence Group — We build and run the protective intelligence layer.">
+<meta name="twitter:title" content="Asos Breach: When Attackers Set the Disclosure Clock | KIG">
+<meta name="twitter:description" content="Asos hackers impersonated a trusted contact, hijacked the app's own push channel, then contacted the BBC as the company's first statement understated the data taken. What is established and what to do.">
+<meta name="twitter:image" content="https://kronusintelligencegroup.com/og/kig-share-v2-1200x630.png">
+<meta property="article:published_time" content="2026-10-14">
+<meta property="article:modified_time" content="2026-10-14">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Asos Breach: When Attackers Set the Disclosure Clock", "description": "Asos hackers impersonated a trusted contact, hijacked the app's own push channel, then contacted the BBC as the company's first statement understated the data taken. What is established and what to do.", "image": "https://kronusintelligencegroup.com/og/kig-share-v2-1200x630.png", "datePublished": "2026-10-14", "dateModified": "2026-10-14", "mainEntityOfPage": "https://kronusintelligencegroup.com/insights/asos-breach-disclosure-clock", "url": "https://kronusintelligencegroup.com/insights/asos-breach-disclosure-clock", "author": {"@type": "Organization", "name": "Kronus Intelligence Group"}, "publisher": {"@type": "Organization", "name": "Kronus Intelligence Group", "logo": {"@type": "ImageObject", "url": "https://kronusintelligencegroup.com/images/kig-logo-horizontal.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kronusintelligencegroup.com/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://kronusintelligencegroup.com/insights/"}, {"@type": "ListItem", "position": 3, "name": "Asos Breach: When Attackers Set the Disclosure Clock", "item": "https://kronusintelligencegroup.com/insights/asos-breach-disclosure-clock"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What happened in the Asos breach?", "acceptedAnswer": {"@type": "Answer", "text": "On October 6, 2026 Asos customers received an unauthorised \"Asos hacked\" app notification. Asos later confirmed attackers had used an employee's credentials, obtained by impersonating a trusted contact, to access third-party platforms and customer data including names, contact details and search histories."}}, {"@type": "Question", "name": "Was payment data taken?", "acceptedAnswer": {"@type": "Answer", "text": "Asos says no bank details or passwords were accessed. That is the company's statement and its investigation is ongoing."}}, {"@type": "Question", "name": "Why did Asos update its disclosure?", "acceptedAnswer": {"@type": "Answer", "text": "Asos widened its statement on October 8 after the BBC told it that the attackers had sent sample data indicating more was taken than first described."}}, {"@type": "Question", "name": "What should a company learn from it?", "acceptedAnswer": {"@type": "Answer", "text": "Treat the first statement as a floor, secure every channel that can speak in your name, verify identity out of band, and prepare for attackers to brief the press."}}]}</script>
+</head>
+<body>
+<nav class="kig-site-nav" aria-label="Main navigation"><a href="/" aria-label="Kronus Intelligence Group home"><img src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-site-links"><div class="kig-nav-drop"><button type="button" class="kig-nav-drop-btn" aria-expanded="false" aria-haspopup="true">Services</button><div class="kig-nav-drop-menu" role="menu"><a role="menuitem" href="/principal-protective-intelligence">Principal &amp; Executive Protective Intelligence</a><a role="menuitem" href="/institutional-threat-intelligence">Institutional &amp; Infrastructure Threat Intelligence</a><a role="menuitem" href="/counterparty-deal-intelligence">Counterparty &amp; Deal-Level Intelligence</a><a role="menuitem" href="/narrative-threat-intelligence">Narrative &amp; Reputational Threat Intelligence</a><a role="menuitem" href="/#services">All Services</a></div></div><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/contact">Contact</a></div><a href="/contact" class="kig-nav-cta">Start a Project →</a><button type="button" class="kig-menu-toggle" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button></nav>
+<div class="hero"><div class="eyebrow">Intelligence Insights</div><h1>ASOS BREACH: WHEN ATTACKERS SET THE DISCLOSURE CLOCK</h1><div class="hero-meta">October 14, 2026 &nbsp;|&nbsp; Kronus Intelligence Group</div><p class="hero-desc">Asos hackers impersonated a trusted contact, hijacked the app's own push channel, then contacted the BBC as the company's first statement understated the data taken. What is established and what to do.</p></div>
+<article>
+<p><strong>BLUF:</strong> Asos's October 6-8 breach is a case of an attacker controlling the narrative as well as the data. Per Asos and press reporting, the intruders impersonated a trusted contact to obtain an employee's login, used third-party platforms to push an "Asos hacked" alert to customers, and then told the BBC the breach was larger than the company's first statement said. Asos widened its disclosure within hours. The lesson for any organization: your first statement must be written assuming the attacker will publish the rest. Confidence in the sequence below is high; confidence in the attackers' own claims is low.</p>
+
+<h2>What Is Established</h2>
+<p>This account follows Asos's London Stock Exchange announcement and customer email, and reporting by the BBC, The Guardian and Infosecurity Magazine.</p>
+<ul>
+<li><strong>October 6.</strong> Customers received an app notification headed "Asos hacked" with a link to Telegram, addressed to Asos's data protection officer and IT team and claiming a "fully compromised" data instance. Asos shares reportedly fell almost 12% that day. Asos told shareholders an unauthorised notification was sent through third-party platforms it uses to communicate with customers, that basic personal information may have been accessed, and that payment cards and passwords were not believed affected.</li>
+<li><strong>October 7-8.</strong> The group calling itself Xuanyewen contacted the BBC with sample data. The BBC held its story so Asos could notify customers first. On October 8 Asos told customers the attackers held detailed profiles, including names, addresses, phone numbers, emails, customer numbers and search histories, while saying no bank details or passwords were accessed.</li>
+<li><strong>How access was gained.</strong> Asos says the attacker impersonated a "trusted contact" to obtain an employee's login credentials, then used them on third-party platforms.</li>
+</ul>
+
+<h2>What Is Not Established</h2>
+<p>The attackers told the BBC they used a Snowflake-based platform to reach the data. That is their claim, relayed by the BBC, and we have not seen it confirmed. The number of customers affected has not been published; reporting says "potentially millions." Asos says its investigation continues.</p>
+
+<h2>Why the Disclosure Sequence Matters</h2>
+<p>Three things happened in the same 48 hours, and each is a general pattern rather than a retail one.</p>
+<ol>
+<li><strong>The attacker used the victim's own voice.</strong> A push alert from the real app carries the brand's authority. Customers could not tell a hostile message from an official one, which is why Asos had to tell them to disregard it.</li>
+<li><strong>The first statement set a baseline the attacker could contradict.</strong> "Basic personal information" was accurate to what Asos knew on October 6. By October 8 an outside party had sample data showing more. When a company's early wording is narrower than the facts, the gap becomes the story.</li>
+<li><strong>A journalist became a disclosure channel.</strong> The attackers went to the press rather than to the company. Asos's update followed the BBC's contact. Plan for the possibility that you learn what was taken from a reporter.</li>
+</ol>
+<p>The same dynamic of a trusted identity being borrowed appears in our briefings on <a href="/insights/openai-false-front-influence-operations">false-front influence operations</a> and <a href="/insights/ta419-ai-policy-impersonation">impersonation phishing against policy experts</a>.</p>
+
+<h2>What to Do Now</h2>
+<ol>
+<li><strong>Write the first statement as a floor.</strong> State what is confirmed, say plainly that scope is still being assessed, and avoid words like "basic" or "limited" until forensics supports them.</li>
+<li><strong>Control your outbound channels.</strong> List every platform that can send messages as your brand (push, email, SMS, social), who has access, and whether each requires phishing-resistant authentication.</li>
+<li><strong>Harden identity checks on "trusted contacts".</strong> Credential theft by impersonation is a verification failure. Require call-back or out-of-band confirmation before any credential or access change.</li>
+<li><strong>Pre-write the customer scam warning.</strong> After a public breach, fraudsters follow with refund and password-reset lures. Security firms quoted by the BBC expect exactly this.</li>
+<li><strong>Brief your press contact early.</strong> If a reporter contacts you with attacker material, you need a named person, a verification step and a decision on whether to update customers first.</li>
+<li><strong>Monitor the channels attackers use.</strong> Telegram, leak sites and forums often carry the claim before the press does. See our guide to <a href="/insights/narrative-threat-monitoring">narrative threat monitoring</a>.</li>
+</ol>
+
+<h2>Questions Leaders Should Ask This Week</h2>
+<p>These take an hour and expose most of the exposure.</p>
+<ul>
+<li><strong>Who can send a message that customers will believe is from us?</strong> Name every tool and every person, including agencies and vendors. The Asos alert came through platforms the company uses to communicate with customers, not through a break into its core systems.</li>
+<li><strong>What would we say in the first two hours if we only knew half the facts?</strong> Draft that statement now. The test is whether each sentence would still be true if the scope doubled.</li>
+<li><strong>Who decides when to widen a disclosure?</strong> If the answer is a committee that meets daily, an attacker with a press contact can move faster than you.</li>
+<li><strong>Where would a hostile claim about us appear first?</strong> Leak sites, messaging channels and journalists' inboxes are usually earlier than your own alerts.</li>
+<li><strong>Do our people know that a request from a trusted contact can be the attack?</strong> Impersonation works because it borrows an existing relationship, so the check has to happen outside the channel the request came in on.</li>
+</ul>
+<p>None of this requires new technology. It requires deciding, before an incident, who speaks, how fast and on what evidence. For organizations that want this mapped to their own exposure, our <a href="/narrative-threat-intelligence">narrative and reputational threat intelligence</a> work covers monitoring and response planning.</p>
+
+<h2>Confidence and Caveats</h2>
+<p>We assess with high confidence the timeline and the access method as stated by Asos. We assess with low confidence any attacker claim about tooling or volume. We have not reviewed the stolen data. This note will be updated if Asos or a regulator publishes further findings.</p>
+
+<h2>Frequently Asked Questions</h2>
+<p><strong>What happened in the Asos breach?</strong> On October 6, 2026 Asos customers received an unauthorised "Asos hacked" app notification. Asos later confirmed attackers had used an employee's credentials, obtained by impersonating a trusted contact, to access third-party platforms and customer data including names, contact details and search histories.</p>
+<p><strong>Was payment data taken?</strong> Asos says no bank details or passwords were accessed. That is the company's statement and its investigation is ongoing.</p>
+<p><strong>Why did Asos update its disclosure?</strong> Asos widened its statement on October 8 after the BBC told it that the attackers had sent sample data indicating more was taken than first described.</p>
+<p><strong>What should a company learn from it?</strong> Treat the first statement as a floor, secure every channel that can speak in your name, verify identity out of band, and prepare for attackers to brief the press.</p>
+
+<div class="cta-block"><p>Kronus Intelligence Group builds and operates custom intelligence infrastructure for organizations that cannot afford to be wrong. If your environment requires it, we want to hear from you.</p><a href="/contact?inquiry=principal">Start a Project &rarr;</a></div>
+<div class="related-insights"><div class="eyebrow">Related Insights</div><ul>
+    <li><a href="/insights/openai-false-front-influence-operations">OpenAI's False-Front Influence Operations</a><div class="rel-desc">Invented identities reaching real audiences.</div></li>
+    <li><a href="/insights/ta419-ai-policy-impersonation">Impersonation Phishing Against AI Policy Experts</a><div class="rel-desc">How trusted identities are borrowed.</div></li>
+    <li><a href="/insights/narrative-threat-monitoring">Narrative Threat Monitoring</a><div class="rel-desc">Watching for claims about you in unfamiliar places.</div></li>
+  </ul></div>
+<div class="related-service-card" style="margin-top:24px;"><a href="/narrative-threat-intelligence" style="display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--gr);border:1px solid rgba(255,255,255,0.06);padding:20px 24px;text-decoration:none;transition:border-color .2s;"><span style="color:var(--cream);font-size:14px;font-weight:600;">Related service: Narrative &amp; Reputational Threat Intelligence</span><span style="color:var(--crim);font-family:var(--mono);font-size:14px;flex-shrink:0;">&rarr;</span></a></div>
+<div class="article-newsletter" style="margin-top:24px;background:var(--gr);border:1px solid var(--border);padding:24px;"><p style="font-family:var(--cond);font-size:16px;font-weight:700;color:var(--cream);text-transform:uppercase;margin:0 0 12px;">Get KIG briefings in your inbox.</p><form class="kig-article-sub-form" method="POST" action="https://kronusempire.activehosted.com/proc.php" target="kig-article-sub-sink" style="display:flex;gap:10px;flex-wrap:wrap;"><input type="hidden" name="u" value="6AB38C2055253"><input type="hidden" name="f" value="3"><input type="hidden" name="s"><input type="hidden" name="c" value="0"><input type="hidden" name="m" value="0"><input type="hidden" name="act" value="sub"><input type="hidden" name="v" value="2"><input type="hidden" name="or" value="bc1d3977-0b5e-496a-acd4-aa03a255a47e"><input type="email" name="email" placeholder="you@organization.com" required style="flex:1;min-width:200px;box-sizing:border-box;padding:12px 14px;background:var(--ch);border:1px solid #555;color:var(--parch);font-family:var(--sans);font-size:15px;"><button type="submit" style="padding:12px 20px;background:var(--crim);border:none;color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;">Subscribe &rarr;</button></form><p style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:#909090;text-transform:uppercase;margin:10px 0 0;">Confidential. See our <a href="/privacy" style="color:#909090;">Privacy Policy</a>.</p><iframe name="kig-article-sub-sink" title="Subscription handler" style="display:none" aria-hidden="true"></iframe></div>
+</article>
+<div id="kig-bottom-form" data-inquiry="General Inquiry" data-page="insights-asos-breach-disclosure-clock"></div>
+<footer class="kig-footer"><div class="kig-footer-top"><a href="/"><img class="kig-footer-logo" src="/images/kig-logo-horizontal.png" alt="Kronus Intelligence Group"></a><div class="kig-footer-links"><a href="/#services">Services</a><a href="/dashboards">Dashboards</a><a href="/about">About</a><a href="/insights/">Insights</a><a href="/newsletter">Subscribe</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><span class="kig-social-links"><a class="kig-social-icon" href="https://www.linkedin.com/company/kronus-intelligence-group" target="_blank" rel="noopener" aria-label="KIG on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a class="kig-social-icon" href="https://www.instagram.com/kronusintel/" target="_blank" rel="noopener" aria-label="KIG on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.41.56.21.96.47 1.38.89.42.42.68.82.89 1.38.17.42.36 1.05.41 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.41 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.17-1.05.36-2.22.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.41a3.72 3.72 0 0 1-1.38-.89 3.72 3.72 0 0 1-.89-1.38c-.17-.42-.36-1.05-.41-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.41-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.17 1.05-.36 2.22-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.66.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.66 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a></span></div></div><div class="kig-press"><span>Seen In</span><a href="https://www.forbes.com/sites/kolawolesamueladebayo/2025/06/05/ai-roi-isnt-just-dollars-how-to-measure-intangible-wins/" target="_blank" rel="noopener" aria-label="Forbes"><img src="/images/forbes-logo.png" alt="Forbes" width="600" height="162"></a><a href="https://www.foxnews.com/video/6375181954112" target="_blank" rel="noopener" aria-label="Fox News"><img src="/images/fox-news-logo.png" alt="Fox News" width="600" height="113"></a><a href="https://www.ien.com/redzone/blog/22950979/the-ai-race-rd-could-determine-the-outcome" target="_blank" rel="noopener" aria-label="Industrial Equipment News"><img src="/images/ien-logo.png" alt="Industrial Equipment News" width="600" height="291"></a></div><div class="kig-csi" style="display:flex;align-items:center;gap:12px;margin-top:20px"><img src="/images/csi-professional-member.png" alt="Cognitive Security Institute — CSI Professional Member badge" width="80" height="80" loading="lazy" decoding="async" style="filter:none;opacity:1;mix-blend-mode:normal;width:80px;height:80px;flex:none;object-fit:contain;border:0;border-radius:0;box-shadow:none;background:none"><span style="font:10px/1.6 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#c8d8e4;max-width:240px">CSI Professional Member · Cognitive Security Institute</span></div><div class="kig-ann" style="display:flex;align-items:center;gap:12px;margin-top:16px"><img src="/images/ann-logo-white.png" alt="Anti Narrative Network logo" width="80" height="56" loading="lazy" decoding="async" style="filter:none;opacity:1;mix-blend-mode:normal;width:80px;height:56px;flex:none;object-fit:contain;border:0;border-radius:0;box-shadow:none;background:none"><span style="font:10px/1.6 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#c8d8e4;max-width:240px">Associated with the Anti Narrative Network</span></div><p class="kig-footer-note">© 2026 Kronus Intelligence Group.</p></footer>
+</body>
+</html>
