@@ -26,3 +26,7 @@
 .kig-article-cta p{margin:0;font:15px/1.5 var(--sans,'Inter',sans-serif);color:#F4EFE7;font-weight:600}
 .kig-article-cta a{background:#B52B43;color:#fff;font:700 13px/1.5 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;padding:12px 20px;border-radius:2px;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
 .kig-article-cta a:hover{background:#c8354f}
+
+.kig-bf .kig-bf-quick{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:0 auto 24px}
+.kig-bf .kig-bf-quick button{min-height:44px;padding:10px 18px;background:transparent;border:1px solid var(--hairline,#3D3D3D);color:#E8F0F8;font:700 11px/1 var(--mono,'IBM Plex Mono',monospace);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.kig-bf .kig-bf-quick button:hover,.kig-bf .kig-bf-quick button:focus-visible{border-color:#CE5368;color:#CE5368}

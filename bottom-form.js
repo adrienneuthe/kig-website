@@ -17,6 +17,8 @@
     ['Custom Dashboard', 'Custom Dashboard'],
     ['Executive Training', 'Executive Training'],
     ['Tactical / Field Support', 'Tactical / Field Support'],
+    ['Sample Briefing Request', 'Sample Briefing Request'],
+    ['15-Minute Confidential Call', '15-Minute Confidential Call'],
     ['General Inquiry', 'General Inquiry']
   ];
 
@@ -33,6 +35,10 @@
   mount.innerHTML =
     '<h2>TELL US WHAT <em>YOU NEED.</em></h2>' +
     '<p class="kig-bf-sub">Active situation, upcoming deployment, counterparty concern, or a capability you need built. Someone on our team responds personally within 24 hours. Everything is confidential.</p>' +
+    '<div class="kig-bf-quick" role="group" aria-label="Quick options">' +
+    '<button type="button" data-pick="Sample Briefing Request">Request a sample briefing</button>' +
+    '<button type="button" data-pick="15-Minute Confidential Call">15-minute confidential call</button>' +
+    '</div>' +
     '<form class="kig-bf-form" id="kig-bf-form">' +
     '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
     '<div class="kig-bf-row">' +
@@ -50,6 +56,13 @@
     '<p class="kig-bf-email">Prefer email? <a href="mailto:project@kronusintelligencegroup.com">project@kronusintelligencegroup.com</a></p>';
 
   var form = document.getElementById('kig-bf-form');
+  Array.prototype.forEach.call(mount.querySelectorAll('.kig-bf-quick button'), function (b) {
+    b.addEventListener('click', function () {
+      form.inquiry_type.value = b.getAttribute('data-pick');
+      if (!form.message.value) form.message.placeholder = b.getAttribute('data-pick') === 'Sample Briefing Request' ? 'Which region, sector or threat type should the sample cover?' : 'Best days and times, and what you would like to discuss.';
+      form.email.focus();
+    });
+  });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var btn = form.querySelector('button');
