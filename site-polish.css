@@ -80,7 +80,7 @@
 @media(max-width:900px){
   main [style*="grid-template-columns:1fr 1fr"]:not(.kig-keep-grid),
   section [style*="grid-template-columns:1fr 1fr"]:not(.kig-keep-grid){grid-template-columns:minmax(0,1fr)!important;gap:32px!important}
-  .mon-bot-grid{grid-template-columns:minmax(0,1fr)!important}
+  .mon-bot-grid,.mon-main-grid,.mon-hdr-grid{grid-template-columns:minmax(0,1fr)!important}
   .mon-cta{width:100%;justify-content:center;white-space:normal;text-align:center}
   .mon-cta-row{flex-direction:column;align-items:flex-start!important;gap:18px!important;padding:20px!important}
 }
