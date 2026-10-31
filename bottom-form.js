@@ -1,107 +1,47 @@
-/* KIG bottom-of-page short contact form. Injected on every page except /contact
-   (which has the full form already). Posts to the same Formspree endpoint. */
+/* Short message form. Existing service definitions and delivery endpoint are retained. */
 (function () {
-  var ENDPOINT = 'https://formspree.io/f/mykbaegd';
   var mount = document.getElementById('kig-bottom-form');
   if (!mount) return;
-
-  var preselect = mount.getAttribute('data-inquiry') || '';
-  var pageName = mount.getAttribute('data-page') || document.title;
-
-  var OPTIONS = [
-    ['Principal & Executive Protective Intelligence', 'Principal & Executive Protective Intelligence'],
-    ['Institutional & Infrastructure Threat Intelligence', 'Institutional & Infrastructure Threat Intelligence'],
-    ['Counterparty & Deal-Level Intelligence', 'Counterparty & Deal-Level Intelligence'],
-    ['Narrative & Reputational Threat Intelligence', 'Narrative & Reputational Threat Intelligence'],
-    ['Electoral Integrity Intelligence', 'Electoral Integrity Intelligence'],
-    ['Custom Dashboard', 'Custom Dashboard'],
-    ['Executive Training', 'Executive Training'],
-    ['Tactical / Field Support', 'Tactical / Field Support'],
-    ['Sample Briefing Request', 'Sample Briefing Request'],
-    ['15-Minute Confidential Call', '15-Minute Confidential Call'],
-    ['General Inquiry', 'General Inquiry']
-  ];
-
-  function optionsHtml() {
-    var html = '<option value="" disabled' + (preselect ? '' : ' selected') + '>Type of inquiry</option>';
-    OPTIONS.forEach(function (o) {
-      var sel = (o[1] === preselect) ? ' selected' : '';
-      html += '<option value="' + o[1] + '"' + sel + '>' + o[0] + '</option>';
-    });
-    return html;
-  }
-
-  mount.className = 'kig-bf';
-  mount.innerHTML =
-    '<h2>TELL US WHAT <em>YOU NEED.</em></h2>' +
-    '<p class="kig-bf-sub">Active situation, upcoming deployment, counterparty concern, or a capability you need built. Someone on our team responds personally within 24 hours. Everything is confidential.</p>' +
-    '<div class="kig-bf-quick" role="group" aria-label="Quick options">' +
-    '<button type="button" data-pick="Sample Briefing Request">Request a sample briefing</button>' +
-    '<button type="button" data-pick="15-Minute Confidential Call">15-minute confidential call</button>' +
-    '</div>' +
-    '<form class="kig-bf-form" id="kig-bf-form">' +
+  var context = window.KIGIntake;
+  var inquiry = context ? context.context() : (mount.getAttribute('data-inquiry') || 'General Inquiry');
+  var page = context ? context.page() : (mount.getAttribute('data-page') || location.pathname);
+  var options = ['Principal & Executive Protective Intelligence', 'Institutional & Infrastructure Threat Intelligence', 'Counterparty & Deal-Level Intelligence', 'Narrative & Reputational Threat Intelligence', 'Electoral Integrity Intelligence', 'Custom Dashboard', 'Executive Training', 'Tactical / Field Support', 'Sample Briefing Request', '15-Minute Confidential Call', 'General Inquiry'];
+  function escape(text) { return text.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
+  mount.className = 'kig-bf kig-conversion';
+  mount.innerHTML = '<h2>TELL US WHAT <em>YOU NEED.</em></h2>' +
+    '<p class="kig-bf-sub">A question, an active concern, or a project to scope. Start with a few lines. Only your email and message are required.</p>' +
+    '<form class="kig-bf-form" id="kig-bf-form" action="https://formspree.io/f/mykbaegd" method="POST">' +
     '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
-    '<div class="kig-bf-row">' +
-    '<input type="text" name="name" placeholder="Name (optional)" aria-label="Name">' +
-    '<input type="email" name="email" placeholder="Email" aria-label="Email" required>' +
-    '</div>' +
-    '<div class="kig-bf-row">' +
-    '<input type="text" name="organization" placeholder="Organization (optional)" aria-label="Organization">' +
-    '<select name="inquiry_type" aria-label="Type of inquiry">' + optionsHtml() + '</select>' +
-    '</div>' +
-    '<textarea name="message" placeholder="What do you need?" aria-label="What do you need?" required></textarea>' +
-    '<button type="submit">Send Message &rarr;</button>' +
-    '<p class="kig-bf-privacy">Confidential. See our <a href="/privacy">Privacy Policy</a>.</p>' +
-    '</form>' +
+    '<label>Email (required)<input type="email" name="email" autocomplete="email" required></label>' +
+    '<label>What do you need? (required)<textarea name="message" placeholder="A few lines are enough. Keep sensitive details for a direct conversation." required></textarea></label>' +
+    '<div class="kig-bf-row"><label>Name (optional)<input name="name" autocomplete="name"></label><label>Organization (optional)<input name="organization" autocomplete="organization"></label></div>' +
+    '<label>Type of inquiry (optional)<select name="inquiry_type">' + options.map(function (item) { return '<option value="' + escape(item) + '"' + (inquiry === item ? ' selected' : '') + '>' + escape(item === 'General Inquiry' ? 'Not sure yet / General Inquiry' : item) + '</option>'; }).join('') + '</select></label>' +
+    '<button type="submit">Send Message &rarr;</button><p class="kig-bf-note" role="status"></p>' +
+    '<p class="kig-bf-privacy">Confidential. See our <a href="/privacy">Privacy Policy</a>.</p></form>' +
+    '<a class="kig-bf-proposal" href="' + escape(context ? context.href('/request-proposal', inquiry) : '/request-proposal') + '">Have a scope in mind? Request a Proposal →</a>' +
     '<p class="kig-bf-email">Prefer email? <a href="mailto:project@kronusintelligencegroup.com">project@kronusintelligencegroup.com</a></p>';
-
-  var form = document.getElementById('kig-bf-form');
-  Array.prototype.forEach.call(mount.querySelectorAll('.kig-bf-quick button'), function (b) {
-    b.addEventListener('click', function () {
-      form.inquiry_type.value = b.getAttribute('data-pick');
-      if (!form.message.value) form.message.placeholder = b.getAttribute('data-pick') === 'Sample Briefing Request' ? 'Which region, sector or threat type should the sample cover?' : 'Best days and times, and what you would like to discuss.';
-      form.email.focus();
-    });
-  });
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var btn = form.querySelector('button');
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-    var resolvedInquiryType = form.inquiry_type.value || 'General Inquiry';
-    var data = {
-      _subject: 'KIG Website Inquiry — ' + pageName,
-      name: form.name.value,
-      email: form.email.value,
-      _replyto: form.email.value,
-      organization: form.organization.value,
-      inquiry_type: resolvedInquiryType,
-      message: form.message.value,
-      _gotcha: form._gotcha.value,
-      page: pageName,
-      source: 'KIG website bottom form — ' + location.pathname
-    };
-    fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(data)
-    }).then(function (r) {
-      if (!r.ok) throw new Error('bad status');
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'generate_lead', { page: pageName, inquiry_type: data.inquiry_type });
-      }
-      var done = document.createElement('div');
-      done.className = 'kig-bf-done';
-      done.innerHTML = '<h3>Received.</h3><p>Someone on our team will respond personally within 24 hours.</p>';
-      mount.innerHTML = '';
-      mount.appendChild(done);
-    }).catch(function () {
-      btn.disabled = false;
-      btn.textContent = 'Send Message →';
-      var note = document.createElement('p');
-      note.className = 'kig-bf-note';
-      note.textContent = 'Could not send. Please email project@kronusintelligencegroup.com';
-      form.appendChild(note);
-    });
+  var form = mount.querySelector('form');
+  var busy = false;
+  function value(name) { return form.elements.namedItem(name).value; }
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (busy || !form.reportValidity() || value('_gotcha')) return;
+    busy = true;
+    var button = form.querySelector('button[type="submit"]');
+    var note = form.querySelector('.kig-bf-note');
+    var data = {_subject: 'KIG Website Inquiry — ' + page, name: value('name'), email: value('email'), _replyto: value('email'), organization: value('organization'), inquiry_type: value('inquiry_type') || 'General Inquiry', message: value('message'), _gotcha: value('_gotcha'), page: page, source: 'KIG website bottom form — ' + location.pathname};
+    button.disabled = true; button.textContent = 'Sending…'; form.setAttribute('aria-busy', 'true');
+    note.setAttribute('role', 'status'); note.textContent = 'Sending your message…';
+    fetch(form.action, {method: 'POST', headers: {'Content-Type': 'application/json', Accept: 'application/json'}, body: JSON.stringify(data)})
+      .then(function (response) {
+        if (!response.ok) throw new Error('Submission failed');
+        if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', {page: page, inquiry_type: data.inquiry_type, form_type: 'short_message'});
+        var done = document.createElement('div'); done.className = 'kig-bf-done'; done.setAttribute('role', 'status'); done.setAttribute('tabindex', '-1');
+        done.innerHTML = '<h3>Received.</h3><p>Someone on our team will respond personally within 24 hours.</p>';
+        form.replaceWith(done); done.focus();
+      }).catch(function () {
+        busy = false; button.disabled = false; button.textContent = 'Send Message →'; form.removeAttribute('aria-busy');
+        note.setAttribute('role', 'alert'); note.textContent = 'Your message could not be sent. Your details are still here. Try again, or email project@kronusintelligencegroup.com.';
+      });
   });
 })();
