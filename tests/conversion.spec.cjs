@@ -111,3 +111,6 @@ test('Mobile proposal submits after scrolling with selected inquiry; landscape r
   await p.close();
  }
 });
+test('Homepage responsive rules are parsed before body to avoid first-paint layout jumps',async()=>{
+ const html=await (await fetch(base+'/')).text();const body=html.split('</head>')[1];assert.ok(body);assert.doesNotMatch(body,/<style\b/i);assert.match(html.split('</head>')[0],/\.hero-l\{min-width:0;width:100%;padding:32px 0 20px\}/);
+});
