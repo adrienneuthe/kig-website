@@ -8,7 +8,7 @@ let browser;
 before(async () => { browser = await chromium.launch({headless:true}); });
 after(async () => { await browser.close(); });
 async function page(path, width=1440) {
-  const page = await browser.newPage({viewport:{width,height:950}});
+  const page = await browser.newPage({viewport:{width,height:950},hasTouch:width<=768,isMobile:width<=700});
   await page.route('https://www.googletagmanager.com/**',route=>route.abort());
   await page.route('https://*.google-analytics.com/**',route=>route.abort());
   await page.goto(base+path); await page.locator('.kig-nav-cta').waitFor();
@@ -73,4 +73,41 @@ test('Mobile: visible header, tap navigation, sticky hides for form/focus and ha
 });
 test('Newsletter markup and provider submission are retained',async()=>{
  const p=await page('/newsletter');const f=p.locator('#kig-sub-form');assert.equal(await f.getAttribute('action'),'https://kronusempire.activehosted.com/proc.php');assert.equal(await f.locator('input[type=email]').count(),1);assert.equal(await f.locator('[type=submit]').isVisible(),true);await p.close();
+});
+test('Mobile launch gate: 44px controls, 16px fields, keyboard-state hiding, no widget/bar overlap',async()=>{
+ for(const width of [320,360,390,430,768]){
+  const p=await page('/request-proposal?inquiry=principal',width);
+  assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth-innerWidth),0);
+  const f=p.locator('#kig-contact-form');
+  for(const selector of ['.kig-nav-cta','#kig-contact-form input[name=email]','#kig-contact-form textarea','#kig-contact-form select','#kig-contact-form button[type=submit]']){
+   assert.ok((await p.locator(selector).boundingBox()).height>=44,selector+' at '+width);
+  }
+  assert.ok(await f.locator('input[name=email]').evaluate(e=>parseFloat(getComputedStyle(e).fontSize)>=16));
+  if(width<=700){
+   await p.locator('.kig-menu-toggle').click();await p.locator('.kig-nav-drop-btn').click();
+   const heights=await p.locator('.kig-nav-drop-menu a').evaluateAll(es=>es.map(e=>e.getBoundingClientRect().height));assert.ok(heights.every(h=>h>=44),JSON.stringify(heights));
+   await p.keyboard.press('Escape');assert.equal(await p.locator('.kig-menu-toggle').getAttribute('aria-expanded'),'false');assert.equal(await p.evaluate(()=>document.activeElement.className),'kig-menu-toggle');
+   assert.equal(await p.locator('#qb-btn').isVisible(),false);
+   await p.goto(base+'/principal-protective-intelligence');
+   await p.evaluate(()=>scrollTo(0,innerHeight*1.8));await p.waitForFunction(()=>document.querySelector('#kig-sticky-bar').classList.contains('show'));
+   assert.equal(await p.locator('#qb-btn').isVisible(),false);
+   // Emulate the visualViewport shrink a soft keyboard produces; this is not a real OS keyboard test.
+   await p.evaluate(()=>{Object.defineProperty(visualViewport,'height',{configurable:true,get:()=>250});visualViewport.dispatchEvent(new Event('resize'))});
+   await p.waitForFunction(()=>!document.querySelector('#kig-sticky-bar').classList.contains('show'));
+   await p.evaluate(()=>{delete visualViewport.height;visualViewport.dispatchEvent(new Event('resize'))});
+   await p.waitForFunction(()=>document.querySelector('#kig-sticky-bar').classList.contains('show'));
+   await p.locator('#kig-bf-form input[name=email]').focus();await p.waitForFunction(()=>!document.querySelector('#kig-sticky-bar').classList.contains('show'));
+  }
+  await p.close();
+ }
+});
+test('Mobile proposal submits after scrolling with selected inquiry; landscape remains usable',async()=>{
+ for(const width of [320,390,430]){
+  const p=await page('/request-proposal?inquiry=counterparty',width);const f=p.locator('#kig-contact-form');let calls=0,posted='';
+  await p.route('https://formspree.io/f/mykbaegd',r=>{calls++;posted=r.request().postData();return r.fulfill({json:{ok:true}})});
+  await f.locator('[name=email]').tap();await f.locator('[name=email]').fill('fixture@example.com');await f.locator('[name=message]').fill('Fixture counterparty requirement.');
+  await f.locator('button[type=submit]').scrollIntoViewIfNeeded();await f.locator('button[type=submit]').tap();await p.locator('.form-done').waitFor();assert.equal(calls,1);assert.match(posted,/Counterparty/);assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth-innerWidth),0);
+  await p.setViewportSize({width:667,height:375});assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth-innerWidth),0);assert.equal(await p.locator('.kig-nav-cta').isVisible(),true);
+  await p.close();
+ }
 });

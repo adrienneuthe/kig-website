@@ -40,6 +40,14 @@
   });
   document.addEventListener('click', closeAll);
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeAll();
+    if (e.key === 'Escape') {
+      closeAll();
+      var nav = document.querySelector('nav.kig-site-nav.kig-nav-open');
+      if (nav) {
+        nav.classList.remove('kig-nav-open');
+        var toggle = nav.querySelector('.kig-menu-toggle');
+        if (toggle) { toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'Open menu'); toggle.focus(); }
+      }
+    }
   });
 })();

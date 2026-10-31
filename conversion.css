@@ -52,3 +52,6 @@
 
 @media(max-width:700px){.kig-nav-cta{white-space:nowrap;max-width:none;font-size:10px!important}.hero-actions a[href="#services"]{border:0;padding:12px 0;min-height:44px}.kig-intake-form summary{padding-bottom:8px}}
 @media(max-width:380px){.kig-site-nav>a:first-child img{width:100px!important}.kig-nav-cta{font-size:9px!important;padding:10px 8px!important}nav.kig-site-nav{padding-left:12px!important;padding-right:12px!important;gap:6px}}
+/* Touch-friendly navigation on phones and tablets as well as desktop. */
+.kig-nav-cta{min-height:44px!important}
+.kig-nav-drop-menu a{display:flex;align-items:center;box-sizing:border-box;min-height:44px}
