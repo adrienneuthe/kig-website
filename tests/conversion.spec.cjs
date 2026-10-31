@@ -111,3 +111,10 @@ test('Mobile proposal submits after scrolling with selected inquiry; landscape r
   await p.close();
  }
 });
+test('Homepage responsive rules are parsed before body to avoid first-paint layout jumps',async()=>{
+ const html=await (await fetch(base+'/')).text();const body=html.split('</head>')[1];assert.ok(body);assert.doesNotMatch(body,/<style\b/i);assert.match(html.split('</head>')[0],/\.hero-l\{min-width:0;width:100%;padding:32px 0 20px\}/);
+});
+
+test('Homepage font faces are discoverable without a blocking external CSS request',async()=>{
+ const html=await (await fetch(base+'/')).text();const head=html.split('</head>')[0];assert.match(head,/<style id="kig-font-faces">/);assert.match(head,/font-family: 'Barlow Condensed'/);assert.match(head,/font-family: 'IBM Plex Sans'/);assert.match(head,/font-family: 'IBM Plex Mono'/);assert.doesNotMatch(head,/<link[^>]*fonts\.googleapis\.com/);assert.match(head,/rel="preconnect" href="https:\/\/fonts\.gstatic\.com" crossorigin/);
+});
