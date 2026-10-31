@@ -1,54 +1,35 @@
-/* Mobile sticky "Start a Project / Message Us" bar. Mobile only (<=700px, see sticky-cta.css).
-   Appears after the visitor scrolls past the hero, hides while any form/footer is in view
-   so it never covers form fields, honors prefers-reduced-motion (no animation used — show/hide
-   only via display toggle). */
+/* One mobile action bar; never overlays an active form or keyboard. */
 (function () {
-  if (window.matchMedia && window.matchMedia('(min-width:701px)').matches) return;
-
-  var bar = document.createElement('div');
-  bar.id = 'kig-sticky-bar';
-  var inquiryEl = document.getElementById('kig-bottom-form');
-  var inquiry = inquiryEl ? inquiryEl.getAttribute('data-inquiry') : '';
-  var startHref = '/contact' + (inquiry ? '?inquiry=' + encodeURIComponent(inquiry) : '');
-  bar.innerHTML =
-    '<a class="kig-sb-primary" href="' + startHref + '">Start a Project</a>' +
-    '<a class="kig-sb-secondary" href="#kig-bottom-form">Message Us</a>';
+  if (!window.matchMedia('(max-width:700px)').matches) return;
+  var bar = document.createElement('div'); bar.id = 'kig-sticky-bar';
+  var context = window.KIGIntake;
+  var href = context ? context.href('/request-proposal') : '/request-proposal';
+  var contact = context ? context.href('/contact') : '/contact';
+  bar.innerHTML = '<a class="kig-sb-primary" href="' + href + '">Request a Proposal</a><a class="kig-sb-secondary" href="' + contact + '">Message Us</a>';
   document.body.appendChild(bar);
-
   var pastHero = false;
-  var nearForm = false;
-
+  var visibleTargets = new Set();
   function sync() {
-    if (pastHero && !nearForm) {
-      bar.classList.add('show');
-    } else {
-      bar.classList.remove('show');
-    }
+    var focused = document.activeElement;
+    var typing = focused && /^(INPUT|TEXTAREA|SELECT)$/.test(focused.tagName);
+    var keyboard = window.visualViewport && window.visualViewport.height < window.innerHeight * .75;
+    bar.classList.toggle('show', pastHero && visibleTargets.size === 0 && !typing && !keyboard);
   }
-
-  var hero = document.querySelector('.hero, .about-hero, header + main, main > div:first-child');
+  var hero = document.querySelector('.hero, .about-hero, .pillar-hero, .dashboard-hero, .kig-intake-heading, main > header, main > div:first-child');
   if (hero && 'IntersectionObserver' in window) {
-    var heroObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        pastHero = !entry.isIntersecting && entry.boundingClientRect.top < 0;
-        sync();
-      });
-    }, { threshold: 0 });
-    heroObserver.observe(hero);
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { pastHero = !entry.isIntersecting && entry.boundingClientRect.top < 0; }); sync();
+    }).observe(hero);
   } else {
-    // Fallback: reveal after a scroll threshold.
-    window.addEventListener('scroll', function () {
-      pastHero = window.scrollY > window.innerHeight * 0.6;
-      sync();
-    }, { passive: true });
+    window.addEventListener('scroll', function () { pastHero = window.scrollY > window.innerHeight * .6; sync(); }, {passive: true});
   }
-
-  var formTargets = document.querySelectorAll('#kig-bottom-form, .cta-form, footer.kig-footer');
-  if (formTargets.length && 'IntersectionObserver' in window) {
-    var formObserver = new IntersectionObserver(function (entries) {
-      nearForm = entries.some(function (e) { return e.isIntersecting; });
-      sync();
-    }, { threshold: 0.05 });
-    formTargets.forEach(function (el) { formObserver.observe(el); });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) visibleTargets.add(entry.target); else visibleTargets.delete(entry.target); }); sync();
+    }, {rootMargin: '0px 0px 100px 0px', threshold: 0});
+    document.querySelectorAll('#kig-bottom-form, .cta-form, .kig-intake-form, footer.kig-footer').forEach(function (target) { observer.observe(target); });
   }
+  document.addEventListener('focusin', sync);
+  document.addEventListener('focusout', function () { requestAnimationFrame(sync); });
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', sync);
 })();
