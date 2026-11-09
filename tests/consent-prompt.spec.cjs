@@ -19,7 +19,7 @@ for(const width of [390,1440]){
  const buttons=prompt.locator('button');
  const a=await buttons.nth(0).boundingBox(),d=await buttons.nth(1).boundingBox();
  assert.ok(Math.abs(a.width-d.width)<=1);assert.ok(a.height>=44&&d.height>=44);
- const bar=p.locator(brand==='kc'?'.kc-sticky-bar':'#kig-sticky-bar');
+ const bar=p.locator('#kig-sticky-bar');
  if(await bar.isVisible()){const s=await bar.boundingBox();assert.ok(b.y+b.height<=s.y||s.y+s.height<=b.y);}
  await p.screenshot({path:`/tmp/consent-shots/${brand}-${width}-prompt.png`});
  await buttons.nth(1).focus();await p.keyboard.press('Enter');

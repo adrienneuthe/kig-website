@@ -2,10 +2,9 @@ const {test} = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
-const file = fs.existsSync('public/visitor-tracking.js') ? 'public/visitor-tracking.js' : 'visitor-tracking.js';
+const file = 'visitor-tracking.js';
 const source = fs.readFileSync(file, 'utf8');
-const isKC = file.startsWith('public');
-const production = isKC ? 'www.kronuscommunications.com' : 'kronusintelligencegroup.com';
+const production = 'kronusintelligencegroup.com';
 function fixture({host=production, preference=null, gpc=false, dnt=null, storageFails=false}={}) {
   let saved=preference, reloads=0, listener, scripts=[], events={}, elements={};
   const status={textContent:''}, allow={disabled:false};

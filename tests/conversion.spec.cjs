@@ -142,9 +142,10 @@ test('Optional tracking choice stays off by default and preview never loads diff
  const prefs=p.locator('#visitor-tracking-preferences');
  assert.match(await prefs.innerText(),/Visitor tracking is off/);
  await prefs.getByRole('button',{name:'Allow visitor tracking',exact:true}).click();
+ await prefs.locator('summary').click();
  assert.match(await prefs.innerText(),/Visitor tracking is allowed/);
  assert.equal(requests,0);
  await prefs.getByRole('button',{name:'Decline / turn off',exact:true}).click();
- assert.match(await prefs.innerText(),/Visitor tracking is off/);
+ assert.match(await prefs.textContent(),/Visitor tracking is off/);
  await p.close();
 });
