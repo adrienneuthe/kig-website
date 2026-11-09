@@ -47,7 +47,7 @@
       status.textContent = blocked() ? 'Visitor tracking is off because your browser requests privacy.' :
         preference() === 'granted' ? 'Visitor tracking is allowed. You can turn it off here at any time.' : 'Visitor tracking is off.';
     }
-    box.addEventListener('click', function (event) {
+    function choose(event) {
       var action = event.target.getAttribute('data-tracking');
       if (!action) return;
       var value = action === 'allow' && !blocked() ? 'granted' : 'denied';
@@ -58,8 +58,23 @@
       if (value === 'granted') start();
       // Reload removes the already-loaded tracker; the denied preference prevents reinjection.
       else if (loaded) { window.location.reload(); return; }
+      var prompt = document.getElementById('visitor-tracking-prompt');
+      if (prompt) prompt.remove();
+      box.open = false;
       render();
-    });
+    }
+    box.addEventListener('click', choose);
+    if (!preference() && !blocked()) {
+      var prompt = document.createElement('aside');
+      prompt.id = 'visitor-tracking-prompt';
+      prompt.className = 'visitor-tracking-prompt';
+      prompt.setAttribute('aria-label', 'Optional visitor tracking');
+      prompt.innerHTML = '<strong>Optional visitor tracking</strong>' +
+        '<p>Allow ActiveCampaign to measure visits and recognize returning contacts? Tracking stays off unless you allow it. This does not subscribe you to email. <a href="/privacy">Privacy policy</a>.</p>' +
+        '<div><button type="button" data-tracking="allow">Allow</button><button type="button" data-tracking="decline">Decline</button></div>';
+      prompt.addEventListener('click', choose);
+      document.body.appendChild(prompt);
+    }
     render();
     start();
   }

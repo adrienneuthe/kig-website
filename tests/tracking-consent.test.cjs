@@ -7,16 +7,17 @@ const source = fs.readFileSync(file, 'utf8');
 const isKC = file.startsWith('public');
 const production = isKC ? 'www.kronuscommunications.com' : 'kronusintelligencegroup.com';
 function fixture({host=production, preference=null, gpc=false, dnt=null, storageFails=false}={}) {
-  let saved=preference, reloads=0, listener, box, scripts=[], events={};
+  let saved=preference, reloads=0, listener, scripts=[], events={}, elements={};
   const status={textContent:''}, allow={disabled:false};
   const document={
     readyState:'complete',
-    getElementById:()=>box,
+    getElementById:id=>elements[id],
     head:{appendChild:s=>scripts.push(s)},
-    body:{appendChild:b=>box=b},
+    body:{appendChild:b=>elements[b.id]=b},
     querySelector:()=>null,
     addEventListener:(name,fn)=>events[name]=fn,
     createElement:tag=>tag==='script'?{}:{
+      setAttribute(){}, remove(){delete elements[this.id];},
       querySelector:s=>s==='.visitor-tracking-status'?status:allow,
       addEventListener:(name,fn)=>listener=fn,
     },
@@ -31,7 +32,7 @@ function fixture({host=production, preference=null, gpc=false, dnt=null, storage
   vm.runInNewContext(source, context);
   return {scripts,context,events,status,allow,
     click:action=>listener({target:{getAttribute:()=>action}}),
-    saved:()=>saved,reloads:()=>reloads};
+    saved:()=>saved,reloads:()=>reloads,elements};
 }
 test('default off, no network or identity before consent',()=>{
   const f=fixture();assert.equal(f.scripts.length,0);assert.equal(f.context.vgo,undefined);
@@ -68,4 +69,11 @@ test('SPA pageview is processed only after opt-in and not on previews',()=>{
   assert.equal(f.context.vgo.q.filter(x=>x[0]==='process').length,2);
   const preview=fixture({host:'preview.vercel.app',preference:'granted'});
   preview.events['ac-page-view']();assert.equal(preview.scripts.length,0);
+});
+
+test('first visit has obvious equal-choice prompt, hidden after choosing',()=>{
+ const f=fixture();assert.ok(f.elements['visitor-tracking-prompt']);
+ f.click('decline');assert.equal(f.elements['visitor-tracking-prompt'],undefined);
+ assert.equal(fixture({preference:'denied'}).elements['visitor-tracking-prompt'],undefined);
+ assert.equal(fixture({gpc:true}).elements['visitor-tracking-prompt'],undefined);
 });
