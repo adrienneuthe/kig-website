@@ -10,7 +10,7 @@
 .visitor-tracking-preferences button:disabled { opacity:.6; cursor:not-allowed; }
 
 /* First-visit notice: below navigation, never over the mobile conversion bar. */
-.visitor-tracking-prompt { position:fixed; z-index:80; top:88px; right:16px; width:min(440px, calc(100vw - 32px)); box-sizing:border-box; padding:16px; background:#1A1A1A; color:#E8F0F8; border:1px solid currentColor; font:14px/1.55 'IBM Plex Sans', sans-serif; }
+.visitor-tracking-prompt { position:fixed; z-index:80; top:128px; right:16px; width:min(440px, calc(100vw - 32px)); box-sizing:border-box; padding:16px; background:#1A1A1A; color:#E8F0F8; border:1px solid currentColor; font:14px/1.55 'IBM Plex Sans', sans-serif; }
 .visitor-tracking-prompt strong { display:block; font-weight:600; }
 .visitor-tracking-prompt p { margin:8px 0 16px; }
 .visitor-tracking-prompt a { color:#CE5368; text-decoration:underline; }
