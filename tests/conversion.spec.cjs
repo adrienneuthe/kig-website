@@ -118,3 +118,34 @@ test('Homepage responsive rules are parsed before body to avoid first-paint layo
 test('Homepage font faces are discoverable without a blocking external CSS request',async()=>{
  const html=await (await fetch(base+'/')).text();const head=html.split('</head>')[0];assert.match(head,/<style id="kig-font-faces">/);assert.match(head,/font-family: 'Barlow Condensed'/);assert.match(head,/font-family: 'IBM Plex Sans'/);assert.match(head,/font-family: 'IBM Plex Mono'/);assert.doesNotMatch(head,/<link[^>]*fonts\.googleapis\.com/);assert.match(head,/rel="preconnect" href="https:\/\/fonts\.gstatic\.com" crossorigin/);
 });
+
+test('Newsletter waits for the actual provider result instead of timed success',async()=>{
+ const p=await page('/newsletter');
+ await p.route('https://kronusempire.activehosted.com/proc.php',route=>route.fulfill({status:200,contentType:'text/html',body:'<h1>Check your email to confirm your subscription.</h1>'}));
+ const f=p.locator('#kig-sub-form');
+ assert.equal(await f.getAttribute('target'),null);
+ await f.locator('[name=email]').fill('newsletter-fixture@example.com');
+ await f.locator('[type=submit]').click();
+ await p.getByRole('heading',{name:'Check your email to confirm your subscription.'}).waitFor();
+ assert.equal(p.url(),'https://kronusempire.activehosted.com/proc.php');
+ await p.close();
+});
+test('Retired direct subscription API cannot bypass double opt-in',()=>{
+ const handler=require('../api/newsletter-signup.js');
+ let status,body;
+ handler({method:'POST',body:{email:'fixture@example.com',type:'kig'}},{setHeader(){},status(code){status=code;return this;},json(value){body=value;}});
+ assert.equal(status,410);assert.match(body.error,/retired/);
+});
+test('Optional tracking choice stays off by default and preview never loads diffuser',async()=>{
+ const p=await page('/contact');let requests=0;
+ await p.route('https://diffuser-cdn.app-us1.com/**',route=>{requests++;return route.abort()});
+ const prefs=p.locator('#visitor-tracking-preferences');
+ assert.match(await prefs.innerText(),/Visitor tracking is off/);
+ await prefs.getByRole('button',{name:'Allow visitor tracking',exact:true}).click();
+ await prefs.locator('summary').click();
+ assert.match(await prefs.innerText(),/Visitor tracking is allowed/);
+ assert.equal(requests,0);
+ await prefs.getByRole('button',{name:'Decline / turn off',exact:true}).click();
+ assert.match(await prefs.textContent(),/Visitor tracking is off/);
+ await p.close();
+});

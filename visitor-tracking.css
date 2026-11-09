@@ -1,0 +1,19 @@
+
+/* Functional privacy controls; existing brand palette and typography. */
+.visitor-tracking-preferences { background:#1A1A1A; color:#E8F0F8; font:14px/1.55 'IBM Plex Sans', sans-serif; padding:16px; border-top:1px solid currentColor; margin-top:16px; text-align:left; }
+.visitor-tracking-preferences summary { cursor:pointer; min-height:44px; display:list-item; padding:10px 0; }
+.visitor-tracking-preferences p { max-width:72ch; margin:8px 0; color:inherit; }
+.visitor-tracking-preferences a { color:#CE5368; text-decoration:underline; }
+.visitor-tracking-preferences > div { display:flex; flex-wrap:wrap; gap:8px; }
+.visitor-tracking-preferences button { min-height:44px; padding:8px 16px; border:1px solid currentColor; background:transparent; color:inherit; font:inherit; cursor:pointer; }
+.visitor-tracking-preferences button:focus-visible, .visitor-tracking-preferences summary:focus-visible { outline:2px solid #CE5368; outline-offset:2px; }
+.visitor-tracking-preferences button:disabled { opacity:.6; cursor:not-allowed; }
+
+/* First-visit notice: below navigation, never over the mobile conversion bar. */
+.visitor-tracking-prompt { position:fixed; z-index:80; top:128px; right:16px; width:min(440px, calc(100vw - 32px)); box-sizing:border-box; padding:16px; background:#1A1A1A; color:#E8F0F8; border:1px solid currentColor; font:14px/1.55 'IBM Plex Sans', sans-serif; }
+.visitor-tracking-prompt strong { display:block; font-weight:600; }
+.visitor-tracking-prompt p { margin:8px 0 16px; }
+.visitor-tracking-prompt a { color:#CE5368; text-decoration:underline; }
+.visitor-tracking-prompt > div { display:flex; gap:8px; }
+.visitor-tracking-prompt button { flex:1; min-height:44px; padding:8px 16px; border:1px solid currentColor; background:transparent; color:inherit; font:inherit; cursor:pointer; }
+.visitor-tracking-prompt button:focus-visible { outline:2px solid #CE5368; outline-offset:2px; }
